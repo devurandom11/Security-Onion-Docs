@@ -133,6 +133,10 @@ You can install custom Zeek packages using `zkg`. Place each package as a subdir
 
 The package directory should contain a valid Zeek package structure (including a `zkg.meta` file).
 
+!!! NOTE
+    
+    zkg requires packages from git repos to be a clone of the repo. The working tree must be clean otherwise it will not install the package. `git status` will tell you if it is clean or not.
+    
 After placing the package, run `sudo salt $SENSORNAME_$ROLE state.highstate` to sync the packages to the sensor nodes. The packages will be automatically installed with `zkg` each time the Zeek container starts. If you have a distributed deployment with separate sensor nodes, it may take up to 15 minutes for packages to sync to the sensor nodes.
 
 You can verify that a custom package was installed by checking the Zeek container logs:
