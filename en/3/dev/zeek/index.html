@@ -6029,6 +6029,10 @@ Please note that Zeek is very strict about the format of <code>intel.dat</code>.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/opt/so/saltstack/local/salt/zeek/zkg/my-package/
 </code></pre></div>
 <p>The package directory should contain a valid Zeek package structure (including a <code>zkg.meta</code> file).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>zkg requires packages from git repos to be a clone of the repo. The working tree must be clean otherwise it will not install the package. <code>git status</code> will tell you if it is clean or not.</p>
+</div>
 <p>After placing the package, run <code>sudo salt $SENSORNAME_$ROLE state.highstate</code> to sync the packages to the sensor nodes. The packages will be automatically installed with <code>zkg</code> each time the Zeek container starts. If you have a distributed deployment with separate sensor nodes, it may take up to 15 minutes for packages to sync to the sensor nodes.</p>
 <p>You can verify that a custom package was installed by checking the Zeek container logs:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo docker logs so-zeek
