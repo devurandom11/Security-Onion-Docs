@@ -196,7 +196,9 @@ Values can be specified using the following formats (single or multi-line):
 
 Create custom variables by selecting an existing Address Group or Port Group and clicking "Duplicate". Enter a name using uppercase naming convention, then click "Create Setting".  
 
-**Note:** The new variable is not saved until you modify its value and click the green "Save Changes" checkmark.         
+**Note:** The new variable is not saved until you modify its value and click the green "Save Changes" checkmark.    
+
+**Note:** Custom Port Group variables have some syntactical limitations, for example, not being able to use negation.    
 
 ## Disabling
 
