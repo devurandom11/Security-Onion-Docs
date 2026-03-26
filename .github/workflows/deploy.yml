@@ -28,7 +28,7 @@ jobs:
 
       - run: mkdocs build
 
-      - run: npx -y @redocly/cli build-docs specs/openapi.yaml -o _build/html/connect-api/so-api-reference.html
+      - run: npx -y @redocly/cli build-docs specs/openapi.yaml -o /home/runner/work/docs/docs/site/connect-api/so-api-reference.html
 
       - name: Generate GitHub App Token
         id: generate_token
