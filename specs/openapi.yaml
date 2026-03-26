@@ -1796,6 +1796,10 @@ components:
           description: Indicates whether disk encryption is enabled on this node
           example: 1
           type: integer
+        load1m:
+          description: The node's 1-minute load metric
+          example: 0.43
+          type: number
         load5m:
           description: The node's 5-minute load metric
           example: 0.96
@@ -1803,10 +1807,6 @@ components:
         load15m:
           description: The node's 15-minute load metric
           example: 1.09
-          type: number
-        load1m:
-          description: The node's 1-minute load metric
-          example: 0.43
           type: number
         memoryTotalGB:
           description: Total size, in gigabytes, of the system memory, or RAM
@@ -1886,11 +1886,6 @@ components:
             restart'
           example: ok
           type: string
-        stenoLossPct:
-          description: The current percentage packet loss experienced by Stenographer,
-            if applicable to this node
-          example: 0
-          type: number
         suriLossPct:
           description: The current percentage packet loss experienced by Suricata,
             if applicable to this node
@@ -2418,7 +2413,7 @@ components:
         helpLink:
           description: (metadata) An HTML page, relative to the doc URL, that may
             assist the user in understanding the purpose of this setting.
-          example: elastalert.html
+          example: elastalert
           type: string
         id:
           description: The ID of the configuration setting. Each period represents
