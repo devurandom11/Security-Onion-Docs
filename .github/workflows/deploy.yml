@@ -24,9 +24,11 @@ jobs:
         with:
           python-version: '3.x'
 
-      - run: pip install mkdocs mkdocs-material mkdocs-glightbox mkdocs-to-pdf neoteroi-mkdocs
+      - run: pip install mkdocs mkdocs-material mkdocs-glightbox mkdocs-to-pdf
 
       - run: mkdocs build
+
+      - run: npx -y @redocly/cli build-docs specs/openapi.yaml -o _build/html/so-api-reference.html
 
       - name: Generate GitHub App Token
         id: generate_token
