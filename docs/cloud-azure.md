@@ -5,7 +5,7 @@ Azure users can deploy an official Security Onion virtual machine image found on
 
 !!! WARNING
     
-    Existing Security Onion cloud image installations should use the [soup](soup.md) command to upgrade. If your grid is still running 2.4.x, use ``soup`` to upgrade to 2.4.210, and then use ``soupto3`` to proceed to 3.0.0, after which continue using ``soup`` again. Attempting to switch to a newer Security Onion image from the cloud marketplace could cause loss of data and require full Grid re-installation; use the ``soup`` procedure to upgrade instead.
+    Existing Security Onion cloud image installations should use the [soup](soup.md) command to upgrade. If your grid is still running 2.4.x, use ``soup`` to upgrade to 2.4.210, and then use ``soupto3`` to proceed to Security Onion 3, after which continue using ``soup`` again. Attempting to switch to a newer Security Onion image from the cloud marketplace could cause loss of data and require full Grid re-installation; use the ``soup`` procedure to upgrade instead.
 
 !!! NOTE
     

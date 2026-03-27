@@ -1,6 +1,6 @@
 # Appendix
 
-This appendix provides an overview of the process of migrating from the old Security Onion 2.4 to the new Security Onion 3.0.
+This appendix provides an overview of the process of migrating from the old Security Onion 2.4 to the new Security Onion 3.
 
 !!! TIP
     
@@ -28,4 +28,8 @@ Next, make sure there is a backup in /nsm/backup:
 sudo ls -alh /nsm/backup
 ```
 
-TODO
+Once you have confirmed your backup, you may update to Security Onion 3:
+
+```
+sudo soupto3
+```

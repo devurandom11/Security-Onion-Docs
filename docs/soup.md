@@ -77,12 +77,12 @@ To update an [Airgap](airgap.md) deployment, you'll need to get the latest ISO i
 
 - burn the latest ISO image to a DVD and insert it in the DVD drive of the manager (example: `/dev/cdrom`)
 - flash the ISO image to a USB drive and connect that USB drive to the manager (example: `/dev/sdb`)
-- simply copy the ISO file itself to the manager (example: `/home/YourUser/securityonion-3.0.XYZ-YYYYMMDD.iso`)
+- simply copy the ISO file itself to the manager (example: `/home/YourUser/securityonion-3.X.Y-YYYYMMDD.iso`)
 
 Instead of waiting for soup to prompt for the location, you can also specify the path on the command line using the `-f` option. For example (change this to reflect the actual path to the ISO file or disk device containing the ISO media):
 
 
-	sudo soup -y -f /home/YourUser/securityonion-3.0.XYZ-YYYYMMDD.iso
+	sudo soup -y -f /home/YourUser/securityonion-3.X.Y-YYYYMMDD.iso
 	
 ## Elastic
 
@@ -154,7 +154,7 @@ Here are some other errors that you may see when running `soup`:
 and/or
 
 
-    There is a problem downloading the so-xyz:3.0.0 image. Details: 
+    There is a problem downloading the so-xyz:3.X.Y image. Details: 
     gpg: Signature made Thu 18 Feb 2021 02:26:10 PM UTC using RSA key ID FE507013 gpg: BAD signature from "Security Onion Solutions, LLC <info@securityonionsolutions.com>"
     
 If you see these errors, it most likely means that a salt highstate process was already running when `soup` began. You can wait a few minutes and then try `soup` again. Alternatively, you can run `sudo so-checkin` and wait for it to complete before running `soup` again.
