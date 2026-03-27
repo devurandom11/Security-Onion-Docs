@@ -1,8 +1,12 @@
 # Onion AI
 
 !!! NOTE
-    
+
     This is an enterprise-level feature of Security Onion. Contact Security Onion Solutions, LLC via our website at <https://securityonion.com/pro> for more information about purchasing a [Security Onion Pro](security-onion-pro.md) license.
+
+!!! NOTE
+
+    Onion AI is disabled by default, even with a Pro license. To enable it, go to the Administration --> Configuration page and navigate to soc --> config --> server --> client --> assistant --> enabled.
 
 The Onion AI Assistant is your personal AI helper designed to assist you with a variety of tasks and provide information on demand. We support accessing LLMs from a variety of sources. Several tools have been made available as you interact with the assistant so it can access up-to-date information and resources.
 
@@ -32,11 +36,15 @@ R = Required, O = Optional, -- = Not Used
 
 ### SOAI
 
-This adapter should not require any configuration, aside from the API Url, which will be different for Security Onion Pro customers located in different regions. If your license is setup to use an alternate cloud region this information will be included with the Security Onion license key. If it is not specified then use the default API url.
+This adapter should not require any configuration, aside from the API Url, which will be different for Security Onion Pro customers located in different regions. To change the SOAI API Url, go to the Administration --> Configuration page and navigate to soc --> config --> server --> modules --> assistant --> adapters. Select the SOAI adapter and update the API Url field. If your license is setup to use an alternate cloud region, the correct API Url will be included with your Security Onion license key. If an alternate URL is not specified, use the default API Url.
 
 Any additionally supplied fields are ignored. Generally at most one instance of this adapter should be configured at a time.
 
-Using models over this adapter will cost credits. Contact your account representative for more information.
+#### Credits
+
+Using models over the SOAI adapter will consume credits from your Security Onion Pro license. Credits are only applicable to the SOAI adapter. If you use a local model or another external provider (such as Gemini or OpenAI), SOAI credits are not consumed.
+
+The Security Onion Pro license includes an initial amount of credits to get started. For long term usage planning contact your Security Onion account representative. They will assist with estimating credit usage rates as well as the provisioning of additional credits. Credits are consumed based on the number of tokens used in the conversation including user input, assistant output, and tool usage. Your organization's balance can be viewed at the top right of the assistant page or on the management page under Administration --> AI Metrics.
 
 ### Gemini
 
@@ -80,10 +88,6 @@ Security Onion now supports local models through any OpenAI-compatible endpoint.
 ## Hosting Local Models
 
 Hosting your own models requires powerful and expensive hardware. For beginners we recommend using a tool such as LM Studio. **You need at least 96GB of VRAM** to host your own models locally. The speed and accuracy of OnionAI when hosted locally is based on the hardware that you are using. For the most accurate results we recommend using credits with OnionAI.
-
-## Credits
-
-The Security Onion Pro license includes an initial amount of credits to get started. For long term usage planning contact your Security Onion account representative. They will assist with estimating credit usage rates as well as the provisioning of additional credits. Credits are consumed based on the number of tokens used in the conversation including user input, assistant output, and tool usage. Your organization's balance can be viewed at the top right of the assistant page or on the management page under Administration --> AI Metrics.
 
 ## Available Tools
 
