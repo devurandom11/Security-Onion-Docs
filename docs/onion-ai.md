@@ -6,7 +6,7 @@
 
 !!! NOTE
 
-    Onion AI is disabled by default, even with a Pro license. To enable it, go to the Administration --> Configuration page and navigate to soc --> config --> server --> client --> assistant --> enabled.
+    Onion AI is disabled by default. To enable it for your Security Onion Pro deployment, go to the Administration --> Configuration page and navigate to soc --> config --> server --> client --> assistant --> enabled.
 
 The Onion AI Assistant is your personal AI helper designed to assist you with a variety of tasks and provide information on demand. We support accessing LLMs from a variety of sources. Several tools have been made available as you interact with the assistant so it can access up-to-date information and resources.
 
