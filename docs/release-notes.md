@@ -21,6 +21,7 @@ For all known issues, please see <https://github.com/Security-Onion-Solutions/se
 - FIX: API 401 errors will no longer redirect <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15611">#15611</a>
 - FIX: Cleanup file.absent and cron.absent
 - FIX: Detections - Intermittent "error closing scroll" <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/14216">#14216</a>
+- FIX: Duplicated user roles when refreshing frontend at Administration > Users <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15688">#15688</a>
 - FIX: Enabled / Disabled Buttons for SOC Grid Configuration Options <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15649">#15649</a>
 - FIX: Fix rule validators in SOC <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15533">#15533</a>
 - FIX: Global override configs should not apply to certain indices <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15601">#15601</a>
