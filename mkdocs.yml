@@ -50,7 +50,7 @@ plugins:
   - search
   - glightbox
   - to-pdf:
-      cover_subtitle: "3.0.0"
+      cover_subtitle: !ENV [VERSION, '']
 
 markdown_extensions:
   - admonition

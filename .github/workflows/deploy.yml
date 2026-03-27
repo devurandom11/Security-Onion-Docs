@@ -26,7 +26,7 @@ jobs:
 
       - run: pip install mkdocs mkdocs-material mkdocs-glightbox mkdocs-to-pdf
 
-      - run: mkdocs build
+      - run: VERSION=$(curl -f https://rawf.githubusercontent.com/Security-Onion-Solutions/securityonion/refs/heads/3/dev/VERSION) && mkdocs build
 
       - run: npx -y @redocly/cli build-docs specs/openapi.yaml -o /home/runner/work/docs/docs/site/connect-api/so-api-reference.html
 
