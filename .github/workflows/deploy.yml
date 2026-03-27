@@ -26,7 +26,13 @@ jobs:
 
       - run: pip install mkdocs mkdocs-material mkdocs-glightbox mkdocs-to-pdf
 
-      - run: VERSION=$(curl -f https://raw.githubusercontent.com/Security-Onion-Solutions/securityonion/refs/heads/3/dev/VERSION) && mkdocs build
+      - run: |
+          echo "VERSION=$(curl -f https://raw.githubusercontent.com/Security-Onion-Solutions/securityonion/refs/heads/3/dev/VERSION)" >> $GITHUB_ENV 
+        shell: bash
+
+      - run: echo "Found version $VERSION"
+      
+      - run: mkdocs build
 
       - run: npx -y @redocly/cli build-docs specs/openapi.yaml -o /home/runner/work/docs/docs/site/connect-api/so-api-reference.html
 
