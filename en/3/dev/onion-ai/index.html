@@ -5324,17 +5324,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#credits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Credits
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#available-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5705,17 +5694,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#credits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Credits
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#available-tools" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5846,6 +5824,10 @@
 <p class="admonition-title">Note</p>
 <p>This is an enterprise-level feature of Security Onion. Contact Security Onion Solutions, LLC via our website at <a href="https://securityonion.com/pro">https://securityonion.com/pro</a> for more information about purchasing a <a href="../security-onion-pro/">Security Onion Pro</a> license.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Onion AI is disabled by default. To enable it for your Security Onion Pro deployment, go to the Administration --&gt; Configuration page and navigate to soc --&gt; config --&gt; server --&gt; client --&gt; assistant --&gt; enabled.</p>
+</div>
 <p>The Onion AI Assistant is your personal AI helper designed to assist you with a variety of tasks and provide information on demand. We support accessing LLMs from a variety of sources. Several tools have been made available as you interact with the assistant so it can access up-to-date information and resources.</p>
 <h2 id="adapters">Adapters<a class="headerlink" href="#adapters" title="Permanent link">¶</a></h2>
 <p>There are a variety of adapters available to connect to different LLM providers. When configuring an adapter, you're instructing SOC how to connect to an LLM provider. You configure the models separately in <a href="#available-models">Available Models</a> and tell each model which adapter to use. This allows you to connect to multiple providers at the same time and choose which models you want to use from each provider. The available adapters are:</p>
@@ -5916,9 +5898,11 @@
 </table>
 <p>R = Required, O = Optional, -- = Not Used</p>
 <h3 id="soai">SOAI<a class="headerlink" href="#soai" title="Permanent link">¶</a></h3>
-<p>This adapter should not require any configuration, aside from the API Url, which will be different for Security Onion Pro customers located in different regions. If your license is setup to use an alternate cloud region this information will be included with the Security Onion license key. If it is not specified then use the default API url.</p>
+<p>This adapter should not require any configuration, aside from the API Url, which will be different for Security Onion Pro customers located in different regions. To change the SOAI API Url, go to the Administration --&gt; Configuration page and navigate to soc --&gt; config --&gt; server --&gt; modules --&gt; assistant --&gt; adapters. Select the SOAI adapter and update the API Url field. If your license is setup to use an alternate cloud region, the correct API Url will be included with your Security Onion license key. If an alternate URL is not specified, use the default API Url.</p>
 <p>Any additionally supplied fields are ignored. Generally at most one instance of this adapter should be configured at a time.</p>
-<p>Using models over this adapter will cost credits. Contact your account representative for more information.</p>
+<h4 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">¶</a></h4>
+<p>Using models over the SOAI adapter will consume credits from your Security Onion Pro license. Credits are only applicable to the SOAI adapter. If you use a local model or another external provider (such as Gemini or OpenAI), SOAI credits are not consumed.</p>
+<p>The Security Onion Pro license includes an initial amount of credits to get started. For long term usage planning contact your Security Onion account representative. They will assist with estimating credit usage rates as well as the provisioning of additional credits. Credits are consumed based on the number of tokens used in the conversation including user input, assistant output, and tool usage. Your organization's balance can be viewed at the top right of the assistant page or on the management page under Administration --&gt; AI Metrics.</p>
 <h3 id="gemini">Gemini<a class="headerlink" href="#gemini" title="Permanent link">¶</a></h3>
 <p>Security Onion supports connecting to Google's Gemini models through either the Gemini Developer API or the Vertex API.</p>
 <p>To connect over the Gemini Developer API, you will need to generate an API Key in the Google Cloud Console or Google AI Studio, and provide it in the API Key field. To connect over the Vertex API, you will need to create a Service Account with the appropriate permissions for the models you would like to access, generate a JSON key for that account, paste the JSON into the Service Account JSON field, and you must also specify the Service Account Location. Some Gemini models may only be available in certain locations, such as <code>global</code>. The API Url field is not used for Gemini connections.</p>
@@ -5948,8 +5932,6 @@
 </div>
 <h2 id="hosting-local-models">Hosting Local Models<a class="headerlink" href="#hosting-local-models" title="Permanent link">¶</a></h2>
 <p>Hosting your own models requires powerful and expensive hardware. For beginners we recommend using a tool such as LM Studio. <strong>You need at least 96GB of VRAM</strong> to host your own models locally. The speed and accuracy of OnionAI when hosted locally is based on the hardware that you are using. For the most accurate results we recommend using credits with OnionAI.</p>
-<h2 id="credits">Credits<a class="headerlink" href="#credits" title="Permanent link">¶</a></h2>
-<p>The Security Onion Pro license includes an initial amount of credits to get started. For long term usage planning contact your Security Onion account representative. They will assist with estimating credit usage rates as well as the provisioning of additional credits. Credits are consumed based on the number of tokens used in the conversation including user input, assistant output, and tool usage. Your organization's balance can be viewed at the top right of the assistant page or on the management page under Administration --&gt; AI Metrics.</p>
 <h2 id="available-tools">Available Tools<a class="headerlink" href="#available-tools" title="Permanent link">¶</a></h2>
 <p>The assistant currently runs in the cloud. In order to reference local information, SOC makes the following tools available to the assistant:</p>
 <ul>
