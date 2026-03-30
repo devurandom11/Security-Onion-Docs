@@ -51,6 +51,9 @@ plugins:
   - glightbox
   - to-pdf:
       cover_subtitle: !ENV [VERSION, '']
+      cover_logo: "https://securityonionsolutions.com/logo/logo-so-onion-light.svg"
+      output_path: securityonion-docs.pdf
+      download_link: header
 
 markdown_extensions:
   - admonition
