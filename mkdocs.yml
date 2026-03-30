@@ -1,6 +1,6 @@
 site_name: Security Onion Documentation
 site_url: https://security-onion-solutions.github.io/docs/
-site_author: Security Onion Solutions, LLC
+site_author: ""
 copyright: Security Onion Solutions, LLC
 
 theme:
@@ -70,7 +70,7 @@ markdown_extensions:
       toc_depth: 3
 
 nav:
-  - About: about.md
+  - About: index.md
   - Introduction: introduction.md
   - License: license.md
   - First Time Users: first-time-users.md
