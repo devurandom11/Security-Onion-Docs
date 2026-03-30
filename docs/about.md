@@ -2,7 +2,7 @@
 
 ## Security Onion
 
-Security Onion is a free and open platform built by defenders for defenders. It includes [network visibility](network-visibility.md), [host visibility](host-visibility.md), [intrusion detection honeypots](idh.md), [log management](elasticsearch.md), and [case management](cases.md). Security Onion has been downloaded over 2 million times and is being used by security teams around the world to monitor and defend their enterprises. Our easy-to-use Setup wizard allows you to build a distributed Grid for your enterprise in minutes!
+Security Onion is a free and open platform built by defenders for defenders. It includes [network visibility](network-visibility.md), [host visibility](host-visibility.md), [intrusion detection honeypots](idh.md), [log management](elasticsearch.md), and [case management](cases.md). Security Onion has been downloaded over 2 million times and is being used by security teams around the world to monitor and defend their enterprises. Our easy-to-use Setup wizard allows you to build a distributed grid for your enterprise in minutes!
 
 ## Security Onion Solutions, LLC
 
@@ -28,7 +28,7 @@ This documentation is licensed under CC BY 4.0. You can read more about this lic
 
 This documentation is published online at <https://securityonion.net/docs>. If you are viewing an offline version of this documentation but have Internet access, you might want to switch to the online version at <https://securityonion.net/docs> to see the latest version.
 
-This documentation is also available in PDF format at <https://docs.securityonion.net/en/3/main/pdf/document.pdf>.
+This documentation is also available in PDF format at <https://docs.securityonion.net/en/3/main/securityonion-docs.pdf>.
 
 Many folks have asked for a printed version of our documentation. Whether you work on airgapped networks or simply want a portable reference that doesn't require an Internet connection or batteries, this is what you've been asking for. Thanks to Richard Bejtlich for writing the inspiring foreword! Proceeds go to the Rural Technology Fund! You can purchase your copy at <https://securityonion.net/book>.
 
