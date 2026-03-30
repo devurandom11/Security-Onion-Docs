@@ -2,7 +2,6 @@
 <html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="Security Onion Solutions, LLC" name="author"/>
 <link href="https://security-onion-solutions.github.io/docs/iptables/" rel="canonical"/>
 <link href="../cef/" rel="prev"/>
 <link href="../unifi/" rel="next"/>
@@ -134,7 +133,7 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../about/">
+<a class="md-nav__link" href="..">
 <span class="md-ellipsis">
     
   
@@ -2453,6 +2452,24 @@
 </div>
 </div>
 <div class="md-content" data-md-component="content">
+<nav aria-label="Navigation" class="md-path">
+<ol class="md-path__list">
+<li class="md-path__item">
+<a class="md-path__link" href="..">
+<span class="md-ellipsis">
+    About
+  </span>
+</a>
+</li>
+<li class="md-path__item">
+<a class="md-path__link" href="../additional-network-visibility/">
+<span class="md-ellipsis">
+    Additional Network Visibility
+  </span>
+</a>
+</li>
+</ol>
+</nav>
 <article class="md-content__inner md-typeset">
 <h1 id="iptables">iptables<a class="headerlink" href="#iptables" title="Permanent link">¶</a></h1>
 <p>If you have Linux iptables firewalls on your network, you can send those logs to Security Onion. To get those iptables logs into <a href="../elasticsearch/">Elasticsearch</a>, you'll need to add the Elastic integration for iptables and then configure the Security Onion firewall to allow the remote firewall to send its logs.</p>
