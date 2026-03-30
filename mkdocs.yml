@@ -70,7 +70,6 @@ markdown_extensions:
       toc_depth: 3
 
 nav:
-  - Home: index.md
   - About: about.md
   - Introduction: introduction.md
   - License: license.md
