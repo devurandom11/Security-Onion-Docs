@@ -1808,6 +1808,10 @@ components:
           description: Indicates whether disk encryption is enabled on this node
           example: 1
           type: integer
+        load15m:
+          description: The node's 15-minute load metric
+          example: 1.09
+          type: number
         load1m:
           description: The node's 1-minute load metric
           example: 0.43
@@ -1815,10 +1819,6 @@ components:
         load5m:
           description: The node's 5-minute load metric
           example: 0.96
-          type: number
-        load15m:
-          description: The node's 15-minute load metric
-          example: 1.09
           type: number
         memoryTotalGB:
           description: Total size, in gigabytes, of the system memory, or RAM
@@ -6392,5 +6392,3 @@ paths:
       summary: Obtain Access Token
       tags:
       - Authentication
-servers:
-- url: BASE_URL
