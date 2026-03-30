@@ -28,7 +28,7 @@ This documentation is licensed under CC BY 4.0. You can read more about this lic
 
 This documentation is published online at <https://securityonion.net/docs>. If you are viewing an offline version of this documentation but have Internet access, you might want to switch to the online version at <https://securityonion.net/docs> to see the latest version.
 
-This documentation is also available in PDF format at <https://docs.securityonion.net/en/3/main/securityonion-docs.pdf>.
+This documentation is also available in PDF format at <https://securityonion.net/docs/securityonion-docs.pdf>.
 
 Many folks have asked for a printed version of our documentation. Whether you work on airgapped networks or simply want a portable reference that doesn't require an Internet connection or batteries, this is what you've been asking for. Thanks to Richard Bejtlich for writing the inspiring foreword! Proceeds go to the Rural Technology Fund! You can purchase your copy at <https://securityonion.net/book>.
 

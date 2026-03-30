@@ -484,7 +484,7 @@ To resolve this block, use the following procedure:
   Suricata ruleset sync is blocked until this file is removed.
   **CRITICAL** Make sure that you have manually added any custom Suricata
   rulesets via SOC config before removing this file - review the documentation
-  for more details: <https://docs.securityonion.net/en/2.4/nids.html#sync-block>
+  for more details: <https://securityonion.net/docs/nids#sync-block>
   Custom so-rule-update detected (hash: 207d8918a2d963bb7dcc0f1ebf28d6f7b5778019fedf0cc36d5d0850cbd8a529)
   ET Pro code found: YOUR_LICENSE_KEY
   ```

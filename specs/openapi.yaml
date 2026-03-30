@@ -2931,7 +2931,7 @@ components:
       type: oauth2
 externalDocs:
   description: Security Onion Documentation Online
-  url: https://docs.securityonion.net
+  url: https://securityonion.net/docs
 info:
   contact:
     name: Community Support
