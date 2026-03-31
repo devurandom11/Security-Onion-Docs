@@ -2,4 +2,4 @@
 
 The docs in this repo are hosted via Github Pages at:
 
-https://security-onion-solutions.github.io/docs/
+https://docs.securityonion.net/
