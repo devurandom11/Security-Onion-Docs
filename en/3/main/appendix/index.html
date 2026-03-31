@@ -2375,7 +2375,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">¶</a></h1>
-<p>This appendix provides an overview of the process of migrating from the old Security Onion 2.4 to the new Security Onion 3.</p>
+<p>This appendix provides an overview of the process of upgrading from the old Security Onion 2.4 to the new Security Onion 3.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If you are a current Security Onion Solutions customer with Professional Services or Appliance coverage, contact SOS support and we can help you through this process.</p>
@@ -2388,19 +2388,15 @@
 <p class="admonition-title">Warning</p>
 <p>We recommend trying this process in a test environment before attempting in your production environment.</p>
 </div>
-<p>If you have reviewed all of the warnings above and still want to attempt migration, you should be able to do the following.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you have a distributed deployment, you will need to perform the steps on the manager first and then on each of the remaining nodes.</p>
-</div>
+<p>If you have reviewed all of the warnings above and are ready to upgrade, you should be able to do the following.</p>
 <p>First, make sure that your 2.4 installation is fully updated via <a href="../soup/">soup</a>:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo soup
 </code></pre></div>
 <p>Next, make sure there is a backup in /nsm/backup:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo ls -alh /nsm/backup
 </code></pre></div>
-<p>Once you have confirmed your backup, you may update to Security Onion 3. </p>
-<p>To begin, you will need to update to the new version of soup:</p>
+<p>Once you have confirmed your backup, you may upgrade to Security Onion 3. </p>
+<p>To begin, you will need to upgrade to the new version of soup:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo soupto3
 </code></pre></div>
 <p>Once you have the new version of soup, then you will need to run it to perform the upgrade:</p>
