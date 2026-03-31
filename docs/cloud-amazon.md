@@ -1,11 +1,11 @@
 # Amazon Cloud Image
 
 If you would like to deploy Security Onion in Amazon Web Services (AWS), we have an Amazon Machine Image (AMI) that is already built for you:
-<https://securityonion.net/aws/?ref=_ptnr_soc_docs_230525>
+<https://securityonion.net/aws/?ref=_ptnr_soc_docs_260311>
 
 !!! WARNING
     
-    Existing 2.4 RC1 or newer Security Onion AMI installations should use the [Soup](soup.md) command to upgrade to newer versions of Security Onion. Attempting to switch to a newer AMI from the AWS Marketplace could cause loss of data and require full Grid re-installation. Upgrading from Security Onion 2.3 or beta versions of 2.4 is unsupported.
+    Existing Security Onion cloud image installations should use the [soup](soup.md) command to upgrade. If your grid is still running 2.4.x, use ``soup`` to upgrade to 2.4.210, and then use ``soupto3`` to proceed to Security Onion 3, after which continue using ``soup`` again. Attempting to switch to a newer Security Onion image from the cloud marketplace could cause loss of data and require full Grid re-installation; use the ``soup`` procedure to upgrade instead.
 
 !!! NOTE
     
@@ -17,7 +17,7 @@ If you would like to deploy Security Onion in Amazon Web Services (AWS), we have
 
 ## Requirements
 
-Before proceeding, determine the Grid architecture desired. Choose from a single-node Grid versus a distributed, multi-node Grid. Additionally, determine if the lower latency of ephemeral instance storage is needed (typically when there is high-volume of traffic being monitored, which is most production scenarios), or if network-based storage, EBS, can be used for increased redundancy.
+Before proceeding, determine the grid architecture desired. Choose from a single-node Grid versus a distributed, multi-node Grid. Additionally, determine if the lower latency of ephemeral instance storage is needed (typically when there is high-volume of traffic being monitored, which is most production scenarios), or if network-based storage, EBS, can be used for increased redundancy.
 
 ## Single Node Grid
 
@@ -174,7 +174,7 @@ Location: Remote    Location: Remote                Location: AWS    Location: A
 192.168.33.13       192.168.33.10                   10.55.1.10       10.55.1.20
 ```
 
-In order to add the Remote Network Sensor Node to the Grid, you would have to add `10.55.1.10` to the `sensor` firewall hostgroup.
+In order to add the Remote Network Sensor Node to the grid, you would have to add `10.55.1.10` to the `sensor` firewall hostgroup.
 
 This change can be done in the SOC Configuration screen. Then, either wait up to 15 minutes for the scheduled configuration sync to run, or force a synchronization immediately via the SOC Configuration Options. Once the firewall hostgroup configuration has been synchronized your Manager will be ready for remote minions to start connecting.
 

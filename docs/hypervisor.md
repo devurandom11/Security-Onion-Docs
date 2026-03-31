@@ -1,6 +1,6 @@
 # Hypervisor
 
-Starting with Security Onion version 2.4.170, Security Onion Pro users can create a hypervisor node that can run virtualized instances of Security Onion. If you have eligible machines with extra horsepower, you can use this feature to spin up additional Security Onion virtual machines (VMs) to take advantage of that extra power. This supports most major Security Onion node types and is especially helpful if you want to optimize your hardware's potential and expand your Elastic performance and retention. Contact your account manager to see if your hardware is supported.
+Security Onion Pro customers can create a hypervisor node that can run virtualized instances of Security Onion. If you have eligible machines with extra horsepower, you can use this feature to spin up additional Security Onion virtual machines (VMs) to take advantage of that extra power. This supports most major Security Onion node types and is especially helpful if you want to optimize your hardware's potential and expand your Elastic performance and retention. Contact your account manager to see if your hardware is supported.
 
 !!! NOTE
     
@@ -29,7 +29,7 @@ The following resources will be reserved for the host machine and will be subtra
 
 ## Airgap
 
-If you are in an [airgap](airgap.md) environment, you will need to perform these steps prior to accepting the new hypervisor node in SOC Grid Members:
+If you are in an [Airgap](airgap.md) environment, you will need to perform these steps prior to accepting the new hypervisor node in SOC Grid Members:
  
 1. Download the Oracle 9 Qcow2 image from <https://download.securityonion.net/file/securityonion/OL9U5_x86_64-kvm-b253.qcow2>
 
@@ -37,7 +37,7 @@ If you are in an [airgap](airgap.md) environment, you will need to perform these
 
 ## Adding a Manager + Hypervisor
 
-Starting in 2.4.180, Security Onion Pro users can create a manager node that also has hypervisor capabilities. This node type is called a `managerhype`.
+Manager nodes can have hypervisor capabilities. This node type is called a `managerhype`.
 
 Install a new node, select the `DISTRIBUTED` deployment option, choose `New Deployment`, and then select the `Managerhype` option:
 
@@ -57,7 +57,7 @@ Install a new node, select the `DISTRIBUTED` deployment option, choose `Existing
 
 The manager will need to be able to connect to the hypervisor node by name so it will either need a DNS entry or you can manually add an entry in /etc/hosts on the manager.
 
-Once the new hypervisor node has been accepted into the Grid, go to SOC Configuration, click the Options menu, enable advanced settings, and then navigate to `hypervisor` settings. It should look like this:
+Once the new hypervisor node has been accepted into the grid, go to SOC Configuration, click the Options menu, enable advanced settings, and then navigate to `hypervisor` settings. It should look like this:
 
 ![Image](images/hypervisor/hyper-1.png)
 
@@ -79,7 +79,7 @@ The vast majority of data, for all node types, is stored in /nsm/. For a VM, the
 
 #. **Virtual disk**
 
-   Added in 2.4.190, a virtual disk is created based on the size specified by the user in the SOC Grid Configuration and the space is pre-allocated on the hypervisor. The disk image file is not removed when the VM is deleted. A user may decide to leave this data around for a while, or delete it manually from the hypervisor where it is stored under `/nsm/libvirt/volumes`.
+   A virtual disk is created based on the size specified by the user in the SOC Grid Configuration and the space is pre-allocated on the hypervisor. The disk image file is not removed when the VM is deleted. A user may decide to leave this data around for a while, or delete it manually from the hypervisor where it is stored under `/nsm/libvirt/volumes`.
 
 !!! NOTE
     

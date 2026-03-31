@@ -20,19 +20,19 @@ There are a few different ways to install Security Onion Desktop:
 
 !!! NOTE
     
-    Depending on how you install, it may take a full [salt](salt.md) cycle before all desktop components are installed and ready for use.
+    Depending on how you install, it may take a full [Salt](salt.md) cycle before all desktop components are installed and ready for use.
 
 **Joining to Grid**
 
-You can optionally join your Desktop installation to your Grid. This allows it to pull updates from the Grid and automatically trust the Grid's HTTPS certificate. It also updates the manager's firewall to allow the Desktop installation to connect. Starting with Security Onion 2.4.20, Desktop nodes will now display on the [Grid](grid.md) page along with the other Grid nodes.
+You can optionally join your Desktop installation to your grid. This allows it to pull updates from the grid and automatically trust the grid's HTTPS certificate. It also updates the manager's firewall to allow the Desktop installation to connect. Desktop nodes display on the [Grid](grid.md) page along with the other Grid nodes.
 
-If you choose not to join your Desktop installation to your Grid, then you may need to allow the traffic through the host-based [firewall](firewall.md) by going to [Administration](administration.md) --> Configuration --> firewall --> hostgroups --> analyst.
+If you choose not to join your Desktop installation to your grid, then you may need to allow the traffic through the host-based [firewall](firewall.md) by going to [Administration](administration.md) --> Configuration --> firewall --> hostgroups --> analyst.
 
 ![Image](images/config-item-firewall.png)
 
 **Disabling**
 
-The analyst desktop is controlled via [salt](salt.md) pillar. If you need to disable the Security Onion Desktop environment, find the `workstation` setting in your [salt](salt.md) pillar and change `enabled: true` to `enabled: false`:
+The analyst desktop is controlled via [Salt](salt.md) pillar. If you need to disable the Security Onion Desktop environment, find the `workstation` setting in your [Salt](salt.md) pillar and change `enabled: true` to `enabled: false`:
 
 
 ```yaml

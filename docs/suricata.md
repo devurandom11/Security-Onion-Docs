@@ -81,7 +81,7 @@ By default, Security Onion uses [Zeek](zeek.md) to record protocol metadata. If 
 
 If you later find that some of that metadata is unnecessary, you can enable the SO_FILTERS ruleset to filter out unnecessary metadata. Navigate to [Administration](administration.md) --> Configuration --> SOC --> config --> server --> modules --> suricataengine --> rulesetSources and enable the SO_FILTERS ruleset.
 
-To change your Grid's metadata engine from [Zeek](zeek.md) to Suricata, go to [Administration](administration.md) --> Configuration --> global --> mdengine and change the value from `Zeek` to `Suricata`:
+To change your grid's metadata engine from [Zeek](zeek.md) to Suricata, go to [Administration](administration.md) --> Configuration --> global --> mdengine and change the value from `Zeek` to `Suricata`:
 
 ![Image](images/config-item-global.png)
 
@@ -196,7 +196,9 @@ Values can be specified using the following formats (single or multi-line):
 
 Create custom variables by selecting an existing Address Group or Port Group and clicking "Duplicate". Enter a name using uppercase naming convention, then click "Create Setting".  
 
-**Note:** The new variable is not saved until you modify its value and click the green "Save Changes" checkmark.         
+**Note:** The new variable is not saved until you modify its value and click the green "Save Changes" checkmark.    
+
+**Note:** Custom Port Group variables have some syntactical limitations, for example, not being able to use negation.    
 
 ## Disabling
 

@@ -1,6 +1,6 @@
 site_name: Security Onion Documentation
 site_url: https://security-onion-solutions.github.io/docs/
-site_author: Security Onion Solutions, LLC
+site_author: ""
 copyright: Security Onion Solutions, LLC
 
 theme:
@@ -42,7 +42,6 @@ extra:
 
 extra_css:
   - _static/theme_overrides.css
-  - _static/mkdocsoad.css
 
 extra_javascript:
   - _static/theme_overrides.js
@@ -50,12 +49,11 @@ extra_javascript:
 plugins:
   - search
   - glightbox
-  - neoteroi.mkdocsoad:
-     use_pymdownx: true
   - to-pdf:
-      cover_subtitle: "3.0.0"
-      exclude_pages:
-        - api
+      cover_subtitle: !ENV [VERSION, '']
+      cover_logo: "https://securityonionsolutions.com/logo/logo-so-onion-light.svg"
+      output_path: securityonion-docs.pdf
+      download_link: header
 
 markdown_extensions:
   - admonition
@@ -72,8 +70,7 @@ markdown_extensions:
       toc_depth: 3
 
 nav:
-  - Home: index.md
-  - About: about.md
+  - About: index.md
   - Introduction: introduction.md
   - License: license.md
   - First Time Users: first-time-users.md
@@ -176,15 +173,15 @@ nav:
     - Customizing Overview: customizing.md
     - Security Onion Console Customization: security-onion-console-customization.md
     - nginx: nginx.md
-    - proxy: proxy.md
-    - firewall: firewall.md
-    - email: email.md
-    - ntp: ntp.md
-    - console: console.md
-    - ssh: ssh.md
-    - hostname: hostname.md
-    - ip: ip.md
-    - dns: dns.md
+    - Proxy: proxy.md
+    - Firewall: firewall.md
+    - Email: email.md
+    - NTP: ntp.md
+    - Console: console.md
+    - SSH: ssh.md
+    - Hostname: hostname.md
+    - IP Address: ip-address.md
+    - DNS: dns.md
     - URL Base: url-base.md
   - Tricks and Tips:
     - Tricks and Tips Overview: tricks-and-tips.md
@@ -216,7 +213,6 @@ nav:
     - Help Overview: help.md
     - FAQ: faq.md
     - Directory: directory.md
-    - Tools: tools.md
     - Community Support: community-support.md
     - Support: support.md
     - Help Wanted: help-wanted.md
@@ -236,8 +232,9 @@ nav:
     - Hypervisor: hypervisor.md
     - Reports: reports.md
     - Onion AI: onion-ai.md
-  - Security: security.md
   - Telemetry: telemetry.md
+  - Security: security.md
+  - Software Bill of Materials: software-bill-of-materials.md
   - Release Notes: release-notes.md
   - Appendix: appendix.md
   - Cheat Sheet: cheat-sheet.md

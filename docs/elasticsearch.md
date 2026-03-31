@@ -132,7 +132,7 @@ If you get errors like `failed to create query: field expansion for [*] matches 
 
 ## Shards
 
-Here are a few tips from <https://www.elastic.co/blog/how-many-shards-should-i-have-in-my-Elasticsearch-cluster>:
+Here are a few tips from <https://www.elastic.co/blog/how-many-shards-should-i-have-in-my-elasticsearch-cluster>:
 
 > **TIP**: Avoid having very large shards as this can negatively affect the cluster's ability to recover from failure. There is no fixed limit on how large shards can be, but a shard size of 50GB is often quoted as a limit that has been seen to work for a variety of use-cases.
 >
@@ -232,13 +232,13 @@ Elasticsearch indices are managed by both the `so-elasticsearch-indices-delete` 
 
 !!! WARNING
 
-    `so-elasticsearch-indices-delete` is primarily designed for single-node deployments (IMPORT, EVAL, and STANDALONE). Running it on a multi-node deployment with one or more search nodes has the possibility of getting into a corner case state where more data is deleted than intended. Because of this, we are disabling this script on multi-node deployments starting in version 2.4.150. If you have a multi-node deployment and haven't yet updated to 2.4.150, then we HIGHLY recommend that you go ahead and manually disable this script. You can find this setting at [Administration](administration.md) --> Configuration --> Elasticsearch --> index_clean. You will also need to ensure that ILM is configured properly to delete indices before disk usage reaches the Elasticsearch watermark setting. Otherwise, Elasticsearch may stop ingesting new data.
+    `so-elasticsearch-indices-delete` is primarily designed for single-node deployments (IMPORT, EVAL, and STANDALONE). Running it on a multi-node deployment with one or more search nodes has the possibility of getting into a corner case state where more data is deleted than intended. Therefore, this script is disabled on multi-node deployments. If you have a multi-node deployment, then you will need to ensure that ILM is configured properly to delete indices before disk usage reaches the Elasticsearch watermark setting. Otherwise, Elasticsearch may stop ingesting new data.
 
 ### so-elasticsearch-indices-delete
 
 `so-elasticsearch-indices-delete` manages size-based deletion of Elasticsearch indices based on the value of the `Elasticsearch.retention.retention_pct` setting. This setting is checked against the total disk space available for `/nsm/elasticsearch` across all nodes in the Elasticsearch cluster. If your indices are using more than `retention_pct`, then `so-elasticsearch-indices-delete` will delete old indices until disk space consumed by indices is back under `retention_pct`. The default value for this setting is `50` percent so that standalone deployments have sufficient space for not only Elasticsearch but also full packet capture and other logs. For distributed deployments with dedicated search nodes where Elasticsearch is main consumer of disk space, you may want to increase this default value.
 
-To modify the `retention_pct` value, first navigate to [Administration](administration.md) --> Configuration. At the top of the page, click the `Options` menu and then enable the `Show advanced settings` option. Then navigate to Elasticsearch --> retention --> retention_pct. Once you make the change and save it, the new setting will take effect at the next 15 minute interval. If you would like to make the change immediately, you can click the `SYNCHRONIZE Grid` button under the `Options` menu at the top of the page.
+To modify the `retention_pct` value, first navigate to [Administration](administration.md) --> Configuration. At the top of the page, click the `Options` menu and then enable the `Show advanced settings` option. Then navigate to Elasticsearch --> retention --> retention_pct. Once you make the change and save it, the new setting will take effect at the next 15 minute interval. If you would like to make the change immediately, you can click the `SYNCHRONIZE GRID` button under the `Options` menu at the top of the page.
 
 ### ILM
 

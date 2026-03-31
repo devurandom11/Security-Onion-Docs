@@ -24,11 +24,11 @@ Once all data has migrated off the search node, then you can continue with other
 
 ## Removing from Salt
 
-You can remove a node from [salt](salt.md) by going to [Administration](administration.md) --> Grid Members. 
+You can remove a node from [Salt](salt.md) by going to [Administration](administration.md) --> Grid Members. 
 
 ![Image](images/84_gridmembers.png)
 
-Find the Grid Member you would like to remove, click the `REVIEW` button, and then click the `DELETE` button.
+Find the grid Member you would like to remove, click the `REVIEW` button, and then click the `DELETE` button.
 
 ## Removing from SOC
 

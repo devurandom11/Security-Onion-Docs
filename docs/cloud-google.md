@@ -1,11 +1,11 @@
 # Google Cloud Image
 
-If you would like to deploy Security Onion in Google Cloud Platform (GCP), choose the Security Onion 2 image listed on the Google Marketplace:
-<https://securityonion.net/google/?ref=_ptnr_soc_docs_230824>
+If you would like to deploy Security Onion in Google Cloud Platform (GCP), choose the Security Onion image listed on the Google Marketplace:
+<https://securityonion.net/google/?ref=_ptnr_soc_docs_260311>
 
 !!! WARNING
     
-    Existing 2.4 RC1 or newer Security Onion Google Image installations should use the [Soup](soup.md) command to upgrade to newer versions of Security Onion. Attempting to switch to a newer image from the Google Marketplace could cause loss of data and require full Grid re-installation. Upgrading from Security Onion 2.3 or beta versions of 2.4 is unsupported.
+    Existing Security Onion AMI installations should use the [soup](soup.md) command to upgrade. If your grid is still running 2.4.x, use ``soup`` to upgrade to 2.4.210, and then use ``soupto3`` to proceed to Security Onion 3, after which continue using ``soup`` again. Attempting to switch to a newer Security Onion image from the cloud marketplace could cause loss of data and require full Grid re-installation; use the ``soup`` procedure to upgrade instead.
 
 !!! NOTE
     
@@ -17,7 +17,7 @@ If you would like to deploy Security Onion in Google Cloud Platform (GCP), choos
 
 ## Requirements
 
-Before proceeding, determine the Grid architecture desired. Choose from a single-node Grid versus a distributed, multi-node Grid. Additionally, determine if the lower latency of local instance storage is needed (typically when there is high-volume of traffic being monitored, which is most production scenarios), or if persistent disks can be used for increased redundancy.
+Before proceeding, determine the grid architecture desired. Choose from a single-node Grid versus a distributed, multi-node Grid. Additionally, determine if the lower latency of local instance storage is needed (typically when there is high-volume of traffic being monitored, which is most production scenarios), or if persistent disks can be used for increased redundancy.
 
 ## Single Node Grid
 
@@ -113,7 +113,7 @@ Traffic mirroring allows you to copy the traffic to/from an instance (or multipl
 
 Create a Packet Mirroring policy. This can be found in the Google Cloud Console under the VPC network section. When selecting the VPC network, choose the option that denotes the mirrored source and collector destination are in the same VPC network and select the Mirrored VPC network created earlier.
 
-Under Select mirrored source, check the box next to the "Select with network tag" label. Then enter a tag named `so-mirror`. Once completed with the Grid setup, you can later tag all your VMs, whose traffic you want monitored, with the same `so-mirror` tag.
+Under Select mirrored source, check the box next to the "Select with network tag" label. Then enter a tag named `so-mirror`. Once completed with the grid setup, you can later tag all your VMs, whose traffic you want monitored, with the same `so-mirror` tag.
 
 Under Select collector destination, choose the front end forwarding rule that was created during the Load Balancer setup earlier.
 
@@ -127,7 +127,7 @@ To configure a Security Onion instance (repeat for each node in a distributed Gr
 
 - Access the Google Cloud Marketplace at <https://console.cloud.google.com/marketplace>.
 - Ensure you have a means of authenticating to VM instances over SSH. One method to authenticate is via a project-wide SSH key, which can be defined in Compute Engine -> Metadata -> SSH Keys.
-- Search the Marketplace for `Security Onion` and Launch the latest version of the Security Onion 2 official VM image. This may require clicking the "Get Started" button.
+- Search the Marketplace for `Security Onion` and Launch the latest version of the Security Onion official VM image. This may require clicking the "Get Started" button.
 - Choose the appropriate machine type based on the desired hardware requirements.  For assistance on determining resource requirements please review the Requirements section above.
 - Under the Networking interfaces section, expand the pre-added Network interface and select the Security Onion VPC network and desired subnet. External ephemeral IP is sufficient, unless you are planning to use a VPN to access the Security Onion Console, in which case no external ephemeral IP is necessary. Using a VPN is recommended, but setup of a VPN in GCP is out of scope of this guide.
 - (Distributed "Sensor" node or Single-Node Grid only) Add a second Network interface and select the monitoring VPC network, and the appropriate subnet. No external ephemeral IP is necessary for this interface.
@@ -208,7 +208,7 @@ Location: Remote    Location: Remote                Location: Googe  Location: G
 192.168.33.13       192.168.33.10                   10.55.1.10       10.55.1.20
 ```
 
-In order to add the Remote Network Sensor Node to the Grid, you would have to add `10.55.1.10` to the `sensor` firewall hostgroup.
+In order to add the Remote Network Sensor Node to the grid, you would have to add `10.55.1.10` to the `sensor` firewall hostgroup.
 
 This change can be done in the SOC Configuration screen. Then, either wait up to 15 minutes for the scheduled configuration sync to run, or force a synchronization immediately via the SOC Configuration Options. Once the firewall hostgroup configuration has been synchronized your Manager will be ready for remote minions to start connecting.
 

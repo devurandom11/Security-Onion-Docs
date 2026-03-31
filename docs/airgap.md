@@ -2,13 +2,13 @@
 
 Security Onion is committed to allowing users to run a full install on networks that do not have Internet access. Our ISO image includes everything you need to run without Internet access. Make sure that you choose the airgap option during Setup. 
 
-If your network has Internet access but has overly restrictive proxies, firewalls, or other network devices that might prevent Security Onion from connecting to the sites shown in the [firewall](firewall.md) section, then you may want to consider the airgap option as everything will install from the ISO image itself.
+If your network has Internet access but has overly restrictive proxies, firewalls, or other network devices that might prevent Security Onion from connecting to the sites shown in the [Firewall](firewall.md) section, then you may want to consider the airgap option as everything will install from the ISO image itself.
 
 ![Image](images/06_setup_airgap.png)
 
 Airgap mode works as follows:
 
-- During the install, all of the necessary RPM packages are copied from the ISO image to a new repo located in `/nsm/repo/`. All devices in the Grid will now use this repo for updates to packages.
+- During the install, all of the necessary RPM packages are copied from the ISO image to a new repo located in `/nsm/repo/`. All devices in the grid will now use this repo for updates to packages.
 
 - [NIDS](nids.md) rules for [Suricata](suricata.md) are copied to `/nsm/rules/suricata`.
 

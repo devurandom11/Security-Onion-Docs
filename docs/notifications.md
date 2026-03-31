@@ -4,7 +4,7 @@
     
     This is an enterprise-level feature of Security Onion. Contact Security Onion Solutions, LLC via our website at <https://securityonion.com/pro> for more information about purchasing a Security Onion Pro license to enable this feature.
 
-The [Detections](detections.md) module, specifically [Sigma](sigma.md) rules, can be enabled to send outbound notifications upon an alert being created. By default, no outbound notifications are enabled in a Security Onion installation. However, with the Pro license applied to a Grid, notifications can be quickly configured via the Configuration screen.
+The [Detections](detections.md) module, specifically [Sigma](sigma.md) rules, can be enabled to send outbound notifications upon an alert being created. By default, no outbound notifications are enabled in a Security Onion installation. However, with the Pro license applied to a grid, notifications can be quickly configured via the Configuration screen.
 
 ## Configuration
 
@@ -69,7 +69,7 @@ Important! After activating (or removing) an alerter from this setting, the [Ela
 
 ### Severity-Based Notifications
 
-The instructions above setup the default notification settings, for all outbound notifications. However, as of Security Onion 2.4.100, notification settings can be customized for higher level severities. Severities are specified in Sigma [Detections](detections.md).
+The instructions above setup the default notification settings, for all outbound notifications. However, notification settings can be customized for higher level severities. Severities are specified in Sigma [Detections](detections.md).
 
 Severity levels progress as follows, starting with the lowest, least significant severity:
 
@@ -88,7 +88,7 @@ If notification settings are not specified for a particular severity level then 
 
 ### User-Defined Notifications
 
-As of Security Onion 2.4.100, individual Sigma detections can be tagged to change the detection's alerting behavior. The tags are set inside the detection source. Tag details are defined below:
+Individual Sigma detections can be tagged to change the detection's alerting behavior. The tags are set inside the detection source. Tag details are defined below:
 
 - `so.notification`: When this tag is present inside of a Sigma tag list, the detection will only perform outbound notifications. It will not add an alert to the SOC Alerts screen.
 - `so.alerters.customAlerters`: When this tag is present inside of a Sigma tag list, the detection will perform notifications for an alternate set of ElastAlert 2 alerters. More information on how to choose these alerters is provided below.
@@ -108,7 +108,7 @@ Example:
 title: Security Onion - Grid Node Login Failure (SSH) (copy)
 id: 0c880a39-f2cc-4e80-af26-eb08e2fe4b0a
 status: experimental
-description: Detects when a user fails to login to a Grid node via SSH. Review associated logs for username and source IP.
+description: Detects when a user fails to login to a grid node via SSH. Review associated logs for username and source IP.
 author: Security Onion Solutions
 date: 2024/08/27
 logsource:
@@ -159,7 +159,7 @@ alert_text_args: ["log.id.uid", "source.ip", "source.port", "destination.ip", "d
 In order for alerters and parameters to take effect, multiple synchronizations must occur. These are done automatically on a set schedule, but it is possible to force them earlier, if needed. Specifically, the following must take place for the changes to be applied to the ElastAlert 2 rules:
 
 1. Changes are saved in Configuration screen by the SOC Admin.
-2. Configuration is synchronized across the Grid. To manually force a Grid sync, go to the Configuration screen, open the `Options` dropdown at the top, and click `Synchronize`.
+2. Configuration is synchronized across the grid. To manually force a grid sync, go to the Configuration screen, open the `Options` dropdown at the top, and click `Synchronize`.
 3. Sigma Detection edits are saved, such as adding the user-defined notification tags, or changing the severity.
 4. Sigma Detections are synchronized. Click Full Synchronize for ElastAlert rules, or to force a single detection sync go to the Detection Source tab, make an edit to the source, and click `Update`.
 

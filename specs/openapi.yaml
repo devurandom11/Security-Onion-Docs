@@ -61,6 +61,13 @@ components:
           example: 0
           type: integer
       type: object
+    model.AdapterParameters:
+      properties:
+        name:
+          type: string
+        protocol:
+          type: string
+      type: object
     model.AlertingParameters:
       properties:
         ackEnabled:
@@ -257,6 +264,11 @@ components:
       type: object
     model.AssistantParameters:
       properties:
+        availableAdapters:
+          items:
+            $ref: '#/components/schemas/model.AdapterParameters'
+          type: array
+          uniqueItems: false
         availableModels:
           items:
             $ref: '#/components/schemas/model.ModelParameters'
@@ -1886,11 +1898,6 @@ components:
             restart'
           example: ok
           type: string
-        stenoLossPct:
-          description: The current percentage packet loss experienced by Stenographer,
-            if applicable to this node
-          example: 0
-          type: number
         suriLossPct:
           description: The current percentage packet loss experienced by Suricata,
             if applicable to this node
@@ -2418,7 +2425,7 @@ components:
         helpLink:
           description: (metadata) An HTML page, relative to the doc URL, that may
             assist the user in understanding the purpose of this setting.
-          example: elastalert.html
+          example: elastalert
           type: string
         id:
           description: The ID of the configuration setting. Each period represents
@@ -2936,7 +2943,7 @@ components:
       type: oauth2
 externalDocs:
   description: Security Onion Documentation Online
-  url: https://docs.securityonion.net
+  url: https://securityonion.net/docs
 info:
   contact:
     name: Community Support
@@ -2948,10 +2955,10 @@ info:
     url: https://securityonion.net/terms/
   termsOfService: https://securityonion.net/terms/
   title: Security Onion Connect API
-  version: 3.0.0
+  version: ""
 openapi: 3.1.0
 paths:
-  /api/assistant/admin/{userId}/sessions:
+  /connect/assistant/admin/{userId}/sessions:
     get:
       description: Get chat session metadata from a specific user.
       parameters:
@@ -2982,7 +2989,7 @@ paths:
       summary: Get Assistant Sessions
       tags:
       - Assistant
-  /api/assistant/admin/{userId}/sessions/{sessionId}/history:
+  /connect/assistant/admin/{userId}/sessions/{sessionId}/history:
     get:
       description: Retrieve a chat session's messages for a given user and session.
       parameters:
@@ -3020,7 +3027,7 @@ paths:
       summary: Get Assistant Session History
       tags:
       - Assistant
-  /api/assistant/admin/sessions:
+  /connect/assistant/admin/sessions:
     get:
       description: Get a list of all previous chat session metadata across all users.
       responses:
@@ -3044,7 +3051,7 @@ paths:
       summary: Get Assistant Sessions
       tags:
       - Assistant
-  /api/assistant/admin/stats:
+  /connect/assistant/admin/stats:
     get:
       description: Retrieve usage statistics of the AI assistant over a specified
         date range for every user.
@@ -3094,7 +3101,7 @@ paths:
       summary: Get Usage Statistics
       tags:
       - Assistant
-  /api/assistant/balance/{modelAndAdapter}:
+  /connect/assistant/balance/{modelAndAdapter}:
     get:
       description: Retrieve the current balance/usage information for the AI assistant.
       parameters:
@@ -3127,7 +3134,7 @@ paths:
       summary: Get Assistant Balance
       tags:
       - Assistant
-  /api/assistant/chat:
+  /connect/assistant/chat:
     post:
       description: Send a message to the AI assistant and receive a response. Supports
         both streaming (SSE) and non-streaming responses.
@@ -3181,7 +3188,7 @@ paths:
       summary: Send Chat Message
       tags:
       - Assistant
-  /api/assistant/sessions:
+  /connect/assistant/sessions:
     get:
       description: Retrieve a list of all previous chat session metadata for the authenticated
         user.
@@ -3206,7 +3213,7 @@ paths:
       summary: Get Assistant Sessions
       tags:
       - Assistant
-  /api/assistant/sessions/{sessionId}:
+  /connect/assistant/sessions/{sessionId}:
     delete:
       description: Delete a specific chat session and all its associated messages.
       parameters:
@@ -3305,7 +3312,7 @@ paths:
       summary: Update metadata for a Session
       tags:
       - Assistant
-  /api/assistant/tool/{name}:
+  /connect/assistant/tool/{name}:
     post:
       description: Execute a tool on behalf of the assistant and continue the conversation
         with the result. Note that more permissions may be checked depending on the
@@ -6385,3 +6392,5 @@ paths:
       summary: Obtain Access Token
       tags:
       - Authentication
+servers:
+- url: https://BASE_URL

@@ -1,6 +1,6 @@
 # ATT&CK Navigator
 
-[SOC](security-onion-console.md) includes a link on the sidebar that takes you to ATT&CK Navigator. 
+[Security Onion Console](security-onion-console.md) includes a link on the sidebar that takes you to ATT&CK Navigator. 
 
 From <https://github.com/mitre-attack/attack-navigator>:
 
@@ -16,7 +16,7 @@ To access Navigator, log into [SOC](security-onion-console.md) and then click th
 
 ## Configuration
 
-Navigator reads its configuration from `/opt/so/conf/navigator/`. However, please keep in mind that if you make any changes here they may be overwritten since the config is managed with [salt](salt.md).
+Navigator reads its configuration from `/opt/so/conf/navigator/`. However, please keep in mind that if you make any changes here they may be overwritten since the config is managed with [Salt](salt.md).
 
 ## More Information
 

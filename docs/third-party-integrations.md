@@ -1,6 +1,6 @@
 # Third Party Integrations
 
-In addition to [Network](network-visibility.md) and [Host](host-visibility.md), you may want to pull in data from other third party systems. You can do that via Elastic integrations which support many of the most common products and services. You can read more about Elastic integrations at <https://docs.elastic.co/integrations>.
+In addition to [network visibility](network-visibility.md) and [host visibility](host-visibility.md), you may want to pull in data from other third party systems. You can do that via Elastic integrations which support many of the most common products and services. You can read more about Elastic integrations at <https://docs.elastic.co/integrations>.
 
 !!! WARNING
     
@@ -16,7 +16,7 @@ New integrations can be added to existing policies to provide increased visibili
     
     If an integration pulls the data, you should add it to the Fleet Server policy. Depending on complexity and log volume, it might make sense to stand up a Fleet Node and add your integrations to it.
     
-    If an integration receives data pushed to it (for example: receiving syslog), consider adding it to the Fleet Server policy. If that is not feasible, then you can add it to the Grid Nodes policy but make sure to set the firewall rules correctly so that you are not opening ports on all of your nodes.
+    If an integration receives data pushed to it (for example: receiving syslog), consider adding it to the Fleet Server policy. If that is not feasible, then you can add it to the grid Nodes policy but make sure to set the firewall rules correctly so that you are not opening ports on all of your nodes.
 
 To add an integration to an existing policy:
 
@@ -51,7 +51,7 @@ To find integrations that have upgrades available:
 
 ## Managing Third Party Integration Index Templates
 
-Index templates for third party integrations can be managed as described in the [Elasticsearch](elasticsearch.md) section, but first `managed_integrations` must be updated by navigating to [Administration](administration.md) --> Configuration --> Manager --> managed_integrations.
+Index templates for third party integrations can be managed as described in the [Elasticsearch](elasticsearch.md) section, but first `managed_integrations` must be updated by navigating to [Administration](administration.md) --> Configuration --> manager --> managed_integrations.
 
 ## Supported Integrations
 

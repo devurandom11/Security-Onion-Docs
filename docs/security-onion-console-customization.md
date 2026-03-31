@@ -4,7 +4,7 @@ You can customize [Security Onion Console](security-onion-console.md) by going t
 
 ![Image](images/config-item-soc.png)
 
-Below are some ways in which you can customize SOC. Once all customizations are complete, you can make the changes take effect by clicking the `Options` bar at the top and then clicking the `SYNCHRONIZE Grid` button.
+Below are some ways in which you can customize SOC. Once all customizations are complete, you can make the changes take effect by clicking the `Options` bar at the top and then clicking the `SYNCHRONIZE GRID` button.
 
 ![Image](images/88_config_options.png)
 
@@ -14,12 +14,7 @@ You can customize the SOC login page with a login banner by going to [Administra
 
 ## Overview Page
 
-After logging into SOC, you'll start on the main SOC Overview page which can be customized as well. You can customize this by going to [Administration](administration.md) --> Configuration --> SOC --> files --> SOC --> Overview Page. This uses Markdown format as mentioned above.
-
-You can add images but they must be hosted from another host that is accessible by the user's browser. For example, let's use one of the images from our online documentation. The markdown to add that image would look like this:
-
-
-![SOC Dashboards](https://docs.securityonion.net/en/2.4/_images/53_dashboards.png)
+After logging into SOC, you'll start on the main SOC Overview page which can be customized as well. You can customize this by going to [Administration](administration.md) --> Configuration --> SOC --> files --> SOC --> Overview Page. This uses Markdown format as mentioned above. You can add images but they must be hosted from another host that is accessible by the user's browser.
 
 ## Links
 

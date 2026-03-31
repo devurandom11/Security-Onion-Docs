@@ -1,6 +1,6 @@
 # Elastic Fleet
 
-[SOC](security-onion-console.md) includes a link on the sidebar that takes you to the Fleet page inside [Kibana](kibana.md).
+[Security Onion Console](security-onion-console.md) includes a link on the sidebar that takes you to the Fleet page inside [Kibana](kibana.md).
 
 Elastic Fleet is pre-configured during Security Onion setup. If you need to make changes to the configuration, you can do so via the Fleet page in [Kibana](kibana.md) as detailed below.
 
@@ -97,10 +97,6 @@ The `Elastic Defend` integration has both free and paid features. By default, on
   - Network
   - Process
 
-!!! TIP
-    
-    If you are upgrading from 2.4.160 or earlier you will need to manually enable the 'DNS' event collection feature for macOS found under the 'endpoints-initial' policy.
-
 ### Osquery-endpoints (`Osquery Manager` integration)
 
 The `Osquery Manager` integration runs Osquery as a daemon on the endpoint and makes the endpoint available for Live or Scheduled queries through the Osquery manager interface in Kibana.
@@ -181,7 +177,7 @@ First, go to [Administration](administration.md) --> Configuration --> elasticfl
 
 ![Image](images/config-item-elasticfleet.png)
 
-At the top of the page, click the `Options` menu and then enable the `Show advanced settings` option. Then, navigate to elasticfleet --> config --> server --> custom_fqdn and set your custom FQDN. Within 15 minutes, the Grid will apply these new settings and you should see the new FQDNs show up in Elastic Fleet settings. New agent installers will also be regenerated to use this new setting.
+At the top of the page, click the `Options` menu and then enable the `Show advanced settings` option. Then, navigate to elasticfleet --> config --> server --> custom_fqdn and set your custom FQDN. Within 15 minutes, the grid will apply these new settings and you should see the new FQDNs show up in Elastic Fleet settings. New agent installers will also be regenerated to use this new setting.
 
 ## More Information
 
