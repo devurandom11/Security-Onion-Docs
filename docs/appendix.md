@@ -1,6 +1,6 @@
 # Appendix
 
-This appendix provides an overview of the process of migrating from the old Security Onion 2.4 to the new Security Onion 3.
+This appendix provides an overview of the process of upgrading from the old Security Onion 2.4 to the new Security Onion 3.
 
 !!! TIP
     
@@ -14,11 +14,7 @@ This appendix provides an overview of the process of migrating from the old Secu
     
     We recommend trying this process in a test environment before attempting in your production environment.
     
-If you have reviewed all of the warnings above and still want to attempt migration, you should be able to do the following.
-
-!!! NOTE
-    
-    If you have a distributed deployment, you will need to perform the steps on the manager first and then on each of the remaining nodes.
+If you have reviewed all of the warnings above and are ready to upgrade, you should be able to do the following.
 
 First, make sure that your 2.4 installation is fully updated via [soup](soup.md):
 
@@ -32,9 +28,9 @@ Next, make sure there is a backup in /nsm/backup:
 sudo ls -alh /nsm/backup
 ```
 
-Once you have confirmed your backup, you may update to Security Onion 3. 
+Once you have confirmed your backup, you may upgrade to Security Onion 3. 
 
-To begin, you will need to update to the new version of soup:
+To begin, you will need to upgrade to the new version of soup:
 
 ```
 sudo soupto3
