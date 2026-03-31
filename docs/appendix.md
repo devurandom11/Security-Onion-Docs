@@ -43,5 +43,5 @@ sudo soupto3
 Once you have the new version of soup, then you will need to run it again to upgrade:
 
 ```
-sudo soupto3
+sudo soup
 ```
