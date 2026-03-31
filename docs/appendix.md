@@ -40,7 +40,7 @@ To begin, you will need to update to the new version of soup:
 sudo soupto3
 ```
 
-Once you have the new version of soup, then you will need to run it again to upgrade:
+Once you have the new version of soup, then you will need to run it to perform the upgrade:
 
 ```
 sudo soup
