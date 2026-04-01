@@ -1,3 +1,5 @@
 dist
 json
+_build
+site
 .venv
