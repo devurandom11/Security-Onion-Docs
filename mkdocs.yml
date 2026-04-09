@@ -107,6 +107,7 @@ nav:
     - Elastic Fleet: elastic-fleet.md
     - Osquery Manager: osquery-manager.md
     - InfluxDB: influxdb.md
+    - PostgreSQL: postgresql.md
     - CyberChef: cyberchef.md
     - Attack Navigator: attack-navigator.md
   - Security Onion Desktop:
