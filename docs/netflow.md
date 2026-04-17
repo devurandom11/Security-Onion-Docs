@@ -10,7 +10,7 @@ First, add the Elastic integration for `NetFlow Records`.
     
     For more information about the `NetFlow Records` integration, please see <https://docs.elastic.co/en/integrations/netflow>.
 
-1. Go to [Elastic Fleet](elastic-fleet.md), click the `Agent policies` tab, and then click the desired policy (for example `so-Grid-nodes_general`).
+1. Go to [Elastic Fleet](elastic-fleet.md), click the `Agent policies` tab, and then click the desired policy (for example `so-grid-nodes_general`).
 2. Click the `Add integration` button.
 3. Search for `netflow` and then click on the `NetFlow Records` integration.
 4. The Elastic Integration page will show an overview of the NetFlow Integration. Review all information on the page and then click the `Add NetFlow Records` button.

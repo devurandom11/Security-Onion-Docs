@@ -30,7 +30,7 @@ The second option for collecting pfSense firewall logs is using the Elastic Inte
 
 First, add the pfSense integration and configure the pfSense firewall:
 
-1. Go to [Elastic Fleet](elastic-fleet.md), click the `Agent policies` tab, and then click the desired policy (for example `so-Grid-nodes_general`).
+1. Go to [Elastic Fleet](elastic-fleet.md), click the `Agent policies` tab, and then click the desired policy (for example `so-grid-nodes_general`).
 2. Click the `Add integration` button.
 3. Search for `pfSense` and then click on the `pfSense` integration.
 4. The Elastic Integration page will show instructions for configuring pfSense. Follow these instructions but please note that the Elastic Integration expects to receive pfSense logs on port 9001 by default.

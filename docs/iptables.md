@@ -10,7 +10,7 @@ First, add the Elastic integration for `iptables`.
     
     For more information about the `iptables` integration, please see <https://www.elastic.co/docs/reference/integrations/iptables>.
 
-1. Go to [Elastic Fleet](elastic-fleet.md), click the `Agent policies` tab, and then click the desired policy (for example `so-Grid-nodes_general`).
+1. Go to [Elastic Fleet](elastic-fleet.md), click the `Agent policies` tab, and then click the desired policy (for example `so-grid-nodes_general`).
 2. Click the `Add integration` button.
 3. Search for `iptables` and then click on the `iptables` integration.
 4. The Elastic Integration page will show an overview of the iptables Integration. Review all information on the page and then click the `Add iptables` button.

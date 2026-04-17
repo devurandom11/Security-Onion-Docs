@@ -10,7 +10,7 @@ First, add the Elastic integration for `CEF`.
     
     For more information about the `CEF` integration, please see <https://www.elastic.co/docs/reference/integrations/cef>.
 
-1. Go to [Elastic Fleet](elastic-fleet.md), click the `Agent policies` tab, and then click the desired policy (for example `so-Grid-nodes_general`).
+1. Go to [Elastic Fleet](elastic-fleet.md), click the `Agent policies` tab, and then click the desired policy (for example `so-grid-nodes_general`).
 2. Click the `Add integration` button.
 3. Search for `cef` and then click on the `Common Event Format (CEF)` integration.
 4. The Elastic Integration page will show an overview of the CEF Integration. Review all information on the page and then click the `Add Common Event Format (CEF)` button.
