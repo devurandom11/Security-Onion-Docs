@@ -119,7 +119,7 @@ The default `intel.dat` file follows these guidelines so you can reference it as
 
 When finished editing `intel.dat`, run `sudo salt $SENSORNAME_$ROLE state.highstate` to sync `/opt/so/saltstack/local/salt/zeek/policy/intel/` to `/opt/so/conf/zeek/policy/intel/`. If you have a distributed deployment with separate sensor nodes, it may take up to 15 minutes for intel to sync to the sensor nodes.
 
-If you experience an error, or do not notice `/nsm/zeek/logs/current/intel.log` being generated, try having a look in `/nsm/zeek/logs/current/reporter.log` for clues. You may also want to restart Zeek after making changes by running `sudo so-Zeek-restart`.
+If you experience an error, or do not notice `/nsm/zeek/logs/current/intel.log` being generated, try having a look in `/nsm/zeek/logs/current/reporter.log` for clues. You may also want to restart Zeek after making changes by running `sudo so-zeek-restart`.
 
 For more information, please see <https://docs.zeek.org/en/latest/frameworks/intel.html>.
 
@@ -151,7 +151,7 @@ Zeek diagnostic logs can be found in `/nsm/zeek/logs/`. Look for files like `rep
 
 
 ```
-sudo docker logs so-Zeek
+sudo docker logs so-zeek
 ```
 
 ## More Information
