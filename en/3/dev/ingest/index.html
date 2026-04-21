@@ -2582,40 +2582,40 @@
 <h1 id="ingest">Ingest<a class="headerlink" href="#ingest" title="Permanent link">¶</a></h1>
 <p>Here's an overview of how logs are ingested in various deployment types.</p>
 <h2 id="import">Import<a class="headerlink" href="#import" title="Permanent link">¶</a></h2>
-<p><strong>Core Pipeline:</strong> Elastic Agent [IMPORT Node] --&gt; Elasticsearch Ingest [IMPORT Node]
-<strong>Logs:</strong> Zeek, Suricata</p>
+<p><strong>Core Pipeline:</strong> Elastic Agent [IMPORT Node] --&gt; Elasticsearch Ingest [IMPORT Node]</p>
+<p><strong>Logs:</strong> Zeek, Suricata</p>
 <h2 id="eval">Eval<a class="headerlink" href="#eval" title="Permanent link">¶</a></h2>
-<p><strong>Core Pipeline:</strong> Elastic Agent [EVAL Node] --&gt; Elasticsearch Ingest [EVAL Node]
-<strong>Logs:</strong> Zeek, Suricata</p>
+<p><strong>Core Pipeline:</strong> Elastic Agent [EVAL Node] --&gt; Elasticsearch Ingest [EVAL Node]</p>
+<p><strong>Logs:</strong> Zeek, Suricata</p>
 <h2 id="standalone">Standalone<a class="headerlink" href="#standalone" title="Permanent link">¶</a></h2>
-<p><strong>Core Pipeline:</strong> Elastic Agent [SA Node] --&gt; Logstash [SA Node] --&gt; Redis [SA Node] &lt;--&gt; Logstash [SA Node] --&gt; Elasticsearch Ingest [SA Node]
-<strong>Logs:</strong> Zeek, Suricata, syslog</p>
-<p><strong>Elastic Agent:</strong> Elastic Agent [Windows Endpoint] --&gt; Logstash [SA Node] --&gt; Redis [SA Node] &lt;--&gt; Logstash [SA Node] --&gt; Elasticsearch Ingest [SA Node]
-<strong>Logs:</strong> WEL, Sysmon</p>
+<p><strong>Core Pipeline:</strong> Elastic Agent [SA Node] --&gt; Logstash [SA Node] --&gt; Redis [SA Node] &lt;--&gt; Logstash [SA Node] --&gt; Elasticsearch Ingest [SA Node]</p>
+<p><strong>Logs:</strong> Zeek, Suricata, syslog</p>
+<p><strong>Elastic Agent:</strong> Elastic Agent [Windows Endpoint] --&gt; Logstash [SA Node] --&gt; Redis [SA Node] &lt;--&gt; Logstash [SA Node] --&gt; Elasticsearch Ingest [SA Node]</p>
+<p><strong>Logs:</strong> WEL, Sysmon</p>
 <h2 id="fleet-standalone">Fleet Standalone<a class="headerlink" href="#fleet-standalone" title="Permanent link">¶</a></h2>
-<p><strong>Pipeline:</strong> Elastic Agent [Fleet Node] --&gt; Logstash [M | MS] --&gt; Elasticsearch Ingest [S | MS]
-<strong>Logs:</strong> Elastic Agent</p>
+<p><strong>Pipeline:</strong> Elastic Agent [Fleet Node] --&gt; Logstash [M | MS] --&gt; Elasticsearch Ingest [S | MS]</p>
+<p><strong>Logs:</strong> Elastic Agent</p>
 <h2 id="manager-separate-search-nodes">Manager (separate search nodes)<a class="headerlink" href="#manager-separate-search-nodes" title="Permanent link">¶</a></h2>
-<p><strong>Core Pipeline:</strong> Elastic Agent [Fleet | Sensor] --&gt; Logstash [Manager] --&gt; Redis [Manager]
-<strong>Logs:</strong> Zeek, Suricata, syslog</p>
-<p><strong>Elastic Agent:</strong> Elastic Agent [Windows Endpoint] --&gt; Logstash [Manager] --&gt; Redis [Manager]
-<strong>Logs:</strong> WEL, Sysmon</p>
+<p><strong>Core Pipeline:</strong> Elastic Agent [Fleet | Sensor] --&gt; Logstash [Manager] --&gt; Redis [Manager]</p>
+<p><strong>Logs:</strong> Zeek, Suricata, syslog</p>
+<p><strong>Elastic Agent:</strong> Elastic Agent [Windows Endpoint] --&gt; Logstash [Manager] --&gt; Redis [Manager]</p>
+<p><strong>Logs:</strong> WEL, Sysmon</p>
 <h2 id="manager-search">Manager Search<a class="headerlink" href="#manager-search" title="Permanent link">¶</a></h2>
-<p><strong>Core Pipeline:</strong> Elastic Agent [Fleet | Sensor] --&gt; Logstash [MS] --&gt; Redis [MS] &lt;--&gt; Logstash [MS] --&gt; Elasticsearch Ingest [MS]
-<strong>Logs:</strong> Zeek, Suricata, syslog</p>
-<p><strong>Pipeline:</strong> Elastic Agent [MS] --&gt; Logstash [MS] --&gt; Elasticsearch Ingest [MS]
-<strong>Logs:</strong> Local Elastic Agent</p>
-<p><strong>Elastic Agent:</strong> Elastic Agent [Windows Endpoint] --&gt; Logstash [MS] --&gt; Elasticsearch Ingest [MS]
-<strong>Logs:</strong> WEL, Sysmon</p>
+<p><strong>Core Pipeline:</strong> Elastic Agent [Fleet | Sensor] --&gt; Logstash [MS] --&gt; Redis [MS] &lt;--&gt; Logstash [MS] --&gt; Elasticsearch Ingest [MS]</p>
+<p><strong>Logs:</strong> Zeek, Suricata, syslog</p>
+<p><strong>Pipeline:</strong> Elastic Agent [MS] --&gt; Logstash [MS] --&gt; Elasticsearch Ingest [MS]</p>
+<p><strong>Logs:</strong> Local Elastic Agent</p>
+<p><strong>Elastic Agent:</strong> Elastic Agent [Windows Endpoint] --&gt; Logstash [MS] --&gt; Elasticsearch Ingest [MS]</p>
+<p><strong>Logs:</strong> WEL, Sysmon</p>
 <h2 id="heavy">Heavy<a class="headerlink" href="#heavy" title="Permanent link">¶</a></h2>
-<p><strong>Pipeline:</strong> Elastic Agent [Heavy Node] --&gt; Elasticsearch Ingest [Heavy]
-<strong>Logs:</strong> Zeek, Suricata, syslog</p>
+<p><strong>Pipeline:</strong> Elastic Agent [Heavy Node] --&gt; Elasticsearch Ingest [Heavy]</p>
+<p><strong>Logs:</strong> Zeek, Suricata, syslog</p>
 <h2 id="search">Search<a class="headerlink" href="#search" title="Permanent link">¶</a></h2>
-<p><strong>Pipeline:</strong> Redis [Manager] --&gt; Logstash [Search] --&gt; Elasticsearch Ingest [Search]
-<strong>Logs:</strong> Zeek, Suricata, syslog</p>
+<p><strong>Pipeline:</strong> Redis [Manager] --&gt; Logstash [Search] --&gt; Elasticsearch Ingest [Search]</p>
+<p><strong>Logs:</strong> Zeek, Suricata, syslog</p>
 <h2 id="sensor">Sensor<a class="headerlink" href="#sensor" title="Permanent link">¶</a></h2>
-<p><strong>Pipeline:</strong> Elastic Agent [Sensor] --&gt; Logstash [M | MS] --&gt; Elasticsearch Ingest [S | MS]
-<strong>Logs:</strong> Zeek, Suricata, syslog</p>
+<p><strong>Pipeline:</strong> Elastic Agent [Sensor] --&gt; Logstash [M | MS] --&gt; Elasticsearch Ingest [S | MS]</p>
+<p><strong>Logs:</strong> Zeek, Suricata, syslog</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
