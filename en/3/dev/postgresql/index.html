@@ -2,12 +2,12 @@
 <html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://security-onion-solutions.github.io/docs/zeek/" rel="canonical"/>
-<link href="../suricata/" rel="prev"/>
-<link href="../strelka/" rel="next"/>
+<link href="https://security-onion-solutions.github.io/docs/postgresql/" rel="canonical"/>
+<link href="../influxdb/" rel="prev"/>
+<link href="../cyberchef/" rel="next"/>
 <link href="../images/logo/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
-<title>Zeek - Security Onion Documentation</title>
+<title>PostgreSQL - Security Onion Documentation</title>
 <link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -31,7 +31,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#zeek">
+<a class="md-skip" href="#postgresql">
           Skip to content
         </a>
 </div>
@@ -55,7 +55,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Zeek
+              PostgreSQL
             
           </span>
 </div>
@@ -410,8 +410,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -423,7 +423,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
             
@@ -601,8 +601,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../postgresql/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    PostgreSQL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
   
@@ -612,6 +624,193 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage">
+<span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication">
+<span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encryption">
+<span class="md-ellipsis">
+      
+        Encryption
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+<span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+</a>
+<nav aria-label="Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegraf-output-selector">
+<span class="md-ellipsis">
+      
+        Telegraf output selector
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#firewall">
+<span class="md-ellipsis">
+      
+        Firewall
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#management-commands">
+<span class="md-ellipsis">
+      
+        Management Commands
+      
+    </span>
+</a>
+<nav aria-label="Management Commands" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interactive-shell">
+<span class="md-ellipsis">
+      
+        Interactive Shell
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execute-sql">
+<span class="md-ellipsis">
+      
+        Execute SQL
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execute-sql-file">
+<span class="md-ellipsis">
+      
+        Execute SQL File
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-databases">
+<span class="md-ellipsis">
+      
+        List Databases
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-database-roles">
+<span class="md-ellipsis">
+      
+        List Database Roles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#container-lifecycle">
+<span class="md-ellipsis">
+      
+        Container Lifecycle
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grid-metrics-snapshot">
+<span class="md-ellipsis">
+      
+        Grid Metrics Snapshot
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegraf-metrics">
+<span class="md-ellipsis">
+      
+        Telegraf Metrics
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extensions">
+<span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backup">
+<span class="md-ellipsis">
+      
+        Backup
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagnostic-logging">
+<span class="md-ellipsis">
+      
+        Diagnostic Logging
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#more-information">
+<span class="md-ellipsis">
+      
+        More Information
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../cyberchef/">
@@ -714,8 +913,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
 <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -727,7 +926,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
             
@@ -797,20 +996,8 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
-  
-    Zeek
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../zeek/">
 <span class="md-ellipsis">
     
   
@@ -820,198 +1007,6 @@
     
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#community-id">
-<span class="md-ellipsis">
-      
-        Community ID
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#packet-loss-and-capture-loss">
-<span class="md-ellipsis">
-      
-        Packet Loss and Capture Loss
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#configuration">
-<span class="md-ellipsis">
-      
-        Configuration
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#home_net">
-<span class="md-ellipsis">
-      
-        HOME_NET
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#performance">
-<span class="md-ellipsis">
-      
-        Performance
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#disabling">
-<span class="md-ellipsis">
-      
-        Disabling
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#syslog">
-<span class="md-ellipsis">
-      
-        Syslog
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#logs">
-<span class="md-ellipsis">
-      
-        Logs
-      
-    </span>
-</a>
-<nav aria-label="Logs" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#connlog">
-<span class="md-ellipsis">
-      
-        conn.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dnslog">
-<span class="md-ellipsis">
-      
-        dns.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#httplog">
-<span class="md-ellipsis">
-      
-        http.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ssllog">
-<span class="md-ellipsis">
-      
-        ssl.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#noticelog">
-<span class="md-ellipsis">
-      
-        notice.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#other-zeek-logs">
-<span class="md-ellipsis">
-      
-        Other Zeek logs
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#file-extraction">
-<span class="md-ellipsis">
-      
-        File Extraction
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#vlan-tags">
-<span class="md-ellipsis">
-      
-        VLAN Tags
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#intel">
-<span class="md-ellipsis">
-      
-        Intel
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#custom-packages">
-<span class="md-ellipsis">
-      
-        Custom Packages
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#diagnostic-logging">
-<span class="md-ellipsis">
-      
-        Diagnostic Logging
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#more-information">
-<span class="md-ellipsis">
-      
-        More Information
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../strelka/">
@@ -2565,19 +2560,28 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#community-id">
+<a class="md-nav__link" href="#storage">
 <span class="md-ellipsis">
       
-        Community ID
+        Storage
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#packet-loss-and-capture-loss">
+<a class="md-nav__link" href="#authentication">
 <span class="md-ellipsis">
       
-        Packet Loss and Capture Loss
+        Authentication
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encryption">
+<span class="md-ellipsis">
+      
+        Encryption
       
     </span>
 </a>
@@ -2590,103 +2594,13 @@
       
     </span>
 </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#home_net">
-<span class="md-ellipsis">
-      
-        HOME_NET
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#performance">
-<span class="md-ellipsis">
-      
-        Performance
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#disabling">
-<span class="md-ellipsis">
-      
-        Disabling
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#syslog">
-<span class="md-ellipsis">
-      
-        Syslog
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#logs">
-<span class="md-ellipsis">
-      
-        Logs
-      
-    </span>
-</a>
-<nav aria-label="Logs" class="md-nav">
+<nav aria-label="Configuration" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#connlog">
+<a class="md-nav__link" href="#telegraf-output-selector">
 <span class="md-ellipsis">
       
-        conn.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dnslog">
-<span class="md-ellipsis">
-      
-        dns.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#httplog">
-<span class="md-ellipsis">
-      
-        http.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ssllog">
-<span class="md-ellipsis">
-      
-        ssl.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#noticelog">
-<span class="md-ellipsis">
-      
-        notice.log
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#other-zeek-logs">
-<span class="md-ellipsis">
-      
-        Other Zeek logs
+        Telegraf output selector
       
     </span>
 </a>
@@ -2695,37 +2609,113 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#file-extraction">
+<a class="md-nav__link" href="#firewall">
 <span class="md-ellipsis">
       
-        File Extraction
+        Firewall
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#vlan-tags">
+<a class="md-nav__link" href="#management-commands">
 <span class="md-ellipsis">
       
-        VLAN Tags
+        Management Commands
+      
+    </span>
+</a>
+<nav aria-label="Management Commands" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interactive-shell">
+<span class="md-ellipsis">
+      
+        Interactive Shell
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#intel">
+<a class="md-nav__link" href="#execute-sql">
 <span class="md-ellipsis">
       
-        Intel
+        Execute SQL
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#custom-packages">
+<a class="md-nav__link" href="#execute-sql-file">
 <span class="md-ellipsis">
       
-        Custom Packages
+        Execute SQL File
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-databases">
+<span class="md-ellipsis">
+      
+        List Databases
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-database-roles">
+<span class="md-ellipsis">
+      
+        List Database Roles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#container-lifecycle">
+<span class="md-ellipsis">
+      
+        Container Lifecycle
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grid-metrics-snapshot">
+<span class="md-ellipsis">
+      
+        Grid Metrics Snapshot
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegraf-metrics">
+<span class="md-ellipsis">
+      
+        Telegraf Metrics
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extensions">
+<span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backup">
+<span class="md-ellipsis">
+      
+        Backup
       
     </span>
 </a>
@@ -2764,119 +2754,194 @@
 </a>
 </li>
 <li class="md-path__item">
-<a class="md-path__link" href="../network-visibility/">
+<a class="md-path__link" href="../security-onion-console/">
 <span class="md-ellipsis">
-    Network Visibility
+    Security Onion Console
   </span>
 </a>
 </li>
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1 id="zeek">Zeek<a class="headerlink" href="#zeek" title="Permanent link">¶</a></h1>
-<p>Security Onion includes Zeek for network protocol analysis and metadata. From <a href="https://zeek.org">https://zeek.org</a>:</p>
+<h1 id="postgresql">PostgreSQL<a class="headerlink" href="#postgresql" title="Permanent link">¶</a></h1>
+<p>From <a href="https://www.postgresql.org/">https://www.postgresql.org/</a>:</p>
 <blockquote>
-<p>Zeek is a powerful network analysis framework that is much different from the typical IDS you may know. (Zeek is the new name for the long-established Bro system. Note that parts of the system retain the "Bro" name, and it also often appears in the documentation and distributions.)</p>
+<p>PostgreSQL is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</p>
 </blockquote>
-<p>Zeek logs are sent to <a href="../elasticsearch/">Elasticsearch</a> for parsing and storage and can then be found in <a href="../dashboards/">Dashboards</a>, <a href="../hunt/">Hunt</a>, and <a href="../kibana/">Kibana</a>. Here's an example of Zeek logs in <a href="../hunt/">Hunt</a>:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/56_hunt.png"><img alt="Image" src="../images/56_hunt.png"/></a></p>
-<h2 id="community-id">Community ID<a class="headerlink" href="#community-id" title="Permanent link">¶</a></h2>
-<p>Security Onion enables Zeek's built-in support for <a href="../community-id/">Community ID</a>.</p>
-<h2 id="packet-loss-and-capture-loss">Packet Loss and Capture Loss<a class="headerlink" href="#packet-loss-and-capture-loss" title="Permanent link">¶</a></h2>
-<p>Zeek reports both packet loss and capture loss and you can find graphs of these in <a href="../influxdb/">InfluxDB</a>. If Zeek reports packet loss, then you most likely need to adjust the number of Zeek workers as shown below or filter out traffic using <a href="../bpf/">BPF</a>. If Zeek is reporting capture loss but no packet loss, this usually means that the capture loss is happening upstream in the TAP or SPAN port itself.</p>
+<p>Security Onion uses PostgreSQL as its central data platform, running on manager nodes. It backs the <a href="ai.md">AI assistant</a> conversation store and receives <a href="../influxdb/">Telegraf</a> metrics alongside <a href="../influxdb/">InfluxDB</a>.</p>
+<h2 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">¶</a></h2>
+<ul>
+<li>Data: <code>/nsm/postgres/</code></li>
+<li>Configuration: <code>/opt/so/conf/postgres/</code></li>
+<li>Secrets (mounted 0600 into the container): <code>/opt/so/conf/postgres/secrets/</code></li>
+<li>Logs: <code>/opt/so/log/postgres/</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not manually modify files in <code>/nsm/postgres/</code> as this could corrupt the database.</p>
+</div>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">¶</a></h2>
+<p>PostgreSQL uses a three-tier authentication model:</p>
+<ul>
+<li><strong><code>postgres</code> superuser</strong> — administrative operations only (schema init, role management during upgrade). The password is auto-generated and delivered to the container via the file mounted at <code>/run/secrets/postgres_password</code> using <code>POSTGRES_PASSWORD_FILE</code>.</li>
+<li><strong><code>so_postgres</code> application user</strong> — used by the Security Onion platform (the SOC assistant store) for day-to-day database access. The password is auto-generated and delivered via <code>/run/secrets/so_postgres_pass</code> using <code>SO_POSTGRES_PASS_FILE</code>.</li>
+<li><strong><code>so_telegraf_&lt;minion&gt;</code> per-minion users</strong> — one login role per grid minion, all members of the shared <code>so_telegraf</code> group. Each minion only sees its own credential via its per-minion pillar file.</li>
+</ul>
+<p>All credentials are auto-generated and managed by Salt. Passwords are delivered to the container as mounted files rather than plaintext environment variables so they do not appear in <code>docker inspect</code> output.</p>
+<h2 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">¶</a></h2>
+<p>All TCP connections to PostgreSQL are encrypted with TLS using a certificate signed by the Security Onion CA at <code>/etc/pki/postgres.crt</code> / <code>/etc/pki/postgres.key</code>.</p>
+<p><code>pg_hba.conf</code> only permits:</p>
+<ul>
+<li><code>local</code> Unix-socket connections (used by the container's own admin scripts).</li>
+<li><code>hostssl</code> TLS-wrapped TCP connections with SCRAM-SHA-256 authentication.</li>
+</ul>
+<p>Plain-text <code>host</code> TCP connections are rejected, so a client using <code>sslmode=disable</code> cannot establish a session even if it has valid credentials.</p>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
-<p>You can configure Zeek by going to <a href="../administration/">Administration</a> --&gt; Configuration --&gt; Zeek. </p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/config-item-zeek.png"><img alt="Image" src="../images/config-item-zeek.png"/></a></p>
-<p>Zeek logs are consumed by the Elastic Agent (managed by Elastic Fleet) so if you want to configure which Zeek logs are excluded, you can go to <a href="../administration/">Administration</a> --&gt; Configuration --&gt; elasticfleet --&gt; logging --&gt; Zeek --&gt; excluded.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/config-item-elasticfleet.png"><img alt="Image" src="../images/config-item-elasticfleet.png"/></a></p>
-<h2 id="home_net">HOME_NET<a class="headerlink" href="#home_net" title="Permanent link">¶</a></h2>
-<p>The HOME_NET variable defines the networks that are considered home networks (those networks that you are monitoring and defending). The default value is RFC1918 private address space (10.0.0.0/8, 192.168.0.0/16, and 172.16.0.0/12). You can modify this default value by going to <a href="../administration/">Administration</a> --&gt; Configuration --&gt; Zeek --&gt; config --&gt; networks --&gt; HOME_NET.</p>
-<h2 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">¶</a></h2>
-<p>Zeek uses <a href="../af-packet/">AF-PACKET</a> so that you can spin up multiple Zeek workers to handle more traffic.  </p>
-<p>If you have multiple physical CPUs, you’ll most likely want to pin sniffing processes to a CPU in the same Non-Uniform Memory Access (NUMA) domain that your sniffing NIC is bound to.  Accessing a CPU in the same NUMA domain is faster than across a NUMA domain.  </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For more information about determining NUMA domains using <code>lscpu</code> and <code>lstopo</code>, please see <a href="https://github.com/brokenscripts/cpu_pinning">https://github.com/brokenscripts/cpu_pinning</a>.</p>
-</div>
-<p>You can modify Zeek worker count by going to <a href="../administration/">Administration</a> --&gt; Configuration --&gt; Zeek --&gt; config --&gt; node --&gt; workers.</p>
-<h2 id="disabling">Disabling<a class="headerlink" href="#disabling" title="Permanent link">¶</a></h2>
-<p>Zeek can be disabled by going to <a href="../administration/">Administration</a> --&gt; Configuration --&gt; Zeek --&gt; enabled.</p>
-<h2 id="syslog">Syslog<a class="headerlink" href="#syslog" title="Permanent link">¶</a></h2>
-<p>To forward Zeek logs to an external syslog collector, please see the <a href="../syslog-output/">syslog-output</a> section.</p>
-<h2 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">¶</a></h2>
-<p>Zeek logs are stored in <code>/nsm/zeek/logs</code>. They are collected by <a href="../elastic-agent/">Elastic Agent</a>, parsed by and stored in <a href="../elasticsearch/">Elasticsearch</a>, and viewable in <a href="../dashboards/">Dashboards</a>, <a href="../hunt/">Hunt</a>, and <a href="../kibana/">Kibana</a>.</p>
-<p>We configure Zeek to output logs in JSON format. If you need to parse those JSON logs from the command line, you can use <a href="../jq/">jq</a>.</p>
-<p>Zeek monitors your network traffic and logs protocol metadata. Here are just a few examples.</p>
-<h3 id="connlog">conn.log<a class="headerlink" href="#connlog" title="Permanent link">¶</a></h3>
-<ul>
-<li>TCP/UDP/ICMP connections</li>
-<li>For ICMP connections, ICMP type is logged as source port and ICMP code as destination port</li>
-<li>For more information, see <a href="https://docs.zeek.org/en/latest/scripts/base/protocols/conn/main.zeek.html#type-Conn::Info">https://docs.zeek.org/en/latest/scripts/base/protocols/conn/main.zeek.html#type-Conn::Info</a>.</li>
-</ul>
-<h3 id="dnslog">dns.log<a class="headerlink" href="#dnslog" title="Permanent link">¶</a></h3>
-<ul>
-<li>DNS activity</li>
-<li>For more information, see <a href="https://docs.zeek.org/en/latest/scripts/base/protocols/dns/main.zeek.html#type-DNS::Info">https://docs.zeek.org/en/latest/scripts/base/protocols/dns/main.zeek.html#type-DNS::Info</a>.</li>
-</ul>
-<h3 id="httplog">http.log<a class="headerlink" href="#httplog" title="Permanent link">¶</a></h3>
-<ul>
-<li>HTTP requests and replies</li>
-<li>For more information, see <a href="https://docs.zeek.org/en/latest/scripts/base/protocols/http/main.zeek.html#type-HTTP::Info">https://docs.zeek.org/en/latest/scripts/base/protocols/http/main.zeek.html#type-HTTP::Info</a>.</li>
-</ul>
-<h3 id="ssllog">ssl.log<a class="headerlink" href="#ssllog" title="Permanent link">¶</a></h3>
-<ul>
-<li>SSL/TLS handshake info</li>
-<li>For more information, see <a href="https://docs.zeek.org/en/latest/scripts/base/protocols/ssl/main.zeek.html#type-SSL::Info">https://docs.zeek.org/en/latest/scripts/base/protocols/ssl/main.zeek.html#type-SSL::Info</a>.</li>
-</ul>
-<h3 id="noticelog">notice.log<a class="headerlink" href="#noticelog" title="Permanent link">¶</a></h3>
-<ul>
-<li>Zeek notices</li>
-<li>For more information, see <a href="https://docs.zeek.org/en/latest/scripts/base/frameworks/notice/main.zeek.html#type-Notice::Info">https://docs.zeek.org/en/latest/scripts/base/frameworks/notice/main.zeek.html#type-Notice::Info</a>.</li>
-</ul>
-<h3 id="other-zeek-logs">Other Zeek logs<a class="headerlink" href="#other-zeek-logs" title="Permanent link">¶</a></h3>
-<p>Zeek also provides other logs by default and you can read more about them at <a href="https://docs.zeek.org/en/latest/script-reference/log-files.html">https://docs.zeek.org/en/latest/script-reference/log-files.html</a>.</p>
-<p>In addition to Zeek's default logs, we also include protocol analyzers for STUN, TDS, and Wireguard traffic. We also include support for ICS/SCADA protocols such as BACnet, BSAP, CIP, COTP, DNP3, ECAT, ENIP, Modbus, OPC UA, Profinet, and S7. All of these analyzers are enabled by default and you can find corresponding dashboards for each of them in <a href="../dashboards/">Dashboards</a>.</p>
-<p>We also include MITRE BZAR scripts and you can read more about them at <a href="https://github.com/mitre-attack/bzar">https://github.com/mitre-attack/bzar</a>. Please note that the MITRE BZAR scripts are disabled by default. If you would like to enable them, you can do so via <a href="../administration/">Administration</a> --&gt; Configuration --&gt; Zeek. Once enabled, you can then check for BZAR detections by going to <a href="../dashboards/">Dashboards</a> and selecting the Zeek Notice dashboard.</p>
-<p>As you can see, Zeek log data can provide a wealth of information to the analyst, all easily accessible through <a href="../dashboards/">Dashboards</a>, <a href="../hunt/">Hunt</a>, or <a href="../kibana/">Kibana</a>.</p>
-<h2 id="file-extraction">File Extraction<a class="headerlink" href="#file-extraction" title="Permanent link">¶</a></h2>
-<p>By default, Zeek will extract files from network traffic and <a href="../strelka/">Strelka</a> will then analyze those extracted files.</p>
-<h2 id="vlan-tags">VLAN Tags<a class="headerlink" href="#vlan-tags" title="Permanent link">¶</a></h2>
-<p>If your network traffic has VLAN tags, then Zeek will log them in conn.log. <a href="../dashboards/">Dashboards</a> includes a VLAN dashboard which shows this data.</p>
-<h2 id="intel">Intel<a class="headerlink" href="#intel" title="Permanent link">¶</a></h2>
-<p>You can add your own intel to <code>/opt/so/saltstack/local/salt/zeek/policy/intel/intel.dat</code> on the manager and it will automatically replicate to all sensor nodes. If the <code>/opt/so/saltstack/local/salt/zeek/policy/intel/</code> directory is empty, you can copy the default files (both <code>intel.dat</code> and <code>__load__.Zeek</code>) from <code>/opt/so/saltstack/default/salt/zeek/policy/intel/</code> as follows:</p>
-<p></p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo cp /opt/so/saltstack/default/salt/zeek/policy/intel/* /opt/so/saltstack/local/salt/zeek/policy/intel/
+<p>You can configure PostgreSQL by going to <a href="../administration/">Administration</a> --&gt; Configuration --&gt; postgres.</p>
+<p>Commonly adjusted settings:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_connections</code></td>
+<td><code>100</code></td>
+<td>Maximum concurrent PostgreSQL connections.</td>
+</tr>
+<tr>
+<td><code>shared_buffers</code></td>
+<td><code>256MB</code></td>
+<td>Memory for the shared buffer cache. Raising this improves read cache hit rate at the cost of RAM.</td>
+</tr>
+<tr>
+<td><code>log_min_messages</code></td>
+<td><code>warning</code></td>
+<td>Minimum severity written to the PostgreSQL log.</td>
+</tr>
+<tr>
+<td><code>telegraf.retention_days</code></td>
+<td><code>14</code></td>
+<td>Days of Telegraf metrics retained in the <code>so_telegraf</code> database. Older partitions are dropped hourly by pg_partman.</td>
+</tr>
+</tbody>
+</table>
+<p>Infrastructure settings (TLS paths, <code>hba_file</code>, <code>listen_addresses</code>, preloaded extensions, etc.) are marked <strong>advanced</strong> — they are Salt-managed and should not be changed in normal operation.</p>
+<h3 id="telegraf-output-selector">Telegraf output selector<a class="headerlink" href="#telegraf-output-selector" title="Permanent link">¶</a></h3>
+<p>The backend(s) Telegraf writes metrics to is configured under <a href="../administration/">Administration</a> --&gt; Configuration --&gt; telegraf --&gt; <strong>output</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INFLUXDB</code></td>
+<td>Telegraf writes only to <a href="../influxdb/">InfluxDB</a>.</td>
+</tr>
+<tr>
+<td><code>POSTGRES</code></td>
+<td>Telegraf writes only to PostgreSQL (<code>so_telegraf</code> database).</td>
+</tr>
+<tr>
+<td><code>BOTH</code></td>
+<td>Telegraf dual-writes to both (useful during migration validation).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="firewall">Firewall<a class="headerlink" href="#firewall" title="Permanent link">¶</a></h2>
+<p>PostgreSQL is only reachable from the manager itself and — within the docker bridge — from container peers. Access is enforced by the Security Onion <a href="../firewall/">firewall</a> via the <code>DOCKER-USER</code> iptables chain: <code>postgres</code> (5432) is granted only to the <code>manager</code>, <code>managerhype</code>, <code>managersearch</code>, <code>eval</code>, and <code>standalone</code> hostgroups. Sensors, heavynodes, search nodes, receivers, and other roles cannot reach the port.</p>
+<h2 id="management-commands">Management Commands<a class="headerlink" href="#management-commands" title="Permanent link">¶</a></h2>
+<p>Security Onion provides command-line tools for managing PostgreSQL. These tools run <code>psql</code> inside the <a href="../docker/">Docker</a> container so PostgreSQL client binaries do not need to be installed on the host.</p>
+<h3 id="interactive-shell">Interactive Shell<a class="headerlink" href="#interactive-shell" title="Permanent link">¶</a></h3>
+<p>Open an interactive <code>psql</code> session as the superuser:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>shell
 </code></pre></div>
-Please note that Zeek is very strict about the format of <code>intel.dat</code>. When editing this file, please follow these guidelines:<p></p>
-<ul>
-<li>no leading spaces or lines</li>
-<li>separate fields with a single literal tab character</li>
-<li>no trailing spaces or lines</li>
-</ul>
-<p>The default <code>intel.dat</code> file follows these guidelines so you can reference it as an example of the proper format.</p>
-<p>When finished editing <code>intel.dat</code>, run <code>sudo salt $SENSORNAME_$ROLE state.highstate</code> to sync <code>/opt/so/saltstack/local/salt/zeek/policy/intel/</code> to <code>/opt/so/conf/zeek/policy/intel/</code>. If you have a distributed deployment with separate sensor nodes, it may take up to 15 minutes for intel to sync to the sensor nodes.</p>
-<p>If you experience an error, or do not notice <code>/nsm/zeek/logs/current/intel.log</code> being generated, try having a look in <code>/nsm/zeek/logs/current/reporter.log</code> for clues. You may also want to restart Zeek after making changes by running <code>sudo so-zeek-restart</code>.</p>
-<p>For more information, please see <a href="https://docs.zeek.org/en/latest/frameworks/intel.html">https://docs.zeek.org/en/latest/frameworks/intel.html</a>.</p>
-<h2 id="custom-packages">Custom Packages<a class="headerlink" href="#custom-packages" title="Permanent link">¶</a></h2>
-<p>You can install custom Zeek packages using <code>zkg</code>. Place each package as a subdirectory in <code>/opt/so/saltstack/local/salt/zeek/zkg/</code> on the manager. For example, if you have a custom package called <code>my-package</code>, the directory structure would be:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>/opt/so/saltstack/local/salt/zeek/zkg/my-package/
+<h3 id="execute-sql">Execute SQL<a class="headerlink" href="#execute-sql" title="Permanent link">¶</a></h3>
+<p>Run a SQL command directly:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>sql<span class="w"> </span><span class="s2">"SELECT version();"</span>
 </code></pre></div>
-<p>The package directory should contain a valid Zeek package structure (including a <code>zkg.meta</code> file).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>zkg requires packages from git repos to be a clone of the repo. The working tree must be clean otherwise it will not install the package. <code>git status</code> will tell you if it is clean or not.</p>
-</div>
-<p>After placing the package, run <code>sudo salt $SENSORNAME_$ROLE state.highstate</code> to sync the packages to the sensor nodes. The packages will be automatically installed with <code>zkg</code> each time the Zeek container starts. If you have a distributed deployment with separate sensor nodes, it may take up to 15 minutes for packages to sync to the sensor nodes.</p>
-<p>You can verify that a custom package was installed by checking the Zeek container logs:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo docker logs so-zeek
+<h3 id="execute-sql-file">Execute SQL File<a class="headerlink" href="#execute-sql-file" title="Permanent link">¶</a></h3>
+<p>Run a SQL script:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>sqlfile<span class="w"> </span>/path/to/script.sql
+</code></pre></div>
+<h3 id="list-databases">List Databases<a class="headerlink" href="#list-databases" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>dblist
+</code></pre></div>
+<h3 id="list-database-roles">List Database Roles<a class="headerlink" href="#list-database-roles" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>userlist
+</code></pre></div>
+<h3 id="container-lifecycle">Container Lifecycle<a class="headerlink" href="#container-lifecycle" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>sudo<span class="w"> </span>so-postgres-start
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>sudo<span class="w"> </span>so-postgres-stop
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>sudo<span class="w"> </span>so-postgres-restart
+</code></pre></div>
+<h3 id="grid-metrics-snapshot">Grid Metrics Snapshot<a class="headerlink" href="#grid-metrics-snapshot" title="Permanent link">¶</a></h3>
+<p><code>so-stats-show</code> prints the most recent CPU, memory, disk, and load metrics for each host reporting to the Telegraf PostgreSQL backend. Useful for verifying that Telegraf is successfully landing metrics before consuming them in a dashboard.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>sudo<span class="w"> </span>so-stats-show<span class="w">            </span><span class="c1"># all hosts</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>sudo<span class="w"> </span>so-stats-show<span class="w"> </span>&lt;hostname&gt;<span class="w"> </span><span class="c1"># a single host</span>
+</code></pre></div>
+<p>This tool requires <code>telegraf.output</code> to be <code>POSTGRES</code> or <code>BOTH</code>.</p>
+<h2 id="telegraf-metrics">Telegraf Metrics<a class="headerlink" href="#telegraf-metrics" title="Permanent link">¶</a></h2>
+<p>When <code>telegraf.output</code> is <code>POSTGRES</code> or <code>BOTH</code>, each grid minion writes its metrics directly to a shared <code>so_telegraf</code> database inside PostgreSQL using its own per-minion login role.</p>
+<ul>
+<li>Tables live in the <code>telegraf</code> schema and are partitioned daily by <a href="https://github.com/pgpartman/pg_partman"><code>pg_partman</code></a>.</li>
+<li>Retention is driven by the <code>postgres.telegraf.retention_days</code> configuration value; <code>pg_partman</code> drops expired partitions hourly via <a href="https://github.com/citusdata/pg_cron"><code>pg_cron</code></a>.</li>
+<li>Tags and fields are stored as <code>jsonb</code> so the fixed-column-per-table limit (1600) does not constrain high-cardinality inputs.</li>
+<li>Each TCP connection is TLS-verified against the Security Onion CA (<code>sslmode=verify-full</code>).</li>
+</ul>
+<p>Per-minion credentials are provisioned automatically when a minion's key is accepted — a Salt reactor creates the database role and writes the password into that minion's own pillar file. No admin intervention is required.</p>
+<h2 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">¶</a></h2>
+<p>The following PostgreSQL extensions are installed and available:</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>pgvector</strong></td>
+<td>Vector similarity search for AI/ML embeddings.</td>
+</tr>
+<tr>
+<td><strong>pg_cron</strong></td>
+<td>Job scheduling within PostgreSQL. Drives pg_partman maintenance.</td>
+</tr>
+<tr>
+<td><strong>pg_partman</strong></td>
+<td>Time-based automated table partitioning. Drives Telegraf metric retention.</td>
+</tr>
+<tr>
+<td><strong>pgcrypto</strong></td>
+<td>Cryptographic functions for column-level encryption.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">¶</a></h2>
+<p>PostgreSQL is automatically backed up daily at 00:05. The backup uses <code>pg_dumpall</code> to capture all databases and roles, compressed with gzip, and stored 0600-mode at <code>/nsm/backup/so-postgres-backup-YYYY_MM_DD.sql.gz</code> with 7-day retention.</p>
+<p>See the <a href="../backup/">Backup</a> page for more.</p>
+<p>To manually create a backup:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>so-postgres<span class="w"> </span>pg_dumpall<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>/nsm/backup/so-postgres-manual-backup.sql.gz
+</code></pre></div>
+<p>To restore from a backup:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>zcat<span class="w"> </span>/nsm/backup/so-postgres-backup-2026_04_21.sql.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>so-postgres<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
 </code></pre></div>
 <h2 id="diagnostic-logging">Diagnostic Logging<a class="headerlink" href="#diagnostic-logging" title="Permanent link">¶</a></h2>
-<p>Zeek diagnostic logs can be found in <code>/nsm/zeek/logs/</code>. Look for files like <code>reporter.log</code>, <code>stats.log</code>, <code>stderr.log</code>, and <code>stdout.log</code>. Depending on what you're looking for, you may also need to look at the <a href="../docker/">Docker</a> logs for the container:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo docker logs so-zeek
+<p>PostgreSQL server logs land at <code>/opt/so/log/postgres/</code>. For container-level issues (startup problems, OOM, crashes), also check the <a href="../docker/">Docker</a> logs:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span>so-postgres
 </code></pre></div>
 <h2 id="more-information">More Information<a class="headerlink" href="#more-information" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For more information about Zeek, please see <a href="https://zeek.org">https://zeek.org</a>.</p>
+<p>For more information about PostgreSQL, please see <a href="https://www.postgresql.org/docs/">https://www.postgresql.org/docs/</a>.</p>
 </div>
 </article>
 </div>
@@ -2889,7 +2954,7 @@ Please note that Zeek is very strict about the format of <code>intel.dat</code>.
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Suricata" class="md-footer__link md-footer__link--prev" href="../suricata/">
+<a aria-label="Previous: InfluxDB" class="md-footer__link md-footer__link--prev" href="../influxdb/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
@@ -2898,17 +2963,17 @@ Please note that Zeek is very strict about the format of <code>intel.dat</code>.
                 Previous
               </span>
 <div class="md-ellipsis">
-                Suricata
+                InfluxDB
               </div>
 </div>
 </a>
-<a aria-label="Next: Strelka" class="md-footer__link md-footer__link--next" href="../strelka/">
+<a aria-label="Next: CyberChef" class="md-footer__link md-footer__link--next" href="../cyberchef/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Next
               </span>
 <div class="md-ellipsis">
-                Strelka
+                CyberChef
               </div>
 </div>
 <div class="md-footer__button md-icon">
