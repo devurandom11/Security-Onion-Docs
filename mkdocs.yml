@@ -177,7 +177,6 @@ nav:
     - Firewall: firewall.md
     - Email: email.md
     - NTP: ntp.md
-    - Console: console.md
     - SSH: ssh.md
     - Hostname: hostname.md
     - IP Address: ip-address.md
