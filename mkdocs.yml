@@ -195,7 +195,6 @@ nav:
     - Salt: salt.md
     - Syslog Output: syslog-output.md
     - Time Zones: time-zones.md
-    - Endgame: endgame.md
   - Utilities:
     - Utilities Overview: utilities.md
     - jq: jq.md
