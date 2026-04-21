@@ -33,3 +33,13 @@ Another option is to use [Elasticsearch](elasticsearch.md)'s built-in support fo
 <https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html>
 
 This option requires that you configure [Elasticsearch](elasticsearch.md) with a `path.repo` setting where it can store the snapshots. Once [Elasticsearch](elasticsearch.md) has the `path.repo` setting, you should be able to log into [Kibana](kibana.md) and configure snapshots as shown in the link above. Those snapshots will then be accessible in `/nsm/elasticsearch/repo/`.
+
+## PostgreSQL
+
+[PostgreSQL](postgresql.md) is automatically backed up daily at 00:05. The backup uses `pg_dumpall` to capture all databases and roles, compressed with gzip. Backup files are stored at `/nsm/backup/so-postgres-backup-YYYY_MM_DD.sql.gz` with 7-day retention and mode 0600.
+
+To restore from a backup:
+
+```bash
+zcat /nsm/backup/so-postgres-backup-2026_04_21.sql.gz | docker exec -i so-postgres psql -U postgres
+```
