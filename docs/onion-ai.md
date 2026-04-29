@@ -62,7 +62,7 @@ The *OpenAI Responses* adapter can connect to the newest OpenAI compatible APIs 
 
 !!! TIP
 
-    Some providers require URL additional parameters passed along with the API calls. For example, Azure requires an `api-version` parameter. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:
+    Some providers require URL parameters passed along with the API calls. For example, Azure requires an `api-version` parameter. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:
 
     ```text
     https://api.someprovider.invalid/v1/?api-version=2024-08-01-preview
@@ -74,7 +74,7 @@ The *OpenAI Chat* adapter can connect to any OpenAI compatible API that supports
 
 !!! TIP
 
-    Some providers require URL additional parameters passed along with the API calls. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:
+    Some providers require URL parameters passed along with the API calls. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:
 
     ```text
     https://api.someprovider.invalid/v1/?api-version=2024-08-01-preview
