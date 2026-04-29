@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
@@ -25,7 +26,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style></head>
+        </style><link href="../securityonion-docs.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
 <body data-md-color-accent="blue" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -2764,8 +2765,20 @@
 <p>This adapter will not use any credits from your Security Onion Pro license, but Google will charge you based on their pricing. Security Onion Solutions, LLC does not provide support for Google Gemini, aside from assisting with the adapter configuration referenced on this page.</p>
 <h3 id="openai-responses">OpenAI Responses<a class="headerlink" href="#openai-responses" title="Permanent link">¶</a></h3>
 <p>The <em>OpenAI Responses</em> adapter can connect to the newest OpenAI compatible APIs that support the Responses protocol. To connect, you will need to provide an API Url. The API Url should be the base url for the provider you are connecting to, for example <code>https://api.openai.com/v1/</code>. An API Key may or may not be required depending on the provider you are connecting to. If you're unsure if your provider supports the Responses protocol, check with their support or try connecting with this adapter. If it doesn't work, you can try the <em>OpenAI Chat</em> adapter which supports an older protocol that is still widely used.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Some providers require URL additional parameters passed along with the API calls. For example, Azure requires an <code>api-version</code> parameter. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>https://api.someprovider.invalid/v1/?api-version=2024-08-01-preview
+</code></pre></div>
+</div>
 <h3 id="openai-chat">OpenAI Chat<a class="headerlink" href="#openai-chat" title="Permanent link">¶</a></h3>
 <p>The <em>OpenAI Chat</em> adapter can connect to any OpenAI compatible API that supports the Chat protocol. To connect, you will need to provide an API Url. The API Url should be the base url for the provider you are connecting to, for example <code>https://api.openai.com/v1/</code>. An API Key may or may not be required depending on the provider you are connecting to.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Some providers require URL additional parameters passed along with the API calls. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>https://api.someprovider.invalid/v1/?api-version=2024-08-01-preview
+</code></pre></div>
+</div>
 <h2 id="available-models">Available Models<a class="headerlink" href="#available-models" title="Permanent link">¶</a></h2>
 <p>In order to control what models are available inside SOC, individual models must be configured. To configure a model, go to the Administration --&gt; Configuration page, be sure "Show advanced settings" is turned on in the Options at the top of the page, and check under soc --&gt; config --&gt; server --&gt; client --&gt; assistant --&gt; availableModels. Here you can add as many models as you need. Each model needs a unique name, the adapter it uses, and a model identifier which tells the adapter which model to connect to on the provider.</p>
 <div class="admonition note">
