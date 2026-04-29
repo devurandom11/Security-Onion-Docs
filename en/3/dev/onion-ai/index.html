@@ -2767,7 +2767,7 @@
 <p>The <em>OpenAI Responses</em> adapter can connect to the newest OpenAI compatible APIs that support the Responses protocol. To connect, you will need to provide an API Url. The API Url should be the base url for the provider you are connecting to, for example <code>https://api.openai.com/v1/</code>. An API Key may or may not be required depending on the provider you are connecting to. If you're unsure if your provider supports the Responses protocol, check with their support or try connecting with this adapter. If it doesn't work, you can try the <em>OpenAI Chat</em> adapter which supports an older protocol that is still widely used.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Some providers require URL additional parameters passed along with the API calls. For example, Azure requires an <code>api-version</code> parameter. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:</p>
+<p>Some providers require URL parameters passed along with the API calls. For example, Azure requires an <code>api-version</code> parameter. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>https://api.someprovider.invalid/v1/?api-version=2024-08-01-preview
 </code></pre></div>
 </div>
@@ -2775,7 +2775,7 @@
 <p>The <em>OpenAI Chat</em> adapter can connect to any OpenAI compatible API that supports the Chat protocol. To connect, you will need to provide an API Url. The API Url should be the base url for the provider you are connecting to, for example <code>https://api.openai.com/v1/</code>. An API Key may or may not be required depending on the provider you are connecting to.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Some providers require URL additional parameters passed along with the API calls. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:</p>
+<p>Some providers require URL parameters passed along with the API calls. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>https://api.someprovider.invalid/v1/?api-version=2024-08-01-preview
 </code></pre></div>
 </div>
