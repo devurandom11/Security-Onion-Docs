@@ -14,7 +14,8 @@ Security Onion only supports x86-64 architecture (standard Intel or AMD 64-bit p
 
 | Node Type       | CPU cores | RAM  | Storage | NICs |
 |-----------------|-----------|------|---------|------|
-| Import          | 2         | 4GB  | 50GB    | 1    |
+| Desktop         | 2         | 4GB  | 50GB    | 1    |
+| Import          | 2         | 4GB  | 100GB   | 1    |
 | Eval            | 4         | 8GB  | 200GB   | 2    |
 | Standalone      | 4         | 24GB | 200GB   | 2    |
 | Manager         | 4         | 16GB | 200GB   | 1    |
@@ -32,7 +33,7 @@ Security Onion only supports x86-64 architecture (standard Intel or AMD 64-bit p
 
 ## Import
 
-An Import installation runs the minimal processes required to import PCAP or EVTX files and view the results. As such, it has the lowest hardware requirements as shown in the table above. You can read more about Import in the [First Time Users](first-time-users.md) section.
+An Import installation runs the minimal processes required to import PCAP or EVTX files and view the results. You can read more about Import in the [First Time Users](first-time-users.md) section.
 
 ## Eval
 
