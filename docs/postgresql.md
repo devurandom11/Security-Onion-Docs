@@ -4,7 +4,7 @@ From <https://www.postgresql.org/>:
 
 > PostgreSQL is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
 
-Security Onion uses PostgreSQL as its central data platform, running on manager nodes. It backs the [AI assistant](ai.md) conversation store and receives [Telegraf](influxdb.md) metrics alongside [InfluxDB](influxdb.md).
+Security Onion uses PostgreSQL as its central data platform, running on manager nodes. It backs the [Onion AI](onion-ai.md) conversation store and receives [Telegraf](influxdb.md) metrics alongside [InfluxDB](influxdb.md).
 
 ## Storage
 

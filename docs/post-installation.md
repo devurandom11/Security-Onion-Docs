@@ -32,7 +32,7 @@ sudo so-status
 	
 ## SSH
 
-You should be able to do most administration from [SOC](security-onion-console.md) but if you need access to the command line then we recommend using [SSH](ssh.md) rather than the [Console](console.md).
+You should be able to do most administration from [SOC](security-onion-console.md) but if you need access to the command line then you can use use [SSH](ssh.md).
 
 ## Data
 
