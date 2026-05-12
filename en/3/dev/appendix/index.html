@@ -2325,6 +2325,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -2335,6 +2346,41 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#check-backup">
+<span class="md-ellipsis">
+      
+        Check Backup
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#internet-deployments">
+<span class="md-ellipsis">
+      
+        Internet Deployments
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#airgap-deployments">
+<span class="md-ellipsis">
+      
+        Airgap Deployments
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../cheat-sheet/">
@@ -2357,6 +2403,39 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#check-backup">
+<span class="md-ellipsis">
+      
+        Check Backup
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#internet-deployments">
+<span class="md-ellipsis">
+      
+        Internet Deployments
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#airgap-deployments">
+<span class="md-ellipsis">
+      
+        Airgap Deployments
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -2377,20 +2456,27 @@
 <p class="admonition-title">Warning</p>
 <p>We recommend trying this process in a test environment before attempting in your production environment.</p>
 </div>
-<p>If you have reviewed all of the warnings above and are ready to upgrade, you should be able to do the following.</p>
-<p>First, make sure that your 2.4 installation is fully updated via <a href="../soup/">soup</a>:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo soup
+<h2 id="check-backup">Check Backup<a class="headerlink" href="#check-backup" title="Permanent link">¶</a></h2>
+<p>If you have reviewed all of the warnings above, next make sure there is a backup in /nsm/backup:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo ls -alh /nsm/backup
 </code></pre></div>
-<p>Next, make sure there is a backup in /nsm/backup:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo ls -alh /nsm/backup
+<p>Once you have checked your backup and are ready to upgrade, you should be able to do the following. There are separate sections for Internet deployments and Airgap deployments.</p>
+<h2 id="internet-deployments">Internet Deployments<a class="headerlink" href="#internet-deployments" title="Permanent link">¶</a></h2>
+<p>Make sure that your 2.4 installation is fully updated to version 2.4.211 via <a href="../soup/">soup</a>:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo soup
 </code></pre></div>
-<p>Once you have confirmed your backup, you may upgrade to Security Onion 3. </p>
-<p>To begin, you will need to upgrade to the new version of soup:</p>
+<p>Once your deployment has been upgraded to 2.4.211, then run the following command:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo soupto3
 </code></pre></div>
-<p>Once you have the new version of soup, then you will need to run it to perform the upgrade:</p>
+<p>This command will check some settings on your system and then download a new version of soup. You can then run the new version of soup to perform the upgrade:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo soup
 </code></pre></div>
+<h2 id="airgap-deployments">Airgap Deployments<a class="headerlink" href="#airgap-deployments" title="Permanent link">¶</a></h2>
+<p>Make sure that your 2.4 deployment is fully updated to version 2.4.211 using <a href="../soup/">soup</a> and the 2.4.211 ISO image.</p>
+<p>Once that is done, then you will need to manually do a few things to prepare for the upgrade:
+- make sure that PCAP engine is set to SURICATA
+- optionally delete old stenographer data</p>
+<p>Finally, you can upgrade to version 3.0 using <a href="../soup/">soup</a> and the 3.0 ISO image. </p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
