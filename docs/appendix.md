@@ -27,7 +27,7 @@ Once you have checked your backup and are ready to upgrade, you should be able t
 
 ## Internet Deployments
 
-Make sure that your 2.4 installation is fully updated to version 2.4.211 via [soup](soup.md):
+If your deployment has Internet access, first make sure that it is fully updated to version 2.4.211 via [soup](soup.md):
 
 ```
 sudo soup
@@ -47,10 +47,11 @@ sudo soup
 
 ## Airgap Deployments
 
-Make sure that your 2.4 deployment is fully updated to version 2.4.211 using [soup](soup.md) and the 2.4.211 ISO image.
+If your deployment does not have Internet access and is in airgap mode, first make sure that it is fully updated to version 2.4.211 using [soup](soup.md#airgap) and the 2.4.211 ISO image.
 
 Once that is done, then you will need to manually do a few things to prepare for the upgrade:
-- make sure that PCAP engine is set to SURICATA
-- optionally delete old stenographer data
 
-Finally, you can upgrade to version 3.0 using [soup](soup.md) and the 3.0 ISO image. 
+- make sure that the ``pcapengine`` setting is set to ``SURICATA``
+- delete any old stenographer data
+
+Finally, you can upgrade to version 3.0 using [soup](soup.md#airgap) and the Security Onion 3 ISO image. 
