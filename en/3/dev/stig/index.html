@@ -2526,15 +2526,24 @@
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Before enabling STIGs on your production Security Onion deployment, we recommend testing in a development environment. With different environments and configurations, there may be unexpected errors.</p>
+<p>Currently, not all node types fully support enabling STIGs. These include the following:</p>
+<ul>
+<li>Hypervisor nodes<ul>
+<li>VMs created within a hypervisor node do support enabling STIGs</li>
+</ul>
+</li>
+<li>Heavy nodes</li>
+<li>IDH nodes</li>
+</ul>
 </div>
-<p>To enable STIGs you'll first need setup your Security Onion Grid and apply your <a href="../security-onion-pro/">Security Onion Pro</a> license. You can then navigate to <a href="../administration/">Administration</a> --&gt; Configuration --&gt; stig --&gt; enabled and set the value to <code>true</code>.</p>
+<p>To enable STIGs you'll first need to set up your Security Onion Grid and apply your <a href="../security-onion-pro/">Security Onion Pro</a> license. You can then navigate to <a href="../administration/">Administration</a> --&gt; Configuration --&gt; stig --&gt; enabled and set the value to <code>true</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will need to enable the <a href="../administration/">Administration</a> --&gt; Show advanced settings option to modify this setting.</p>
 </div>
 <h2 id="openscap">OpenSCAP<a class="headerlink" href="#openscap" title="Permanent link">¶</a></h2>
-<p>In order to apply STIGs on Security Onion we use a combination of our existing Saltstack configuration managment and OpenSCAP. Currently, OpenSCAP is using a draft version of STIGs for Oracle Linux 9.</p>
-<p>OpenScap can be configured to run at different time intervals. By default, OpenSCAP will run a remediation every 12 hours meaning any changes made to the system that bring it out of compliance will be reverted back to the STIG compliant state. This setting can be lowered or increased by modifying the <code>run_interval</code> setting found under <a href="../administration/">Administration</a> --&gt; Configuration --&gt; stig</p>
+<p>In order to apply STIGs on Security Onion we use a combination of our existing Saltstack configuration management and OpenSCAP. Currently, OpenSCAP is using a draft version of STIGs for Oracle Linux 9.</p>
+<p>OpenSCAP can be configured to run at different time intervals. By default, OpenSCAP will run a remediation every 12 hours meaning any changes made to the system that bring it out of compliance will be reverted back to the STIG compliant state. This setting can be lowered or increased by modifying the <code>run_interval</code> setting found under <a href="../administration/">Administration</a> --&gt; Configuration --&gt; stig</p>
 <p>With the STIG feature enabled, you can find OpenSCAP reports under <code>/opt/so/log/stig</code>. Currently, the expected compliance score is 86%.</p>
 <h2 id="more-information">More information<a class="headerlink" href="#more-information" title="Permanent link">¶</a></h2>
 <p>For more information about OpenSCAP see: <a href="https://www.open-scap.org/">https://www.open-scap.org/</a>.</p>
