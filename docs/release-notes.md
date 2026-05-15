@@ -6,6 +6,51 @@ For all known issues, please see <https://github.com/Security-Onion-Solutions/se
 
 ### Release History
 
+3.1.0 [20260519] Changes
+------------------------
+
+- FEATURE: Add Postgres support for future features
+- FEATURE: Add bonded NIC support for management interfaces <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15548">#15548</a>
+- FEATURE: Add ingest latency metric
+- FEATURE: Allow the setup of bond1 for management for ISO installs <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15865">#15865</a>
+- FEATURE: Elastic Fleet continuously validate output policy
+- FEATURE: RAID monitoring for hypervisor VMs <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15809">#15809</a>
+- FEATURE: Restore Suricata Overrides from backup <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15881">#15881</a>
+- FEATURE: Sigma mappings - M365 & Fortigate <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15882">#15882</a>
+- FEATURE: Simplified Onion AI setup for regions outside US <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15773">#15773</a>
+- FEATURE: Support Azure OpenAI endpoints <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15841">#15841</a>
+- FIX: 'Investigate' using inaccessible local model shows "insufficient credits"
+- FIX: Add options selection to annotations <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15744">#15744</a>
+- FIX: Appliance images in SOC grid misaligned <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15713">#15713</a>
+- FIX: Consider setting Elastic Agent output level to warning only <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15431">#15431</a>
+- FIX: Deterministically sort threshold.conf <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15815">#15815</a>
+- FIX: Improve elastic agent install outcome to check that the installation is healthy
+- FIX: Improve lucene and elastic query param validation <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15860">#15860</a>
+- FIX: Improve reverse DNS lookups success rate <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15760">#15760</a>
+- FIX: Improve usability for visually impaired users
+- FIX: JA4+ license hyperlink <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15717">#15717</a>
+- FIX: Make SOC and Kratos enabled annoations readonly <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15827">#15827</a>
+- FIX: Modifying detection templates in config causes SOC to crash loop <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15798">#15798</a>
+- FIX: Need better user feedback when attaching assistant chat to a case <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15689">#15689</a>
+- FIX: Prevent excessive OnionAI query length
+- FIX: Reactor sominion_setup <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15834">#15834</a>
+- FIX: Refactor Detections backup <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/14992">#14992</a>
+- FIX: Reinstall <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15811">#15811</a>
+- FIX: Suricata pcap-log max-files rounds to 0 when calculated value is between 0 and 1 <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15740">#15740</a>
+- FIX: UI should show the name of the current Dashboard <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15703">#15703</a>
+- FIX: Use hunt action link for case observable hunt pivots <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15752">#15752</a>
+- FIX: Use safeload for loading filecheck config <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15859">#15859</a>
+- FIX: Zeek ingest pipeline for JA4d.log <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15886">#15886</a>
+- Node descriptions containing both spaces and numbers prevent pillar creation <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15540">#15540</a>
+- UPGRADE: Axios to 1.15.0 in SOC <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15774">#15774</a>
+- UPGRADE: CyberChef to 11.0.0 <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15890">#15890</a>
+- UPGRADE: Elasticsearch to 9.3.3
+- UPGRADE: SOC Go dependencies <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15795">#15795</a>
+- UPGRADE: SOC frontend dependency libs <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15848">#15848</a>
+- UPGRADE: Upgrade Kratos and Hydra 26.2.0+pgx <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15796">#15796</a>
+- UPGRADE: Zeek to 8.0.8 <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15794">#15794</a>
+- UPGRADE: nginx to 1.30.1 <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15891">#15891</a>
+
 3.0.0 [20260331] Changes
 ----------------------
 
