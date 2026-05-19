@@ -32,6 +32,7 @@ For all known issues, please see <https://github.com/Security-Onion-Solutions/se
 - FIX: Make SOC and Kratos enabled annoations readonly <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15827">#15827</a>
 - FIX: Modifying detection templates in config causes SOC to crash loop <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15798">#15798</a>
 - FIX: Need better user feedback when attaching assistant chat to a case <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15689">#15689</a>
+- FIX: Node descriptions containing both spaces and numbers prevent pillar creation <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15540">#15540</a>
 - FIX: Prevent excessive OnionAI query length
 - FIX: Reactor sominion_setup <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15834">#15834</a>
 - FIX: Refactor Detections backup <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/14992">#14992</a>
@@ -41,7 +42,6 @@ For all known issues, please see <https://github.com/Security-Onion-Solutions/se
 - FIX: Use hunt action link for case observable hunt pivots <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15752">#15752</a>
 - FIX: Use safeload for loading filecheck config <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15859">#15859</a>
 - FIX: Zeek ingest pipeline for JA4d.log <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15886">#15886</a>
-- Node descriptions containing both spaces and numbers prevent pillar creation <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15540">#15540</a>
 - UPGRADE: Axios to 1.15.0 in SOC <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15774">#15774</a>
 - UPGRADE: CyberChef to 11.0.0 <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15890">#15890</a>
 - UPGRADE: Elasticsearch to 9.3.3
