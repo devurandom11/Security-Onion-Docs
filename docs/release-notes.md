@@ -37,6 +37,7 @@ For all known issues, please see <https://github.com/Security-Onion-Solutions/se
 - FIX: Reactor sominion_setup <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15834">#15834</a>
 - FIX: Refactor Detections backup <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/14992">#14992</a>
 - FIX: Reinstall <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15811">#15811</a>
+- FIX: SOUP verify all Elasticsearch nodes are compatible with the next Elasticsearch version <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15908">#15908</a>
 - FIX: Suricata pcap-log max-files rounds to 0 when calculated value is between 0 and 1 <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15740">#15740</a>
 - FIX: UI should show the name of the current Dashboard <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15703">#15703</a>
 - FIX: Use hunt action link for case observable hunt pivots <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15752">#15752</a>
