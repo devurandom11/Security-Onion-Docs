@@ -6,7 +6,7 @@ For all known issues, please see <https://github.com/Security-Onion-Solutions/se
 
 ### Release History
 
-3.1.0 [20260519] Changes
+3.1.0 [20260521] Changes
 ------------------------
 
 - FEATURE: Add Postgres support for future features
