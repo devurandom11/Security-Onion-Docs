@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
@@ -25,7 +26,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style></head>
+        </style><link href="../securityonion-docs.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
 <body data-md-color-accent="blue" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -595,6 +596,18 @@
     
   
     InfluxDB
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../postgresql/">
+<span class="md-ellipsis">
+    
+  
+    PostgreSQL
   
 
     
@@ -1568,18 +1581,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../console/">
-<span class="md-ellipsis">
-    
-  
-    Console
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../ssh/">
 <span class="md-ellipsis">
     
@@ -1724,6 +1725,15 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#postgresql">
+<span class="md-ellipsis">
+      
+        PostgreSQL
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1841,18 +1851,6 @@
     
   
     Time Zones
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../endgame/">
-<span class="md-ellipsis">
-    
-  
-    Endgame
   
 
     
@@ -2428,6 +2426,15 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#postgresql">
+<span class="md-ellipsis">
+      
+        PostgreSQL
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -2475,6 +2482,11 @@
 <p>Another option is to use <a href="../elasticsearch/">Elasticsearch</a>'s built-in support for snapshots:
 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html">https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html</a></p>
 <p>This option requires that you configure <a href="../elasticsearch/">Elasticsearch</a> with a <code>path.repo</code> setting where it can store the snapshots. Once <a href="../elasticsearch/">Elasticsearch</a> has the <code>path.repo</code> setting, you should be able to log into <a href="../kibana/">Kibana</a> and configure snapshots as shown in the link above. Those snapshots will then be accessible in <code>/nsm/elasticsearch/repo/</code>.</p>
+<h2 id="postgresql">PostgreSQL<a class="headerlink" href="#postgresql" title="Permanent link">¶</a></h2>
+<p><a href="../postgresql/">PostgreSQL</a> is automatically backed up daily at 00:05. The backup uses <code>pg_dumpall</code> to capture all databases and roles, compressed with gzip. Backup files are stored at <code>/nsm/backup/so-postgres-backup-YYYY_MM_DD.sql.gz</code> with 7-day retention and mode 0600.</p>
+<p>To restore from a backup:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>zcat<span class="w"> </span>/nsm/backup/so-postgres-backup-2026_04_21.sql.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>so-postgres<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
+</code></pre></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

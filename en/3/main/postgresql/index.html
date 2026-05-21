@@ -3,12 +3,12 @@
 <html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://security-onion-solutions.github.io/docs/removing-a-node/" rel="canonical"/>
-<link href="../performance/" rel="prev"/>
-<link href="../salt/" rel="next"/>
+<link href="https://security-onion-solutions.github.io/docs/postgresql/" rel="canonical"/>
+<link href="../influxdb/" rel="prev"/>
+<link href="../cyberchef/" rel="next"/>
 <link href="../images/logo/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
-<title>Removing a Node - Security Onion Documentation</title>
+<title>PostgreSQL - Security Onion Documentation</title>
 <link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -32,7 +32,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#removing-a-node">
+<a class="md-skip" href="#postgresql">
           Skip to content
         </a>
 </div>
@@ -56,7 +56,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Removing a Node
+              PostgreSQL
             
           </span>
 </div>
@@ -411,8 +411,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -424,7 +424,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
             
@@ -602,8 +602,20 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../postgresql/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    PostgreSQL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
   
@@ -613,6 +625,193 @@
     
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#storage">
+<span class="md-ellipsis">
+      
+        Storage
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authentication">
+<span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#encryption">
+<span class="md-ellipsis">
+      
+        Encryption
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration">
+<span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+</a>
+<nav aria-label="Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegraf-output-selector">
+<span class="md-ellipsis">
+      
+        Telegraf output selector
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#firewall">
+<span class="md-ellipsis">
+      
+        Firewall
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#management-commands">
+<span class="md-ellipsis">
+      
+        Management Commands
+      
+    </span>
+</a>
+<nav aria-label="Management Commands" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interactive-shell">
+<span class="md-ellipsis">
+      
+        Interactive Shell
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execute-sql">
+<span class="md-ellipsis">
+      
+        Execute SQL
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execute-sql-file">
+<span class="md-ellipsis">
+      
+        Execute SQL File
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-databases">
+<span class="md-ellipsis">
+      
+        List Databases
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-database-roles">
+<span class="md-ellipsis">
+      
+        List Database Roles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#container-lifecycle">
+<span class="md-ellipsis">
+      
+        Container Lifecycle
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grid-metrics-snapshot">
+<span class="md-ellipsis">
+      
+        Grid Metrics Snapshot
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegraf-metrics">
+<span class="md-ellipsis">
+      
+        Telegraf Metrics
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extensions">
+<span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backup">
+<span class="md-ellipsis">
+      
+        Backup
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagnostic-logging">
+<span class="md-ellipsis">
+      
+        Diagnostic Logging
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#more-information">
+<span class="md-ellipsis">
+      
+        More Information
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../cyberchef/">
@@ -1643,8 +1842,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_18" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_18" type="checkbox"/>
 <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
 <span class="md-ellipsis">
     
@@ -1656,7 +1855,7 @@
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-expanded="true" aria-labelledby="__nav_18_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_18_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_18">
 <span class="md-nav__icon md-icon"></span>
             
@@ -1762,20 +1961,8 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    
-  
-    Removing a Node
-  
-
-    
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../removing-a-node/">
 <span class="md-ellipsis">
     
   
@@ -1785,50 +1972,6 @@
     
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#removing-a-search-node">
-<span class="md-ellipsis">
-      
-        Removing a Search Node
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#removing-from-salt">
-<span class="md-ellipsis">
-      
-        Removing from Salt
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#removing-from-soc">
-<span class="md-ellipsis">
-      
-        Removing from SOC
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#removing-from-fleet">
-<span class="md-ellipsis">
-      
-        Removing from Fleet
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../salt/">
@@ -2418,37 +2561,180 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#removing-a-search-node">
+<a class="md-nav__link" href="#storage">
 <span class="md-ellipsis">
       
-        Removing a Search Node
+        Storage
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#removing-from-salt">
+<a class="md-nav__link" href="#authentication">
 <span class="md-ellipsis">
       
-        Removing from Salt
+        Authentication
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#removing-from-soc">
+<a class="md-nav__link" href="#encryption">
 <span class="md-ellipsis">
       
-        Removing from SOC
+        Encryption
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#removing-from-fleet">
+<a class="md-nav__link" href="#configuration">
 <span class="md-ellipsis">
       
-        Removing from Fleet
+        Configuration
+      
+    </span>
+</a>
+<nav aria-label="Configuration" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegraf-output-selector">
+<span class="md-ellipsis">
+      
+        Telegraf output selector
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#firewall">
+<span class="md-ellipsis">
+      
+        Firewall
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#management-commands">
+<span class="md-ellipsis">
+      
+        Management Commands
+      
+    </span>
+</a>
+<nav aria-label="Management Commands" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interactive-shell">
+<span class="md-ellipsis">
+      
+        Interactive Shell
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execute-sql">
+<span class="md-ellipsis">
+      
+        Execute SQL
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#execute-sql-file">
+<span class="md-ellipsis">
+      
+        Execute SQL File
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-databases">
+<span class="md-ellipsis">
+      
+        List Databases
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-database-roles">
+<span class="md-ellipsis">
+      
+        List Database Roles
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#container-lifecycle">
+<span class="md-ellipsis">
+      
+        Container Lifecycle
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grid-metrics-snapshot">
+<span class="md-ellipsis">
+      
+        Grid Metrics Snapshot
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#telegraf-metrics">
+<span class="md-ellipsis">
+      
+        Telegraf Metrics
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extensions">
+<span class="md-ellipsis">
+      
+        Extensions
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backup">
+<span class="md-ellipsis">
+      
+        Backup
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagnostic-logging">
+<span class="md-ellipsis">
+      
+        Diagnostic Logging
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#more-information">
+<span class="md-ellipsis">
+      
+        More Information
       
     </span>
 </a>
@@ -2469,39 +2755,195 @@
 </a>
 </li>
 <li class="md-path__item">
-<a class="md-path__link" href="../tricks-and-tips/">
+<a class="md-path__link" href="../security-onion-console/">
 <span class="md-ellipsis">
-    Tricks and Tips
+    Security Onion Console
   </span>
 </a>
 </li>
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1 id="removing-a-node">Removing a Node<a class="headerlink" href="#removing-a-node" title="Permanent link">¶</a></h1>
-<p>There may come a time when you need to remove a node from your distributed deployment. To do this, you'll need to remove the node's configuration from a few different components.</p>
-<h2 id="removing-a-search-node">Removing a Search Node<a class="headerlink" href="#removing-a-search-node" title="Permanent link">¶</a></h2>
-<p>To remove a search node, the data stored on the node needs to be migrated off before other node removal actions.</p>
-<p>Use the following command in <a href="../kibana/">Kibana</a> Dev Tools to stop shard allocation to the node (replacing 10.0.0.1 with the actual IP address of the search node to be removed):</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="err">PUT</span><span class="w"> </span><span class="err">_clus</span><span class="kc">ter</span><span class="err">/se</span><span class="kc">tt</span><span class="err">i</span><span class="kc">n</span><span class="err">gs</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="nt">"persistent"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="nt">"cluster.routing.allocation.exclude._ip"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"10.0.0.1"</span>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="p">}</span>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
+<h1 id="postgresql">PostgreSQL<a class="headerlink" href="#postgresql" title="Permanent link">¶</a></h1>
+<p>From <a href="https://www.postgresql.org/">https://www.postgresql.org/</a>:</p>
+<blockquote>
+<p>PostgreSQL is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</p>
+</blockquote>
+<p>Security Onion uses PostgreSQL as its central data platform, running on manager nodes. It backs the <a href="../onion-ai/">Onion AI</a> conversation store and receives <a href="../influxdb/">Telegraf</a> metrics alongside <a href="../influxdb/">InfluxDB</a>.</p>
+<h2 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">¶</a></h2>
+<ul>
+<li>Data: <code>/nsm/postgres/</code></li>
+<li>Configuration: <code>/opt/so/conf/postgres/</code></li>
+<li>Secrets (mounted 0600 into the container): <code>/opt/so/conf/postgres/secrets/</code></li>
+<li>Logs: <code>/opt/so/log/postgres/</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not manually modify files in <code>/nsm/postgres/</code> as this could corrupt the database.</p>
+</div>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">¶</a></h2>
+<p>PostgreSQL uses a three-tier authentication model:</p>
+<ul>
+<li><strong><code>postgres</code> superuser</strong> — administrative operations only (schema init, role management during upgrade). The password is auto-generated and delivered to the container via the file mounted at <code>/run/secrets/postgres_password</code> using <code>POSTGRES_PASSWORD_FILE</code>.</li>
+<li><strong><code>so_postgres</code> application user</strong> — used by the Security Onion platform (the SOC assistant store) for day-to-day database access. The password is auto-generated and delivered via <code>/run/secrets/so_postgres_pass</code> using <code>SO_POSTGRES_PASS_FILE</code>.</li>
+<li><strong><code>so_telegraf_&lt;minion&gt;</code> per-minion users</strong> — one login role per grid minion, all members of the shared <code>so_telegraf</code> group. Each minion only sees its own credential via its per-minion pillar file.</li>
+</ul>
+<p>All credentials are auto-generated and managed by Salt. Passwords are delivered to the container as mounted files rather than plaintext environment variables so they do not appear in <code>docker inspect</code> output.</p>
+<h2 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">¶</a></h2>
+<p>All TCP connections to PostgreSQL are encrypted with TLS using a certificate signed by the Security Onion CA at <code>/etc/pki/postgres.crt</code> / <code>/etc/pki/postgres.key</code>.</p>
+<p><code>pg_hba.conf</code> only permits:</p>
+<ul>
+<li><code>local</code> Unix-socket connections (used by the container's own admin scripts).</li>
+<li><code>hostssl</code> TLS-wrapped TCP connections with SCRAM-SHA-256 authentication.</li>
+</ul>
+<p>Plain-text <code>host</code> TCP connections are rejected, so a client using <code>sslmode=disable</code> cannot establish a session even if it has valid credentials.</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
+<p>You can configure PostgreSQL by going to <a href="../administration/">Administration</a> --&gt; Configuration --&gt; postgres.</p>
+<p>Commonly adjusted settings:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_connections</code></td>
+<td><code>100</code></td>
+<td>Maximum concurrent PostgreSQL connections.</td>
+</tr>
+<tr>
+<td><code>shared_buffers</code></td>
+<td><code>256MB</code></td>
+<td>Memory for the shared buffer cache. Raising this improves read cache hit rate at the cost of RAM.</td>
+</tr>
+<tr>
+<td><code>log_min_messages</code></td>
+<td><code>warning</code></td>
+<td>Minimum severity written to the PostgreSQL log.</td>
+</tr>
+<tr>
+<td><code>telegraf.retention_days</code></td>
+<td><code>14</code></td>
+<td>Days of Telegraf metrics retained in the <code>so_telegraf</code> database. Older partitions are dropped hourly by pg_partman.</td>
+</tr>
+</tbody>
+</table>
+<p>Infrastructure settings (TLS paths, <code>hba_file</code>, <code>listen_addresses</code>, preloaded extensions, etc.) are marked <strong>advanced</strong> — they are Salt-managed and should not be changed in normal operation.</p>
+<h3 id="telegraf-output-selector">Telegraf output selector<a class="headerlink" href="#telegraf-output-selector" title="Permanent link">¶</a></h3>
+<p>The backend(s) Telegraf writes metrics to is configured under <a href="../administration/">Administration</a> --&gt; Configuration --&gt; telegraf --&gt; <strong>output</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INFLUXDB</code></td>
+<td>Telegraf writes only to <a href="../influxdb/">InfluxDB</a>.</td>
+</tr>
+<tr>
+<td><code>POSTGRES</code></td>
+<td>Telegraf writes only to PostgreSQL (<code>so_telegraf</code> database).</td>
+</tr>
+<tr>
+<td><code>BOTH</code></td>
+<td>Telegraf dual-writes to both (useful during migration validation).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="firewall">Firewall<a class="headerlink" href="#firewall" title="Permanent link">¶</a></h2>
+<p>PostgreSQL is only reachable from the manager itself and — within the docker bridge — from container peers. Access is enforced by the Security Onion <a href="../firewall/">firewall</a> via the <code>DOCKER-USER</code> iptables chain: <code>postgres</code> (5432) is granted only to the <code>manager</code>, <code>managerhype</code>, <code>managersearch</code>, <code>eval</code>, and <code>standalone</code> hostgroups. Sensors, heavynodes, search nodes, receivers, and other roles cannot reach the port.</p>
+<h2 id="management-commands">Management Commands<a class="headerlink" href="#management-commands" title="Permanent link">¶</a></h2>
+<p>Security Onion provides command-line tools for managing PostgreSQL. These tools run <code>psql</code> inside the <a href="../docker/">Docker</a> container so PostgreSQL client binaries do not need to be installed on the host.</p>
+<h3 id="interactive-shell">Interactive Shell<a class="headerlink" href="#interactive-shell" title="Permanent link">¶</a></h3>
+<p>Open an interactive <code>psql</code> session as the superuser:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>shell
 </code></pre></div>
-<p>For more information about this command, please see <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-cluster.html#cluster-shard-allocation-filtering">https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-cluster.html#cluster-shard-allocation-filtering</a>.</p>
-<p>Once all data has migrated off the search node, then you can continue with other node removal actions. </p>
-<h2 id="removing-from-salt">Removing from Salt<a class="headerlink" href="#removing-from-salt" title="Permanent link">¶</a></h2>
-<p>You can remove a node from <a href="../salt/">Salt</a> by going to <a href="../administration/">Administration</a> --&gt; Grid Members. </p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="auto" href="../images/84_gridmembers.png"><img alt="Image" src="../images/84_gridmembers.png"/></a></p>
-<p>Find the grid Member you would like to remove, click the <code>REVIEW</code> button, and then click the <code>DELETE</code> button.</p>
-<h2 id="removing-from-soc">Removing from SOC<a class="headerlink" href="#removing-from-soc" title="Permanent link">¶</a></h2>
-<p>To remove the node from the SOC <a href="../grid/">Grid</a> page, make sure the node is powered off and then restart SOC:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo so-soc-restart
+<h3 id="execute-sql">Execute SQL<a class="headerlink" href="#execute-sql" title="Permanent link">¶</a></h3>
+<p>Run a SQL command directly:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>sql<span class="w"> </span><span class="s2">"SELECT version();"</span>
 </code></pre></div>
-<h2 id="removing-from-fleet">Removing from Fleet<a class="headerlink" href="#removing-from-fleet" title="Permanent link">¶</a></h2>
-<p>To remove the node from <a href="../elastic-fleet/">Elastic Fleet</a>, go to the Agents tab and find the node. Then click the checkbox to the left of the node. Click the <code>Actions</code> button and then click <code>Unenroll 1 agent</code>. Select the <code>Remove agent immediately</code> option and then click the <code>Unenroll agent</code> button.</p>
+<h3 id="execute-sql-file">Execute SQL File<a class="headerlink" href="#execute-sql-file" title="Permanent link">¶</a></h3>
+<p>Run a SQL script:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>sqlfile<span class="w"> </span>/path/to/script.sql
+</code></pre></div>
+<h3 id="list-databases">List Databases<a class="headerlink" href="#list-databases" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>dblist
+</code></pre></div>
+<h3 id="list-database-roles">List Database Roles<a class="headerlink" href="#list-database-roles" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>so-postgres-manage<span class="w"> </span>userlist
+</code></pre></div>
+<h3 id="container-lifecycle">Container Lifecycle<a class="headerlink" href="#container-lifecycle" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>sudo<span class="w"> </span>so-postgres-start
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>sudo<span class="w"> </span>so-postgres-stop
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>sudo<span class="w"> </span>so-postgres-restart
+</code></pre></div>
+<h3 id="grid-metrics-snapshot">Grid Metrics Snapshot<a class="headerlink" href="#grid-metrics-snapshot" title="Permanent link">¶</a></h3>
+<p><code>so-stats-show</code> prints the most recent CPU, memory, disk, and load metrics for each host reporting to the Telegraf PostgreSQL backend. Useful for verifying that Telegraf is successfully landing metrics before consuming them in a dashboard.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>sudo<span class="w"> </span>so-stats-show<span class="w">            </span><span class="c1"># all hosts</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>sudo<span class="w"> </span>so-stats-show<span class="w"> </span>&lt;hostname&gt;<span class="w"> </span><span class="c1"># a single host</span>
+</code></pre></div>
+<p>This tool requires <code>telegraf.output</code> to be <code>POSTGRES</code> or <code>BOTH</code>.</p>
+<h2 id="telegraf-metrics">Telegraf Metrics<a class="headerlink" href="#telegraf-metrics" title="Permanent link">¶</a></h2>
+<p>When <code>telegraf.output</code> is <code>POSTGRES</code> or <code>BOTH</code>, each grid minion writes its metrics directly to a shared <code>so_telegraf</code> database inside PostgreSQL using its own per-minion login role.</p>
+<ul>
+<li>Tables live in the <code>telegraf</code> schema and are partitioned daily by <a href="https://github.com/pgpartman/pg_partman"><code>pg_partman</code></a>.</li>
+<li>Retention is driven by the <code>postgres.telegraf.retention_days</code> configuration value; <code>pg_partman</code> drops expired partitions hourly via <a href="https://github.com/citusdata/pg_cron"><code>pg_cron</code></a>.</li>
+<li>Tags and fields are stored as <code>jsonb</code> so the fixed-column-per-table limit (1600) does not constrain high-cardinality inputs.</li>
+<li>Each TCP connection is TLS-verified against the Security Onion CA (<code>sslmode=verify-full</code>).</li>
+</ul>
+<p>Per-minion credentials are provisioned automatically when a minion's key is accepted — a Salt reactor creates the database role and writes the password into that minion's own pillar file. No admin intervention is required.</p>
+<h2 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">¶</a></h2>
+<p>The following PostgreSQL extensions are installed and available:</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>pgvector</strong></td>
+<td>Vector similarity search for AI/ML embeddings.</td>
+</tr>
+<tr>
+<td><strong>pg_cron</strong></td>
+<td>Job scheduling within PostgreSQL. Drives pg_partman maintenance.</td>
+</tr>
+<tr>
+<td><strong>pg_partman</strong></td>
+<td>Time-based automated table partitioning. Drives Telegraf metric retention.</td>
+</tr>
+<tr>
+<td><strong>pgcrypto</strong></td>
+<td>Cryptographic functions for column-level encryption.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">¶</a></h2>
+<p>PostgreSQL is automatically backed up daily at 00:05. The backup uses <code>pg_dumpall</code> to capture all databases and roles, compressed with gzip, and stored 0600-mode at <code>/nsm/backup/so-postgres-backup-YYYY_MM_DD.sql.gz</code> with 7-day retention.</p>
+<p>See the <a href="../backup/">Backup</a> page for more.</p>
+<p>To manually create a backup:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>so-postgres<span class="w"> </span>pg_dumpall<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>/nsm/backup/so-postgres-manual-backup.sql.gz
+</code></pre></div>
+<p>To restore from a backup:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>zcat<span class="w"> </span>/nsm/backup/so-postgres-backup-2026_04_21.sql.gz<span class="w"> </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-i<span class="w"> </span>so-postgres<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
+</code></pre></div>
+<h2 id="diagnostic-logging">Diagnostic Logging<a class="headerlink" href="#diagnostic-logging" title="Permanent link">¶</a></h2>
+<p>PostgreSQL server logs land at <code>/opt/so/log/postgres/</code>. For container-level issues (startup problems, OOM, crashes), also check the <a href="../docker/">Docker</a> logs:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span>so-postgres
+</code></pre></div>
+<h2 id="more-information">More Information<a class="headerlink" href="#more-information" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about PostgreSQL, please see <a href="https://www.postgresql.org/docs/">https://www.postgresql.org/docs/</a>.</p>
+</div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -2513,7 +2955,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Performance" class="md-footer__link md-footer__link--prev" href="../performance/">
+<a aria-label="Previous: InfluxDB" class="md-footer__link md-footer__link--prev" href="../influxdb/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </div>
@@ -2522,17 +2964,17 @@
                 Previous
               </span>
 <div class="md-ellipsis">
-                Performance
+                InfluxDB
               </div>
 </div>
 </a>
-<a aria-label="Next: Salt" class="md-footer__link md-footer__link--next" href="../salt/">
+<a aria-label="Next: CyberChef" class="md-footer__link md-footer__link--next" href="../cyberchef/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Next
               </span>
 <div class="md-ellipsis">
-                Salt
+                CyberChef
               </div>
 </div>
 <div class="md-footer__button md-icon">

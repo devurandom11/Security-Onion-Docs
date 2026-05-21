@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
@@ -25,7 +26,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style></head>
+        </style><link href="../securityonion-docs.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
 <body data-md-color-accent="blue" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -595,6 +596,18 @@
     
   
     InfluxDB
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../postgresql/">
+<span class="md-ellipsis">
+    
+  
+    PostgreSQL
   
 
     
@@ -1568,18 +1581,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../console/">
-<span class="md-ellipsis">
-    
-  
-    Console
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../ssh/">
 <span class="md-ellipsis">
     
@@ -1803,18 +1804,6 @@
     
   
     Time Zones
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../endgame/">
-<span class="md-ellipsis">
-    
-  
-    Endgame
   
 
     
@@ -2673,7 +2662,7 @@ from_addr: "ElastAlert@yourcompany.com"
 <a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>    selection:
 <a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>        event.outcome: failure
 <a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>        process.name: sshd
-<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>        tags|contains: so-Grid-node
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>        tags|contains: so-grid-node
 <a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>    filter:
 <a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>        system.auth.ssh.method: '*'
 <a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>    condition: selection and not filter

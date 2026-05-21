@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
@@ -25,7 +26,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style></head>
+        </style><link href="../securityonion-docs.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
 <body data-md-color-accent="blue" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -595,6 +596,18 @@
     
   
     InfluxDB
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../postgresql/">
+<span class="md-ellipsis">
+    
+  
+    PostgreSQL
   
 
     
@@ -1772,18 +1785,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../console/">
-<span class="md-ellipsis">
-    
-  
-    Console
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../ssh/">
 <span class="md-ellipsis">
     
@@ -2007,18 +2008,6 @@
     
   
     Time Zones
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../endgame/">
-<span class="md-ellipsis">
-    
-  
-    Endgame
   
 
     
@@ -2866,7 +2855,7 @@ Please note that Zeek is very strict about the format of <code>intel.dat</code>.
 </ul>
 <p>The default <code>intel.dat</code> file follows these guidelines so you can reference it as an example of the proper format.</p>
 <p>When finished editing <code>intel.dat</code>, run <code>sudo salt $SENSORNAME_$ROLE state.highstate</code> to sync <code>/opt/so/saltstack/local/salt/zeek/policy/intel/</code> to <code>/opt/so/conf/zeek/policy/intel/</code>. If you have a distributed deployment with separate sensor nodes, it may take up to 15 minutes for intel to sync to the sensor nodes.</p>
-<p>If you experience an error, or do not notice <code>/nsm/zeek/logs/current/intel.log</code> being generated, try having a look in <code>/nsm/zeek/logs/current/reporter.log</code> for clues. You may also want to restart Zeek after making changes by running <code>sudo so-Zeek-restart</code>.</p>
+<p>If you experience an error, or do not notice <code>/nsm/zeek/logs/current/intel.log</code> being generated, try having a look in <code>/nsm/zeek/logs/current/reporter.log</code> for clues. You may also want to restart Zeek after making changes by running <code>sudo so-zeek-restart</code>.</p>
 <p>For more information, please see <a href="https://docs.zeek.org/en/latest/frameworks/intel.html">https://docs.zeek.org/en/latest/frameworks/intel.html</a>.</p>
 <h2 id="custom-packages">Custom Packages<a class="headerlink" href="#custom-packages" title="Permanent link">¶</a></h2>
 <p>You can install custom Zeek packages using <code>zkg</code>. Place each package as a subdirectory in <code>/opt/so/saltstack/local/salt/zeek/zkg/</code> on the manager. For example, if you have a custom package called <code>my-package</code>, the directory structure would be:</p>
@@ -2883,7 +2872,7 @@ Please note that Zeek is very strict about the format of <code>intel.dat</code>.
 </code></pre></div>
 <h2 id="diagnostic-logging">Diagnostic Logging<a class="headerlink" href="#diagnostic-logging" title="Permanent link">¶</a></h2>
 <p>Zeek diagnostic logs can be found in <code>/nsm/zeek/logs/</code>. Look for files like <code>reporter.log</code>, <code>stats.log</code>, <code>stderr.log</code>, and <code>stdout.log</code>. Depending on what you're looking for, you may also need to look at the <a href="../docker/">Docker</a> logs for the container:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo docker logs so-Zeek
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo docker logs so-zeek
 </code></pre></div>
 <h2 id="more-information">More Information<a class="headerlink" href="#more-information" title="Permanent link">¶</a></h2>
 <div class="admonition note">

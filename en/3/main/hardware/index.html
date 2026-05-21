@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
@@ -25,7 +26,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style></head>
+        </style><link href="../securityonion-docs.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
 <body data-md-color-accent="blue" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -835,6 +836,18 @@
     
   
     InfluxDB
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../postgresql/">
+<span class="md-ellipsis">
+    
+  
+    PostgreSQL
   
 
     
@@ -1808,18 +1821,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../console/">
-<span class="md-ellipsis">
-    
-  
-    Console
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../ssh/">
 <span class="md-ellipsis">
     
@@ -2043,18 +2044,6 @@
     
   
     Time Zones
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../endgame/">
-<span class="md-ellipsis">
-    
-  
-    Endgame
   
 
     
@@ -2878,10 +2867,17 @@
 </thead>
 <tbody>
 <tr>
-<td>Import</td>
+<td>Desktop</td>
 <td>2</td>
 <td>4GB</td>
 <td>50GB</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Import</td>
+<td>2</td>
+<td>4GB</td>
+<td>100GB</td>
 <td>1</td>
 </tr>
 <tr>
@@ -2961,7 +2957,7 @@
 <p>Please note these are the absolute bare minimum requirements. Your requirements may increase drastically as you enable more services, monitor more traffic, and consume more logs. For more information, please see the detailed sections below.</p>
 </div>
 <h2 id="import">Import<a class="headerlink" href="#import" title="Permanent link">¶</a></h2>
-<p>An Import installation runs the minimal processes required to import PCAP or EVTX files and view the results. As such, it has the lowest hardware requirements as shown in the table above. You can read more about Import in the <a href="../first-time-users/">First Time Users</a> section.</p>
+<p>An Import installation runs the minimal processes required to import PCAP or EVTX files and view the results. You can read more about Import in the <a href="../first-time-users/">First Time Users</a> section.</p>
 <h2 id="eval">Eval<a class="headerlink" href="#eval" title="Permanent link">¶</a></h2>
 <p>An Eval installation runs the minimal processes required for a single machine to sniff live network traffic from a TAP or SPAN port and view the results. Therefore, its hardware requirements are higher than Import as shown in the table above. Eval is designed for temporary installations or homelab installations on a budget. Unlike a full Standalone installation, Evaluation is NOT designed for production usage. In order to minimize RAM usage, Eval does not run <a href="../logstash/">Logstash</a> or <a href="../redis/">Redis</a> at all.</p>
 <h2 id="production-deployments">Production Deployments<a class="headerlink" href="#production-deployments" title="Permanent link">¶</a></h2>
@@ -3056,10 +3052,10 @@
 <li>If you're deploying Security Onion in production on a small network (100Mbps or less), you should plan on 16GB RAM or more. Again, more is obviously better!</li>
 <li>If you're deploying Security Onion in production to a medium network (100Mbps - 1000Mbps), you should plan on 16GB - 128GB RAM or more.</li>
 <li>If you're deploying Security Onion in production to a large network (1000Mbps - 10Gbps), you should plan on 128GB - 256GB RAM or more.</li>
-<li>If you're buying a new server, go ahead and max out the RAM (it's cheap!). As always, more is obviously better!</li>
+<li>If you're buying a new server, consider maxing out the RAM if possible.</li>
 </ul>
 <h3 id="storage_1">Storage<a class="headerlink" href="#storage_1" title="Permanent link">¶</a></h3>
-<p>Sensors that have full packet capture enabled need LOTS of storage. For example, suppose you are monitoring a link that averages 50Mbps, here are some quick calculations: 50Mb/s = 6.25 MB/s = 375 MB/minute = 22,500 MB/hour = 540,000 MB/day. So you're going to need about 540GB for one day's worth of pcaps (multiply this by the number of days of PCAP you want to keep). The more disk space you have, the more PCAP retention you'll have for doing investigations after the fact. Disk is cheap, get all you can!</p>
+<p>Sensors that have full packet capture enabled need LOTS of storage. For example, suppose you are monitoring a link that averages 50Mbps, here are some quick calculations: 50Mb/s = 6.25 MB/s = 375 MB/minute = 22,500 MB/hour = 540,000 MB/day. So you're going to need about 540GB for one day's worth of pcaps (multiply this by the number of days of PCAP you want to keep). The more disk space you have, the more PCAP retention you'll have for doing investigations after the fact.</p>
 <h3 id="packets">Packets<a class="headerlink" href="#packets" title="Permanent link">¶</a></h3>
 <p>You'll need some way of getting packets into your sensor interface(s). If you're just evaluating Security Onion, you can replay <a href="../pcaps/">pcaps</a>. For a production deployment, you'll need a SPAN port on an existing switch or a dedicated TAP. We recommend using a dedicated TAP where possible. If collecting traffic near a NAT boundary, make sure you collect from inside the NAT boundary so that you see the true internal IP addresses.</p>
 <p>Inexpensive TAP/SPAN options (listed alphabetically):</p>

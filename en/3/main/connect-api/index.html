@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html class="no-js" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
@@ -25,7 +26,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style></head>
+        </style><link href="../securityonion-docs.pdf" rel="alternate" title="PDF" type="application/pdf"/></head>
 <body data-md-color-accent="blue" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
@@ -595,6 +596,18 @@
     
   
     InfluxDB
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../postgresql/">
+<span class="md-ellipsis">
+    
+  
+    PostgreSQL
   
 
     
@@ -1568,18 +1581,6 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../console/">
-<span class="md-ellipsis">
-    
-  
-    Console
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../ssh/">
 <span class="md-ellipsis">
     
@@ -1803,18 +1804,6 @@
     
   
     Time Zones
-  
-
-    
-  </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../endgame/">
-<span class="md-ellipsis">
-    
-  
-    Endgame
   
 
     
@@ -2217,6 +2206,15 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#api-reference">
+<span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#enabling-connect-api">
 <span class="md-ellipsis">
       
@@ -2279,15 +2277,6 @@
 <span class="md-ellipsis">
       
         Manager of Managers
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#api-reference">
-<span class="md-ellipsis">
-      
-        API Reference
       
     </span>
 </a>
@@ -2469,6 +2458,15 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#api-reference">
+<span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#enabling-connect-api">
 <span class="md-ellipsis">
       
@@ -2535,15 +2533,6 @@
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#api-reference">
-<span class="md-ellipsis">
-      
-        API Reference
-      
-    </span>
-</a>
-</li>
 </ul>
 </nav>
 </div>
@@ -2576,6 +2565,13 @@
 </div>
 <p>The Security Onion Connect API allows other servers to integrate with Security Onion, and access the same functionality that the Security Onion Console user-interface provides. Access to the Connect API is permitted through API Clients, which can be created by SOC administrators via the SOC UI -&gt; Administration -&gt; API Clients screen.</p>
 <p>The Connect API currently provides functionality exposed by the Security Onion Console server. It does not provide full access to third-party applications included with the Security Onion platform. Specifically, while you can read events from Elasticsearch, you cannot manipulate Kibana settings via the Security Onion Connect API, unless those settings are already exposed via the SOC Configuration system.</p>
+<h2 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>New releases of Security Onion may contain additional fields in API responses. Consequently, it is important that the API output be properly parsed by official libraries that can handle these scenarios. Using custom parsing of API outputs may lead to upgrade-related malfunctions.</p>
+</div>
+<p>An interactive API view is available for browser-based viewing: <a href="so-api-reference.html">Interactive API</a></p>
+<p>In order to connect to the API, you will need to follow the steps below.</p>
 <h2 id="enabling-connect-api">Enabling Connect API<a class="headerlink" href="#enabling-connect-api" title="Permanent link">¶</a></h2>
 <p>By default, newly setup grids will not be configured for API client access. To enable API client access, the following steps must be taken:</p>
 <ol>
@@ -2617,12 +2613,6 @@ This ensures that remote systems will only have access to the minimum necessary 
 <p>Where the provided bearer token above must be replaced with the access token extracted from the client credential exchange response.</p>
 <h2 id="manager-of-managers">Manager of Managers<a class="headerlink" href="#manager-of-managers" title="Permanent link">¶</a></h2>
 <p>To interact with subgrid data, while still communicating with the primary <strong>Manager of Managers (MoM)</strong> node, include an additional query string parameter on the API URL. The parameter key is <code>gridId</code> and the value should be set to the desired subgrid ID.</p>
-<h2 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>New releases of Security Onion may contain additional fields in API responses. Consequently, it is important that the API output be properly parsed by official libraries that can handle these scenarios. Using custom parsing of API outputs may lead to upgrade-related malfunctions.</p>
-</div>
-<p>An interactive API view is available for browser-based viewing: <a href="so-api-reference.html">Interactive API</a></p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
