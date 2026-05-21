@@ -107,6 +107,7 @@ nav:
     - Elastic Fleet: elastic-fleet.md
     - Osquery Manager: osquery-manager.md
     - InfluxDB: influxdb.md
+    - PostgreSQL: postgresql.md
     - CyberChef: cyberchef.md
     - Attack Navigator: attack-navigator.md
   - Security Onion Desktop:
@@ -177,7 +178,6 @@ nav:
     - Firewall: firewall.md
     - Email: email.md
     - NTP: ntp.md
-    - Console: console.md
     - SSH: ssh.md
     - Hostname: hostname.md
     - IP Address: ip-address.md
@@ -196,7 +196,6 @@ nav:
     - Salt: salt.md
     - Syslog Output: syslog-output.md
     - Time Zones: time-zones.md
-    - Endgame: endgame.md
   - Utilities:
     - Utilities Overview: utilities.md
     - jq: jq.md

@@ -87,7 +87,7 @@ No, Security Onion does not support blocking traffic. Most organizations have so
 
 ### Where can I read more about the tools contained within Security Onion?
 
-Please see the [Tools](tools.md) section.
+Please see the [Software Bill of Materials](software-bill-of-materials.md) section.
 
 ### What's the directory structure of `/nsm`?
 

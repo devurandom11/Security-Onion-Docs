@@ -60,9 +60,25 @@ This adapter will not use any credits from your Security Onion Pro license, but 
 
 The *OpenAI Responses* adapter can connect to the newest OpenAI compatible APIs that support the Responses protocol. To connect, you will need to provide an API Url. The API Url should be the base url for the provider you are connecting to, for example `https://api.openai.com/v1/`. An API Key may or may not be required depending on the provider you are connecting to. If you're unsure if your provider supports the Responses protocol, check with their support or try connecting with this adapter. If it doesn't work, you can try the *OpenAI Chat* adapter which supports an older protocol that is still widely used.
 
+!!! TIP
+
+    Some providers require URL parameters passed along with the API calls. For example, Azure requires an `api-version` parameter. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:
+
+    ```text
+    https://api.someprovider.invalid/v1/?api-version=2024-08-01-preview
+    ```
+
 ### OpenAI Chat
 
 The *OpenAI Chat* adapter can connect to any OpenAI compatible API that supports the Chat protocol. To connect, you will need to provide an API Url. The API Url should be the base url for the provider you are connecting to, for example `https://api.openai.com/v1/`. An API Key may or may not be required depending on the provider you are connecting to.
+
+!!! TIP
+
+    Some providers require URL parameters passed along with the API calls. To support this, starting with Security Onion 3.1.0, you can append the parameter(s) to the API Url field. For example:
+
+    ```text
+    https://api.someprovider.invalid/v1/?api-version=2024-08-01-preview
+    ```
 
 ## Available Models
 

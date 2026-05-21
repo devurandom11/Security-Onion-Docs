@@ -8,6 +8,16 @@ The Security Onion Connect API allows other servers to integrate with Security O
 
 The Connect API currently provides functionality exposed by the Security Onion Console server. It does not provide full access to third-party applications included with the Security Onion platform. Specifically, while you can read events from Elasticsearch, you cannot manipulate Kibana settings via the Security Onion Connect API, unless those settings are already exposed via the SOC Configuration system.
 
+## API Reference
+
+!!! WARNING
+    
+    New releases of Security Onion may contain additional fields in API responses. Consequently, it is important that the API output be properly parsed by official libraries that can handle these scenarios. Using custom parsing of API outputs may lead to upgrade-related malfunctions.
+
+An interactive API view is available for browser-based viewing: <a href="so-api-reference.html">Interactive API</a>
+
+In order to connect to the API, you will need to follow the steps below.
+
 ## Enabling Connect API
 
 By default, newly setup grids will not be configured for API client access. To enable API client access, the following steps must be taken:
@@ -73,11 +83,3 @@ Where the provided bearer token above must be replaced with the access token ext
 ## Manager of Managers
 
 To interact with subgrid data, while still communicating with the primary **Manager of Managers (MoM)** node, include an additional query string parameter on the API URL. The parameter key is `gridId` and the value should be set to the desired subgrid ID.
-
-## API Reference
-
-!!! WARNING
-    
-    New releases of Security Onion may contain additional fields in API responses. Consequently, it is important that the API output be properly parsed by official libraries that can handle these scenarios. Using custom parsing of API outputs may lead to upgrade-related malfunctions.
-
-An interactive API view is available for browser-based viewing: <a href="so-api-reference.html">Interactive API</a>

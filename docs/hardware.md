@@ -14,7 +14,8 @@ Security Onion only supports x86-64 architecture (standard Intel or AMD 64-bit p
 
 | Node Type       | CPU cores | RAM  | Storage | NICs |
 |-----------------|-----------|------|---------|------|
-| Import          | 2         | 4GB  | 50GB    | 1    |
+| Desktop         | 2         | 4GB  | 50GB    | 1    |
+| Import          | 2         | 4GB  | 100GB   | 1    |
 | Eval            | 4         | 8GB  | 200GB   | 2    |
 | Standalone      | 4         | 24GB | 200GB   | 2    |
 | Manager         | 4         | 16GB | 200GB   | 1    |
@@ -32,7 +33,7 @@ Security Onion only supports x86-64 architecture (standard Intel or AMD 64-bit p
 
 ## Import
 
-An Import installation runs the minimal processes required to import PCAP or EVTX files and view the results. As such, it has the lowest hardware requirements as shown in the table above. You can read more about Import in the [First Time Users](first-time-users.md) section.
+An Import installation runs the minimal processes required to import PCAP or EVTX files and view the results. You can read more about Import in the [First Time Users](first-time-users.md) section.
 
 ## Eval
 
@@ -169,11 +170,11 @@ The following RAM estimates are a rough guideline and assume that you're going t
 - If you're deploying Security Onion in production on a small network (100Mbps or less), you should plan on 16GB RAM or more. Again, more is obviously better!
 - If you're deploying Security Onion in production to a medium network (100Mbps - 1000Mbps), you should plan on 16GB - 128GB RAM or more.
 - If you're deploying Security Onion in production to a large network (1000Mbps - 10Gbps), you should plan on 128GB - 256GB RAM or more.
-- If you're buying a new server, go ahead and max out the RAM (it's cheap!). As always, more is obviously better!
+- If you're buying a new server, consider maxing out the RAM if possible.
 
 ### Storage
 
-Sensors that have full packet capture enabled need LOTS of storage. For example, suppose you are monitoring a link that averages 50Mbps, here are some quick calculations: 50Mb/s = 6.25 MB/s = 375 MB/minute = 22,500 MB/hour = 540,000 MB/day. So you're going to need about 540GB for one day's worth of pcaps (multiply this by the number of days of PCAP you want to keep). The more disk space you have, the more PCAP retention you'll have for doing investigations after the fact. Disk is cheap, get all you can!
+Sensors that have full packet capture enabled need LOTS of storage. For example, suppose you are monitoring a link that averages 50Mbps, here are some quick calculations: 50Mb/s = 6.25 MB/s = 375 MB/minute = 22,500 MB/hour = 540,000 MB/day. So you're going to need about 540GB for one day's worth of pcaps (multiply this by the number of days of PCAP you want to keep). The more disk space you have, the more PCAP retention you'll have for doing investigations after the fact.
 
 ### Packets
 

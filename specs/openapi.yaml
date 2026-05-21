@@ -1225,6 +1225,12 @@ components:
           description: The maximum number of metrics to limit in aggregate groups
           example: 10
           type: integer
+        params:
+          additionalProperties: {}
+          description: Any parameters used in the event update scripts
+          example:
+            '{"userId"': ' "admin"}'
+          type: object
         query:
           description: The base query used to conduct the event search
           example: (*) AND tags:alert AND NOT event.acknowledged:true AND NOT event.escalated:true
@@ -1667,6 +1673,8 @@ components:
       properties:
         adapter:
           type: string
+        charsPerTokenEstimate:
+          type: number
         contextLimitLarge:
           type: integer
         contextLimitSmall:
@@ -1808,10 +1816,6 @@ components:
           description: Indicates whether disk encryption is enabled on this node
           example: 1
           type: integer
-        load5m:
-          description: The node's 5-minute load metric
-          example: 0.96
-          type: number
         load15m:
           description: The node's 15-minute load metric
           example: 1.09
@@ -1819,6 +1823,10 @@ components:
         load1m:
           description: The node's 1-minute load metric
           example: 0.43
+          type: number
+        load5m:
+          description: The node's 5-minute load metric
+          example: 0.96
           type: number
         memoryTotalGB:
           description: Total size, in gigabytes, of the system memory, or RAM

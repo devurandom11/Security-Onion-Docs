@@ -28,17 +28,25 @@ In addition to the required partitions, using the STIG menu option will also con
 !!! WARNING
     
     Before enabling STIGs on your production Security Onion deployment, we recommend testing in a development environment. With different environments and configurations, there may be unexpected errors.
+    
+    Currently, not all node types fully support enabling STIGs. These include the following:
 
-To enable STIGs you'll first need setup your Security Onion Grid and apply your [Security Onion Pro](security-onion-pro.md) license. You can then navigate to [Administration](administration.md) --> Configuration --> stig --> enabled and set the value to `true`.
+    - Hypervisor nodes
+        - VMs created within a hypervisor node do support enabling STIGs
+    - Heavy nodes
+    - IDH nodes
+
+To enable STIGs you'll first need to set up your Security Onion Grid and apply your [Security Onion Pro](security-onion-pro.md) license. You can then navigate to [Administration](administration.md) --> Configuration --> stig --> enabled and set the value to `true`.
 
 !!! NOTE
     
     You will need to enable the [Administration](administration.md) --> Show advanced settings option to modify this setting.
 
 ## OpenSCAP
-In order to apply STIGs on Security Onion we use a combination of our existing Saltstack configuration managment and OpenSCAP. Currently, OpenSCAP is using a draft version of STIGs for Oracle Linux 9.
 
-OpenScap can be configured to run at different time intervals. By default, OpenSCAP will run a remediation every 12 hours meaning any changes made to the system that bring it out of compliance will be reverted back to the STIG compliant state. This setting can be lowered or increased by modifying the `run_interval` setting found under [Administration](administration.md) --> Configuration --> stig
+In order to apply STIGs on Security Onion we use a combination of our existing Saltstack configuration management and OpenSCAP. Currently, OpenSCAP is using a draft version of STIGs for Oracle Linux 9.
+
+OpenSCAP can be configured to run at different time intervals. By default, OpenSCAP will run a remediation every 12 hours meaning any changes made to the system that bring it out of compliance will be reverted back to the STIG compliant state. This setting can be lowered or increased by modifying the `run_interval` setting found under [Administration](administration.md) --> Configuration --> stig
 
 With the STIG feature enabled, you can find OpenSCAP reports under `/opt/so/log/stig`. Currently, the expected compliance score is 86%.
 

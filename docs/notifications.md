@@ -118,7 +118,7 @@ detection:
     selection:
         event.outcome: failure
         process.name: sshd
-        tags|contains: so-Grid-node
+        tags|contains: so-grid-node
     filter:
         system.auth.ssh.method: '*'
     condition: selection and not filter
