@@ -1,12 +1,12 @@
-# Connect API
+# Security Onion API
 
 !!! NOTE
     
     This is an enterprise-level feature of Security Onion. Contact Security Onion Solutions, LLC via our website at <https://securityonion.com/pro> for more information about purchasing a Security Onion Pro license to enable this feature.
 
-The Security Onion Connect API allows other servers to integrate with Security Onion, and access the same functionality that the Security Onion Console user-interface provides. Access to the Connect API is permitted through API Clients, which can be created by SOC administrators via the SOC UI -> Administration -> API Clients screen.
+The Security Onion API allows other servers to integrate with Security Onion, and access the same functionality that the Security Onion Console user-interface provides. Access to the Security Onion API is permitted through API Clients, which can be created by SOC administrators via the SOC UI -> Administration -> API Clients screen.
 
-The Connect API currently provides functionality exposed by the Security Onion Console server. It does not provide full access to third-party applications included with the Security Onion platform. Specifically, while you can read events from Elasticsearch, you cannot manipulate Kibana settings via the Security Onion Connect API, unless those settings are already exposed via the SOC Configuration system.
+The Security Onion API currently provides functionality exposed by the Security Onion Console server. It does not provide full access to third-party applications included with the Security Onion platform. Specifically, while you can read events from Elasticsearch, you cannot manipulate Kibana settings via the Security Onion API, unless those settings are already exposed via the SOC Configuration system.
 
 ## API Reference
 
@@ -18,7 +18,7 @@ An interactive API view is available for browser-based viewing: <a href="so-api-
 
 In order to connect to the API, you will need to follow the steps below.
 
-## Enabling Connect API
+## Enabling Security Onion API
 
 By default, newly setup grids will not be configured for API client access. To enable API client access, the following steps must be taken:
 
@@ -28,7 +28,7 @@ By default, newly setup grids will not be configured for API client access. To e
 
 ## API Client Credentials
 
-In order to communicate with the Connect API, an API Client must be created. Navigate to the Administration menu using a superuser account. Under the Administration menu click the API Clients menu option. Create a new API client using a short name that reflects the intended usage of this client. Use the Notes field to provide more information, if desired. Upon saving the new client a generated secret will be issued. This client ID and secret pair is needed to authenticate to the Connect API. Protect these credentials using industry best practices.
+In order to communicate with the Security Onion API, an API Client must be created. Navigate to the Administration menu using a superuser account. Under the Administration menu click the API Clients menu option. Create a new API client using a short name that reflects the intended usage of this client. Use the Notes field to provide more information, if desired. Upon saving the new client a generated secret will be issued. This client ID and secret pair is needed to authenticate to the Security Onion API. Protect these credentials using industry best practices.
 
 ## Authorization / RBAC
 

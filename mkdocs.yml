@@ -223,7 +223,7 @@ nav:
     - STIG: stig.md
     - Notifications: notifications.md
     - Kafka: kafka.md
-    - Connect API: connect-api.md
+    - Security Onion API: connect-api.md
     - Active Query Management: active-query-management.md
     - Manager of Managers: manager-of-managers.md
     - MCP Server: mcp-server.md

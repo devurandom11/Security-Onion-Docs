@@ -7,7 +7,7 @@ Here is what gets backed up automatically by default:
 - `/etc/pki/` - All of the certs including the CA.
 - `/etc/salt/` - Configuration for the [Salt](salt.md) manager and minions.
 - `/nsm/kratos/` - Configuration for [Kratos](kratos.md).
-- `/nsm/hydra/` - Configuration for Hydra (used for [Connect](connect-api.md)).
+- `/nsm/hydra/` - Configuration for Hydra (used for [Security Onion API access](connect-api.md)).
 - `/opt/so/saltstack/local/` - Customizations done via [Administration](administration.md) --> Configuration. 
 
 If you need to restore one or more files from backup, locate the tar backup file from the desired date and use the standard `tar` command to expand the file. For example, to expand the backup file from March 17, 2025:
