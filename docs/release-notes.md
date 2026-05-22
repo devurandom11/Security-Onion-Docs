@@ -2,7 +2,11 @@
 
 ### Known Issues
 
-For all known issues, please see <https://github.com/Security-Onion-Solutions/securityonion/issues>.
+An issue was discovered with deployments with multiple heavy nodes that prevents them from updating to version 3.1.0. We plan to address this in an upcoming hotfix:
+
+https://github.com/Security-Onion-Solutions/securityonion/discussions/15920
+
+For all other known issues, please see <https://github.com/Security-Onion-Solutions/securityonion/issues>.
 
 ### Release History
 
