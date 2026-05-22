@@ -62,8 +62,11 @@ not host 192.168.1.6 or not host 192.168.1.27
 ### Troubleshooting BPF using tcpdump
 
 If you need to troubleshoot BPF, you can use `tcpdump` as shown in the following articles:
+
 <https://taosecurity.blogspot.com/2004/09/understanding-tcpdumps-d-option-have.html>
+
 <https://taosecurity.blogspot.com/2004/12/understanding-tcpdumps-d-option-part-2.html>
+
 <https://taosecurity.blogspot.com/2008/12/bpf-for-ip-or-vlan-traffic.html>
 
 ## More Information
@@ -71,5 +74,7 @@ If you need to troubleshoot BPF, you can use `tcpdump` as shown in the following
 !!! NOTE
     
     For more information about BPF, please see:
+
     <https://en.wikipedia.org/wiki/Berkeley_Packet_Filter>
+
     <https://biot.com/capstats/bpf.html>
