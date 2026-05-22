@@ -6,7 +6,7 @@ The MCP server gives AI the ability to query alerts, playbooks, events, etc. whi
 
 !!! NOTE
     
-    The MCP server utilizes the Security Onion Connect API, which is an enterprise-level feature of Security Onion. Contact Security Onion Solutions, LLC via our website at <https://securityonion.com/pro> for more information about purchasing a Security Onion Pro license to enable this feature.
+    The MCP server utilizes the Security Onion API, which is an enterprise-level feature of Security Onion. Contact Security Onion Solutions, LLC via our website at <https://securityonion.com/pro> for more information about purchasing a Security Onion Pro license to enable this feature.
 
 ## Configuration
 
@@ -16,7 +16,7 @@ See <https://github.com/Security-Onion-Solutions/securityonion-mcp> to get start
 
 !!! NOTE
     
-    A Connect API Client must be created in the Security Onion API Clients screen. The API Client should be granted sufficient permissions needed to perform the tasks that the LLM will need to execute. 
+    A Security Onion API Client must be created in the Security Onion API Clients screen. The API Client should be granted sufficient permissions needed to perform the tasks that the LLM will need to execute. 
     
     For example, if the LLM will be querying events and playbooks then the API Client will need *events/read*, *playbooks/read*, and *detections/read* permissions.
 

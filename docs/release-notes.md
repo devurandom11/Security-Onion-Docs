@@ -2,7 +2,11 @@
 
 ### Known Issues
 
-For all known issues, please see <https://github.com/Security-Onion-Solutions/securityonion/issues>.
+An issue was discovered with deployments with multiple heavy nodes that prevents them from updating to version 3.1.0. We plan to address this in an upcoming hotfix:
+
+<https://github.com/Security-Onion-Solutions/securityonion/discussions/15920>
+
+For all other known issues, please see <https://github.com/Security-Onion-Solutions/securityonion/issues>.
 
 ### Release History
 
@@ -77,7 +81,7 @@ For all known issues, please see <https://github.com/Security-Onion-Solutions/se
 - FIX: so-suricata-testrule script <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15396">#15396</a>
 - FIX: STIG V1R3
 - FIX: Suricata address-groups vars allow negation <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15664">#15664</a>
-- FIX: Unable to create detections via Connect API <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15673">#15673</a>
+- FIX: Unable to create detections via Security Onion API <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15673">#15673</a>
 - UPGRADE: All frontend 3rd party deps
 - UPGRADE: ATTACK Navigator to 5.3.0 <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15680">#15680</a>
 - UPGRADE: CyberChef to 10.22.1 <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15681">#15681</a>

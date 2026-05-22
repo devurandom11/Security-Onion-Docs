@@ -42,12 +42,12 @@ If a subgrid is expected to remain in a disconnected state for a longer period i
 
 Configuration of Manager of Managers requires two steps:
 
-1. API Client: Creation of an API Client on each subgrid manager via the subgrid's [Connect](connect-api.md) Client screen
+1. API Client: Creation of an API Client on each subgrid manager via the subgrid's API Client screen
 2. Subgrid Config: Configuration of the subgrids on the MoM Configuration screen
 
 ### API Client
 
-Create a new, dedicated [Connect](connect-api.md) Client on each subgrid and assign all permissions that the MoM will need to perform the desired functions. For example, if the MoM users will need complete management and visibility (effectively `superuser` access) then grant all permissions. However, if the MoM users will only be monitoring the subgrid health then the API Client permissions can be limited to `read` permission on specific resources, such as `Grid`, `nodes`, etc.
+Create a new, dedicated API Client on each subgrid and assign all permissions that the MoM will need to perform the desired functions. For example, if the MoM users will need complete management and visibility (effectively `superuser` access) then grant all permissions. However, if the MoM users will only be monitoring the subgrid health then the API Client permissions can be limited to `read` permission on specific resources, such as `Grid`, `nodes`, etc.
 
 The API Client ID and Secret will be needed on the next step, so ensure those are recorded for each of the subgrids.
 
