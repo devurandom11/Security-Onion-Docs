@@ -8,7 +8,7 @@
 <link href="../active-query-management/" rel="next"/>
 <link href="../images/logo/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
-<title>Connect API - Security Onion Documentation</title>
+<title>Security Onion API - Security Onion Documentation</title>
 <link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -32,7 +32,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#connect-api">
+<a class="md-skip" href="#security-onion-api">
           Skip to content
         </a>
 </div>
@@ -56,7 +56,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Connect API
+              Security Onion API
             
           </span>
 </div>
@@ -2182,7 +2182,7 @@
 <span class="md-ellipsis">
     
   
-    Connect API
+    Security Onion API
   
 
     
@@ -2193,7 +2193,7 @@
 <span class="md-ellipsis">
     
   
-    Connect API
+    Security Onion API
   
 
     
@@ -2215,10 +2215,10 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#enabling-connect-api">
+<a class="md-nav__link" href="#enabling-security-onion-api">
 <span class="md-ellipsis">
       
-        Enabling Connect API
+        Enabling Security Onion API
       
     </span>
 </a>
@@ -2467,10 +2467,10 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#enabling-connect-api">
+<a class="md-nav__link" href="#enabling-security-onion-api">
 <span class="md-ellipsis">
       
-        Enabling Connect API
+        Enabling Security Onion API
       
     </span>
 </a>
@@ -2558,13 +2558,13 @@
 </ol>
 </nav>
 <article class="md-content__inner md-typeset">
-<h1 id="connect-api">Connect API<a class="headerlink" href="#connect-api" title="Permanent link">¶</a></h1>
+<h1 id="security-onion-api">Security Onion API<a class="headerlink" href="#security-onion-api" title="Permanent link">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This is an enterprise-level feature of Security Onion. Contact Security Onion Solutions, LLC via our website at <a href="https://securityonion.com/pro">https://securityonion.com/pro</a> for more information about purchasing a Security Onion Pro license to enable this feature.</p>
 </div>
-<p>The Security Onion Connect API allows other servers to integrate with Security Onion, and access the same functionality that the Security Onion Console user-interface provides. Access to the Connect API is permitted through API Clients, which can be created by SOC administrators via the SOC UI -&gt; Administration -&gt; API Clients screen.</p>
-<p>The Connect API currently provides functionality exposed by the Security Onion Console server. It does not provide full access to third-party applications included with the Security Onion platform. Specifically, while you can read events from Elasticsearch, you cannot manipulate Kibana settings via the Security Onion Connect API, unless those settings are already exposed via the SOC Configuration system.</p>
+<p>The Security Onion API allows other servers to integrate with Security Onion, and access the same functionality that the Security Onion Console user-interface provides. Access to the Security Onion API is permitted through API Clients, which can be created by SOC administrators via the SOC UI -&gt; Administration -&gt; API Clients screen.</p>
+<p>The Security Onion API currently provides functionality exposed by the Security Onion Console server. It does not provide full access to third-party applications included with the Security Onion platform. Specifically, while you can read events from Elasticsearch, you cannot manipulate Kibana settings via the Security Onion API, unless those settings are already exposed via the SOC Configuration system.</p>
 <h2 id="api-reference">API Reference<a class="headerlink" href="#api-reference" title="Permanent link">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -2572,7 +2572,7 @@
 </div>
 <p>An interactive API view is available for browser-based viewing: <a href="so-api-reference.html">Interactive API</a></p>
 <p>In order to connect to the API, you will need to follow the steps below.</p>
-<h2 id="enabling-connect-api">Enabling Connect API<a class="headerlink" href="#enabling-connect-api" title="Permanent link">¶</a></h2>
+<h2 id="enabling-security-onion-api">Enabling Security Onion API<a class="headerlink" href="#enabling-security-onion-api" title="Permanent link">¶</a></h2>
 <p>By default, newly setup grids will not be configured for API client access. To enable API client access, the following steps must be taken:</p>
 <ol>
 <li>A license key must be applied to the grid. The license key must include the API feature.</li>
@@ -2580,7 +2580,7 @@
 <li>Synchronize the grid to apply the license key and configuration changes. This can be done via the Configuration screen options dropdown.</li>
 </ol>
 <h2 id="api-client-credentials">API Client Credentials<a class="headerlink" href="#api-client-credentials" title="Permanent link">¶</a></h2>
-<p>In order to communicate with the Connect API, an API Client must be created. Navigate to the Administration menu using a superuser account. Under the Administration menu click the API Clients menu option. Create a new API client using a short name that reflects the intended usage of this client. Use the Notes field to provide more information, if desired. Upon saving the new client a generated secret will be issued. This client ID and secret pair is needed to authenticate to the Connect API. Protect these credentials using industry best practices.</p>
+<p>In order to communicate with the Security Onion API, an API Client must be created. Navigate to the Administration menu using a superuser account. Under the Administration menu click the API Clients menu option. Create a new API client using a short name that reflects the intended usage of this client. Use the Notes field to provide more information, if desired. Upon saving the new client a generated secret will be issued. This client ID and secret pair is needed to authenticate to the Security Onion API. Protect these credentials using industry best practices.</p>
 <h2 id="authorization-rbac">Authorization / RBAC<a class="headerlink" href="#authorization-rbac" title="Permanent link">¶</a></h2>
 <p>API clients are permitted access to various components within Security Onion using the same RBAC system for users. 
 However, rather than assign <em>roles</em> to API clients, the more granular <em>permissions</em> are assigned. 
