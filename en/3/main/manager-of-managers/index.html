@@ -2181,7 +2181,7 @@
 <span class="md-ellipsis">
     
   
-    Connect API
+    Security Onion API
   
 
     
@@ -2569,11 +2569,11 @@
 </div>
 <p>Configuration of Manager of Managers requires two steps:</p>
 <ol>
-<li>API Client: Creation of an API Client on each subgrid manager via the subgrid's <a href="../connect-api/">Connect</a> Client screen</li>
+<li>API Client: Creation of an API Client on each subgrid manager via the subgrid's API Client screen</li>
 <li>Subgrid Config: Configuration of the subgrids on the MoM Configuration screen</li>
 </ol>
 <h3 id="api-client">API Client<a class="headerlink" href="#api-client" title="Permanent link">¶</a></h3>
-<p>Create a new, dedicated <a href="../connect-api/">Connect</a> Client on each subgrid and assign all permissions that the MoM will need to perform the desired functions. For example, if the MoM users will need complete management and visibility (effectively <code>superuser</code> access) then grant all permissions. However, if the MoM users will only be monitoring the subgrid health then the API Client permissions can be limited to <code>read</code> permission on specific resources, such as <code>Grid</code>, <code>nodes</code>, etc.</p>
+<p>Create a new, dedicated API Client on each subgrid and assign all permissions that the MoM will need to perform the desired functions. For example, if the MoM users will need complete management and visibility (effectively <code>superuser</code> access) then grant all permissions. However, if the MoM users will only be monitoring the subgrid health then the API Client permissions can be limited to <code>read</code> permission on specific resources, such as <code>Grid</code>, <code>nodes</code>, etc.</p>
 <p>The API Client ID and Secret will be needed on the next step, so ensure those are recorded for each of the subgrids.</p>
 <p>While on the API Client screen, click the ⤓ icon to download the Certificate Authority (CA) certificate file. This file is in a text format and the contents will be pasted into the subgrid setting in the next step.</p>
 <div class="admonition note">

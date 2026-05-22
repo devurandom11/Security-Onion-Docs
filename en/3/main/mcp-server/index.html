@@ -2181,7 +2181,7 @@
 <span class="md-ellipsis">
     
   
-    Connect API
+    Security Onion API
   
 
     
@@ -2447,14 +2447,14 @@
 <p>The MCP server gives AI the ability to query alerts, playbooks, events, etc. which provides the LLM with additional information needed to make informed decisions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The MCP server utilizes the Security Onion Connect API, which is an enterprise-level feature of Security Onion. Contact Security Onion Solutions, LLC via our website at <a href="https://securityonion.com/pro">https://securityonion.com/pro</a> for more information about purchasing a Security Onion Pro license to enable this feature.</p>
+<p>The MCP server utilizes the Security Onion API, which is an enterprise-level feature of Security Onion. Contact Security Onion Solutions, LLC via our website at <a href="https://securityonion.com/pro">https://securityonion.com/pro</a> for more information about purchasing a Security Onion Pro license to enable this feature.</p>
 </div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
 <p>The MCP server is a low-overhead server application that is maintained separately from the Security Onion software. It's available in a GitHub repository, which includes the installation and configuration instructions.</p>
 <p>See <a href="https://github.com/Security-Onion-Solutions/securityonion-mcp">https://github.com/Security-Onion-Solutions/securityonion-mcp</a> to get started.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A Connect API Client must be created in the Security Onion API Clients screen. The API Client should be granted sufficient permissions needed to perform the tasks that the LLM will need to execute. </p>
+<p>A Security Onion API Client must be created in the Security Onion API Clients screen. The API Client should be granted sufficient permissions needed to perform the tasks that the LLM will need to execute. </p>
 <p>For example, if the LLM will be querying events and playbooks then the API Client will need <em>events/read</em>, <em>playbooks/read</em>, and <em>detections/read</em> permissions.</p>
 </div>
 <h2 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">¶</a></h2>
