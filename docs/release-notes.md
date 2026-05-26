@@ -10,6 +10,11 @@ For all other known issues, please see <https://github.com/Security-Onion-Soluti
 
 ### Release History
 
+3.1.0 Hotfix [20260526] Changes
+-------------------------------
+
+- FIX: Grids with multiple heavy nodes fail Elasticsearch upgrade verification for 3.1.0
+
 3.1.0 [20260521] Changes
 ------------------------
 
