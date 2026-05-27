@@ -14,7 +14,7 @@ To view agent details, click the `Host` name.
 
 To assign the agent to a new policy, unenroll, upgrade the agent, or perform other actions, click the `Actions` menu on the right side of the agent listing and select the appropriate option.
 
-By default, Elastic Agent is installed on every Security Onion Grid node. As a result, all Grid node agents will be enrolled in the `SO-Grid-Nodes` agent policy. 
+By default, Elastic Agent is installed on every Security Onion Grid node. As a result, all Grid node agents will be enrolled in the `so-grid-nodes` agent policy. 
 
 !!! WARNING
     
@@ -49,21 +49,21 @@ Agent policies dictate what data each agent will ingest and forward to Elasticse
 
 The individual components within each agent policy are called integrations (referred to as `package policies` at the API level), and refer to a specific input and settings pertinent to a data source.
 
-For example, the `SO-Grid-Nodes` agent policy is comprised of the following integrations:
+For example, the `so-grid-nodes` agent policy is comprised of the following integrations:
 
-- Elasticsearch-logs (`Elasticsearch` integration)
+- elasticsearch-logs (`Elasticsearch` integration)
 - import-evtx-logs (`Custom Logs` integration)
-- import-Suricata-logs (`Custom Logs` integration)
-- import-Zeek-logs (`Custom Logs` integration)
+- import-suricata-logs (`Custom Logs` integration)
+- import-zeek-logs (`Custom Logs` integration)
 - kratos-logs (`Custom Logs` integration)
-- Osquery-Grid-nodes (`Osquery Manager` integration)
-- Redis-logs (`Redis` integration)
-- Strelka-logs (`Custom Logs` integration)
-- Suricata-logs (`Custom Logs` integration)
+- osquery-grid-nodes (`Osquery Manager` integration)
+- redis-logs (`Redis` integration)
+- strelka-logs (`Custom Logs` integration)
+- suricata-logs (`Custom Logs` integration)
 - syslog-tcp-514 (`Custom Logs` integration)
 - syslog-udp-514 (`Custom Logs` integration)
-- system-Grid-nodes (`System` integration)
-- Zeek-logs (`Custom Logs` integration)
+- system-grid-nodes (`System` integration)
+- zeek-logs (`Custom Logs` integration)
 
 ## Agent Policies - endpoints-initial
 
