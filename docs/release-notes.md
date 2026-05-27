@@ -14,6 +14,7 @@ For all other known issues, please see <https://github.com/Security-Onion-Soluti
 -------------------------------
 
 - FIX: Grids with multiple heavy nodes fail Elasticsearch upgrade verification for 3.1.0
+- FIX: Grids using custom logstash pipeline(s) may have stale pillar entries
 
 3.1.0 [20260521] Changes
 ------------------------
