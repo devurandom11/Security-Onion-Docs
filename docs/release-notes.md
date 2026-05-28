@@ -2,13 +2,15 @@
 
 ### Known Issues
 
-An issue was discovered with deployments with multiple heavy nodes that prevents them from updating to version 3.1.0. We plan to address this in an upcoming hotfix:
-
-<https://github.com/Security-Onion-Solutions/securityonion/discussions/15920>
-
 For all other known issues, please see <https://github.com/Security-Onion-Solutions/securityonion/issues>.
 
 ### Release History
+
+3.1.0 Hotfix [20260528] Changes
+-------------------------------
+
+- FIX: Grids with multiple heavy nodes fail Elasticsearch upgrade verification for 3.1.0
+- FIX: Grids using custom logstash pipeline(s) may have stale pillar entries <a href="https://github.com/Security-Onion-Solutions/securityonion/issues/15932">#15932</a>
 
 3.1.0 [20260521] Changes
 ------------------------
