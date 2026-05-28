@@ -2718,7 +2718,7 @@
 <p>The Agents tab displays registered Elastic agents.</p>
 <p>To view agent details, click the <code>Host</code> name. </p>
 <p>To assign the agent to a new policy, unenroll, upgrade the agent, or perform other actions, click the <code>Actions</code> menu on the right side of the agent listing and select the appropriate option.</p>
-<p>By default, Elastic Agent is installed on every Security Onion Grid node. As a result, all Grid node agents will be enrolled in the <code>SO-Grid-Nodes</code> agent policy. </p>
+<p>By default, Elastic Agent is installed on every Security Onion Grid node. As a result, all Grid node agents will be enrolled in the <code>so-grid-nodes</code> agent policy. </p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>We do not recommend removing policy settings for Security Onion Grid node agents.</p>
@@ -2742,21 +2742,21 @@
 <h2 id="agent-policies">Agent Policies<a class="headerlink" href="#agent-policies" title="Permanent link">¶</a></h2>
 <p>Agent policies dictate what data each agent will ingest and forward to Elasticsearch. This could be through the use of an HTTP, log file, or TCP-based input.</p>
 <p>The individual components within each agent policy are called integrations (referred to as <code>package policies</code> at the API level), and refer to a specific input and settings pertinent to a data source.</p>
-<p>For example, the <code>SO-Grid-Nodes</code> agent policy is comprised of the following integrations:</p>
+<p>For example, the <code>so-grid-nodes</code> agent policy is comprised of the following integrations:</p>
 <ul>
-<li>Elasticsearch-logs (<code>Elasticsearch</code> integration)</li>
+<li>elasticsearch-logs (<code>Elasticsearch</code> integration)</li>
 <li>import-evtx-logs (<code>Custom Logs</code> integration)</li>
-<li>import-Suricata-logs (<code>Custom Logs</code> integration)</li>
-<li>import-Zeek-logs (<code>Custom Logs</code> integration)</li>
+<li>import-suricata-logs (<code>Custom Logs</code> integration)</li>
+<li>import-zeek-logs (<code>Custom Logs</code> integration)</li>
 <li>kratos-logs (<code>Custom Logs</code> integration)</li>
-<li>Osquery-Grid-nodes (<code>Osquery Manager</code> integration)</li>
-<li>Redis-logs (<code>Redis</code> integration)</li>
-<li>Strelka-logs (<code>Custom Logs</code> integration)</li>
-<li>Suricata-logs (<code>Custom Logs</code> integration)</li>
+<li>osquery-grid-nodes (<code>Osquery Manager</code> integration)</li>
+<li>redis-logs (<code>Redis</code> integration)</li>
+<li>strelka-logs (<code>Custom Logs</code> integration)</li>
+<li>suricata-logs (<code>Custom Logs</code> integration)</li>
 <li>syslog-tcp-514 (<code>Custom Logs</code> integration)</li>
 <li>syslog-udp-514 (<code>Custom Logs</code> integration)</li>
-<li>system-Grid-nodes (<code>System</code> integration)</li>
-<li>Zeek-logs (<code>Custom Logs</code> integration)</li>
+<li>system-grid-nodes (<code>System</code> integration)</li>
+<li>zeek-logs (<code>Custom Logs</code> integration)</li>
 </ul>
 <h2 id="agent-policies-endpoints-initial">Agent Policies - endpoints-initial<a class="headerlink" href="#agent-policies-endpoints-initial" title="Permanent link">¶</a></h2>
 <p>Agent installers downloaded from <a href="../downloads/">Downloads</a> are deployed using the <code>endpoints-initial</code> Agent Policy. This policy includes the <code>Elastic Defend</code>, <code>Osquery Manager</code>, <code>System</code>, and <code>Windows</code> integrations.</p>
