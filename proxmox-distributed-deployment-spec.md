@@ -61,7 +61,8 @@ concurrency (20)** and **endpoint agent management (100)**, *not* by packet volu
 | **OVS virtual-NIC creation + port mirror** for the sensor | **Ansible (Proxmox host)** | §7 |
 | **CPU pinning / NUMA / vhost-net pinning** | **Ansible (Proxmox host)** | §8 |
 | Host-side **NIC offload disable** (sniff path) | **Ansible (Proxmox host)** | §7.3 |
-| Run **`so-setup`** (role bind + grid join) | **Ansible (in-guest, via `expect`)** | §6.3 — the one nuance; see §6 |
+| Stage **custom `so-setup`/`so-whiptail`** onto each VM before setup | **Ansible** | §6.3 Path (a); scripts pre-validated against SO 3.0 clone |
+| Run **`so-setup`** (role bind + grid join) | **Ansible (in-guest, unattended flag + answer file)** | §6.3 — the one nuance; see §6 |
 | Manager-side **node acceptance** (salt-key / firewall hostgroup / API) | **Ansible (manager)** | §11 |
 | **Create users** (SOC/Elastic analyst accounts ×20) | **Ansible** | §9.8 |
 | **Check `so-status`** / grid health | **Ansible** | §16 |
@@ -225,13 +226,14 @@ NIC count by role:
 4. **Manager must be built first**, fully, before any other node joins (`docs/configuration.md`).
 5. **Node join is a two-party handshake** requiring manager-side acceptance (firewall hostgroup
    + Grid Members "Accept") — see §11. Playbooks must orchestrate both sides.
-6. **`so-setup` is interactive — but automatable.** It is a whiptail TUI with **no documented**
-   unattended flag. Two automation paths exist (see §6.3): (a) **Ansible `expect`** driving the
-   real prompts with production values (uses the supported path; pin to a version), or (b) the
-   **built-in `TESTING` bypass** (pass a second "profile" arg → every prompt short-circuits) —
-   but the stock profiles **hardcode test-grade values** (DHCP, default creds, `10.0.0.0/8`,
-   `0.0.0.0/0`, throwaway hostnames) and are **undocumented/unsupported for production**.
-   **Recommended: path (a).** This is the single biggest automation risk — budget for it.
+6. **`so-setup` is interactive — but automatable.** It is a whiptail TUI with no documented
+   unattended flag. The whiptail prompts only **populate shell variables** that later code reads,
+   so the recommended approach (§6.3 Path a) is to ship **lightly patched `so-setup`/`so-whiptail`
+   that skip the prompts via a dedicated flag and source an answer file of our values** — Ansible
+   replaces the stock scripts with these custom versions before setup. `expect` is the no-patch
+   fallback (Path b). The built-in `TESTING` bypass is **not** production-safe (Path c). **These
+   custom scripts must be developed and tested against a clone of the SO 3.0 repo first (§6.3
+   validation step) — not done in this spec.** This is the single biggest automation risk.
 7. **Multi-node Elasticsearch deletion is ILM-only.** `so-elasticsearch-indices-delete` is
    **disabled on multi-node deployments**; retention MUST be enforced via ILM `min_age` (§9).
 8. **Do not hand-edit iptables.** The host firewall is **Salt-managed**; all firewall changes go
@@ -278,8 +280,15 @@ Per node, before any SO setup:
 
 ### 6.3 Driving `so-setup` non-interactively (Ansible)
 
-`so-setup`'s prompts (whiptail) each short-circuit when `TESTING` is set, otherwise they collect
-the variables below. Whichever path is chosen, the **answer set** is the same:
+**Mechanism.** The `whiptail_*` functions in `setup/so-whiptail` do **not** talk to the installer
+directly — they only **populate shell variables** (`HOSTNAME`, `WEBUSER`, `MNIC`, `MGATEWAY`,
+`MDNS`, `MSRV`/`MSRVIP`, `BNICS`, `ALLOW_CIDR`/`ALLOW_ROLE`, `NODE_DESCRIPTION`, …). Later
+functions (`nginx_pillar`, `soc_pillar`, the network/minion config writers, etc.) read those
+variables and write the Salt pillars that actually drive the install. **So if we pre-set those
+variables and make the prompts not overwrite them, the real install proceeds with our values.**
+This is the same mechanism the project's own CI uses.
+
+**The answer set** (every variable a skipped prompt must already hold):
 
 | Variable | Meaning | Example / source |
 |---|---|---|
@@ -299,17 +308,109 @@ the variables below. Whichever path is chosen, the **answer set** is the same:
 | `ALLOW_CIDR` / `ALLOW_ROLE` | Initial allowed analyst CIDR/role | analyst mgmt subnet |
 | telemetry accept | Accept/decline telemetry prompt | per policy |
 
-**Path (a) — Ansible `expect` (recommended, supported flow).** Use `ansible.builtin.expect`
-(or a pexpect wrapper) to run `sudo SecurityOnion/setup/so-setup iso` and respond to each
-whiptail prompt with the values above. Pin the SO version, and keep a prompt→response map that
-is version-tested (`docs`/UI text can change between releases).
+> The table is the **starting set**, not a guarantee of completeness. Some prompts set more than
+> one variable or derive/validate secondary state (network IP/mask parsing, NIC selection,
+> password confirmation). The agent **must read each `whiptail_*` function used by each
+> `install_type`** and enumerate **every** variable it assigns/exports, then ensure all of them
+> are pre-set. See the validation requirement at the end of this section.
 
-**Path (b) — built-in `TESTING` bypass (fast, UNSUPPORTED for prod).** Passing a second
-positional "profile" arg (e.g. `distributed-search-iso`) sets `TESTING=true`, skipping all
-prompts. **But** the stock profile block hardcodes `address_type=DHCP`, default web creds, a
-`/8` minion CIDR, `ALLOW_CIDR=0.0.0.0/0`, and throwaway hostnames — i.e. **not production-safe**
-and undocumented. Only consider this if you also override those hardcoded values (effectively
-forking the setup flow) and you accept it is unsupported and version-fragile.
+#### Path (a) — **RECOMMENDED**: surgical variable injection via a dedicated flag (custom scripts)
+
+This is the primary path. It skips **only** the prompts (not any install logic) and avoids the
+overloaded `TESTING` flag's side effects (see Path (c)). The customization is small and
+mechanical:
+
+1. **Add a dedicated flag** (e.g. `SO_UNATTENDED`) and change the guard at the top of **every**
+   prompt function in `setup/so-whiptail` from:
+
+   ```bash
+   [ -n "$TESTING" ] && return
+   ```
+   to:
+   ```bash
+   [ -n "$TESTING$SO_UNATTENDED" ] && return
+   ```
+   (One mechanical one-pattern change across the ~40 prompt functions — they all use the same
+   idiom.)
+
+2. **Source an answer file early** in `setup/so-setup`, immediately after `source ./so-variables`
+   and **before** any prompt is called:
+
+   ```bash
+   if [ -n "$SO_UNATTENDED" ] && [ -f "$ANSWERS" ]; then source "$ANSWERS"; fi
+   ```
+   where `$ANSWERS` sets the answer-set variables above with our production values. Do **not**
+   pass the second positional "profile" arg (that triggers the hardcoded test-value block and
+   `update_sudoers_for_testing`).
+
+3. **Add the flag to the few *non-whiptail* interactive guards** so they don't try to prompt
+   under unattended mode — these currently key off `[ -z "$TESTING" ]`. Known ones to extend
+   (the agent must confirm the full list for the pinned version):
+   - `setup/so-setup` — the ISO first-menu / network-config block (`whiptail_first_menu_iso`,
+     `collect_hostname`, `network_init_whiptail`) and the `progress()` gauge.
+   - `setup/so-functions` — `collect_hostname_validate` localhost→securityonion guard,
+     `collect_proxy` (skip only if no proxy; otherwise pre-set proxy vars).
+
+4. **Pre-accept the Elastic license** (it is *not* skipped under this flag — and should not be):
+   `mkdir -p /opt/so/state && touch /opt/so/state/yeselastic.txt`. This is a deliberate legal
+   acceptance of the Elastic License v2; record it intentionally.
+
+5. **Leave all `TESTING`-only behaviors alone.** Because `TESTING` stays empty, the production
+   paths run normally: `nginx_pillar` keeps default **login rate limiting** (not the test
+   `9999`), the post-install **sudoers cleanup** (removing the `so-setup` entry) runs, and the
+   **Elastic license** gate is honored (satisfied by step 4).
+
+**Result:** a normal, supported production install, with our values, and no prompts.
+
+#### Path (b) — fallback: Ansible `expect` (no script changes)
+
+If patching the scripts is undesirable, use `ansible.builtin.expect` (or a pexpect wrapper) to
+run `sudo SecurityOnion/setup/so-setup iso` and answer each whiptail prompt with the values
+above. No fork to maintain, but it screen-scrapes the TUI, so it is **more brittle** to prompt
+text changes between releases. Pin the SO version and keep a version-tested prompt→response map.
+
+#### Path (c) — do NOT use in production: the built-in `TESTING` bypass
+
+Passing a second positional "profile" arg (e.g. `distributed-search-iso`) sets `TESTING=true`
+and skips all prompts, **but** (i) the stock profile block hardcodes `address_type=DHCP`,
+default web creds, a `/8` minion CIDR, `ALLOW_CIDR=0.0.0.0/0`, and throwaway hostnames, and
+(ii) `TESTING` is overloaded and also alters the install: it **disables nginx login rate
+limiting** (`throttle_login_*: 9999`), **skips the post-install sudoers cleanup**, and
+**bypasses the Elastic license gate**. Documented here only so the agent understands *why* Path
+(a) uses a separate flag instead of reusing `TESTING`.
+
+#### MANDATORY validation step for the future agent (not done in this spec)
+
+The custom scripts above must be **developed and tested against the real Security Onion 3.0
+source before they touch any production system.** The agent that implements this must:
+
+1. **Clone the Security Onion 3.0 repository** (branch `3/main`):
+   `git clone -b 3/main https://github.com/Security-Onion-Solutions/securityonion`.
+2. **Re-audit every `TESTING` reference** in `setup/so-setup`, `setup/so-whiptail`,
+   `setup/so-functions`, and `salt/common/tools/sbin/so-common` for the **pinned version**
+   (these can change between releases), and confirm the complete list of: prompt guards to
+   extend (step 1), non-whiptail interactive guards to extend (step 3), and any new
+   `TESTING`-only install behaviors that must be left untouched (step 5).
+3. **Enumerate, per `install_type`, every variable** each invoked `whiptail_*` function
+   assigns/exports, and verify the answer file sets all of them.
+4. **Produce the customized `so-setup` / `so-whiptail` (and any `so-functions`) as a maintained
+   diff** against the pinned version, and **test the unattended install** for each role
+   (in a lab) until it completes cleanly with the production-style values.
+5. Treat this as **version-pinned**: `soup` updates these scripts, so re-validate the diff on
+   every SO version bump.
+
+> **This spec does not produce or fully validate those custom scripts — that is the future
+> agent's task.** This section defines the approach, the patch points, and the test gate.
+
+#### Deployment of the custom scripts (Ansible)
+
+The custom `so-setup` / `so-whiptail` (and any patched `so-functions`) are **staged in version
+control** and **Ansible replaces the stock scripts on each Security Onion VM with our custom
+versions before running setup** — i.e., after clone + cloud-init personalization (§6.2) and
+before the `so-setup` invocation (§11.0 step 6). Ansible should also drop the per-node `$ANSWERS`
+file and pre-accept the Elastic license (step 4) as part of the same pre-setup task. Keep the
+replacement idempotent and record the source SO version alongside the scripts so drift is
+detectable on upgrade.
 
 **Run order:** MANAGER first (New Deployment), then SEARCHNODE ×2, then RECEIVER, FLEET,
 SENSOR, (IDH) as Existing-Deployment joins pointing at `MSRV`/`MSRVIP` — see §11.
@@ -520,9 +621,12 @@ chain**; the *order across nodes* is fixed (manager → search → receiver/flee
 4. **Proxmox host plumbing** *(sensor especially)*: OVS sniff vNIC + mirror (§7), offload-disable
    hookscript (§7.3), CPU affinity / NUMA pin (§8), vhost pin (§8.1).
 5. **First boot**; wait for guest agent + SSH; grow `/nsm` LVM if required.
-6. **Run `so-setup`** non-interactively (§6.3, `expect`) with the role's answer set.
-7. **Accept on the manager** (§11.6) — firewall hostgroup + grid membership.
-8. **Verify** (`so-status`, grid green) before moving to the next node (§16).
+6. **Stage custom setup scripts + answer file** (§6.3 Path a): replace stock
+   `so-setup`/`so-whiptail` (and any patched `so-functions`) with the pre-validated custom
+   versions, drop the per-node `$ANSWERS` file, and pre-accept the Elastic license.
+7. **Run `so-setup`** non-interactively (§6.3) with the role's answer set (unattended flag).
+8. **Accept on the manager** (§11.6) — firewall hostgroup + grid membership.
+9. **Verify** (`so-status`, grid green) before moving to the next node (§16).
 
 ### 11.1 Manager (must complete fully first)
 - Task chain with `install_type=MANAGER`, **New Deployment**.
@@ -696,9 +800,12 @@ The playbook should verify, at minimum:
 2. **Local-storage-only for `/nsm`** → search and sensor VMs are effectively **non-migratable** and
    **must not** use Ceph/NFS/shared storage. Plan HA accordingly (rebuild-from-config, not live
    migrate, for those two roles).
-3. **`so-setup` is interactive** → the single biggest automation gap; it is **driven by Ansible
-   via `expect`** (§6.3), pinned to a specific SO version. The undocumented `TESTING` bypass is
-   **not** production-safe. Node acceptance is automated manager-side via salt-key/API (§11.6).
+3. **`so-setup` is interactive** → the single biggest automation gap; addressed with **lightly
+   patched `so-setup`/`so-whiptail` (dedicated unattended flag + answer file)** that Ansible
+   stages onto each VM before setup (§6.3 Path a), `expect` as fallback. **The custom scripts
+   are a maintained, version-pinned fork that must be developed and tested against a clone of the
+   SO 3.0 repo before production use — out of scope for this spec.** Node acceptance is automated
+   manager-side via salt-key/API (§11.6).
 4. **Templates must be pre-`so-setup` and generalized** → a post-setup template cannot be cloned
    for multi-instance roles (the two search nodes). `so-setup` therefore runs **per clone**, in
    Ansible's scope, not in the template (§0.1, §5.3, §6).
@@ -713,8 +820,10 @@ The playbook should verify, at minimum:
 
 Minimum variable set to template the whole build:
 
-- Template/clone: `base_template_id` (or name), `so_version` (pin for `so-setup` `expect`),
-  `setup_method` (`expect` | `testing_bypass`), `ci_user`/`ci_ssh_key` (cloud-init bootstrap).
+- Template/clone: `base_template_id` (or name), `so_version` (pinned version the custom scripts
+  were validated against), `setup_method` (`custom_unattended` (default) | `expect`),
+  `custom_scripts_path` (VCS location of patched `so-setup`/`so-whiptail`/`so-functions`),
+  `answers_file` (per-node), `ci_user`/`ci_ssh_key` (cloud-init bootstrap).
 - Per node: `hostname`, `mgmt_ip`, `cidr`, `gateway`, `dns_servers`, `ntp_servers`,
   `proxmox_host`, `vcpus`, `ram_gb`, `root_disk_gb`, `nsm_disk_gb`, `role` (=`install_type`),
   `numa_node`, `cpu_affinity` (cpuset), `node_description`, `mac` (optional).
